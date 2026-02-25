@@ -1,0 +1,963 @@
+{
+  "nav": {
+    "howItWorks": "So funktioniert's",
+    "features": "Funktionen",
+    "legalBasis": "Rechtsgrundlage",
+    "docs": "Dokumentation",
+    "getStarted": "Loslegen",
+    "language": "Sprache"
+  },
+  "hero": {
+    "badge": "LBO BW 2026 KONFORM",
+    "headlineLine1": "Ihre",
+    "headlineHighlight": "Baugenehmigung,",
+    "headlineLine3": "vereinfacht.",
+    "description": "Beantworten Sie einige Fragen zu Ihrem Vorhaben und erhalten Sie eine vollständige, einsatzbereite Checkliste – spezifisch für Ihre Gemeinde und das aktuelle Baurecht.",
+    "ctaPrimary": "Bewertung starten",
+    "ctaSecondary": "So funktioniert's",
+    "trust1": "KOSTENLOS",
+    "trust2": "KEIN KONTO",
+    "trust3": "~15 MIN",
+    "trustRef": "VNR. PP-BW-2026"
+  },
+  "diagram": {
+    "classLabel": "GK-KLASSE",
+    "classValue": "GK 2",
+    "classNote": "≤ 7 m Höhe",
+    "procedureLabel": "VERFAHREN",
+    "procedureValue": "Vereinfacht",
+    "procedureRef": "§ 52 LBO BW",
+    "itemsLabel": "PUNKTE",
+    "itemsValue": "14",
+    "itemsBlockers": "0 Blocker",
+    "scale": "MASSSTAB 1:100"
+  },
+  "howItWorks": {
+    "eyebrow": "DER PROZESS",
+    "title": "Von der Frage zur Checkliste",
+    "titleHighlight": "in vier Schritten",
+    "subtitle": "Unser regelbasiertes System analysiert Ihr Bauvorhaben nach dem aktuellen Landesbaurecht und generiert eine behördenkonforme Dokumentenliste.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Gemeinde wählen",
+        "description": "Wählen Sie Ihre Gemeinde aus über 1.101 Kommunen in Baden-Württemberg. Jede Gemeinde hat spezifische lokale Bebauungspläne und Anforderungen.",
+        "tag": "Gemeindespezifisch"
+      },
+      {
+        "number": "02",
+        "title": "Vorhaben beschreiben",
+        "description": "Geben Sie Art und Umfang Ihres Bauvorhabens an: Neubau, Anbau, Umbau oder Nutzungsänderung – mit Angaben zu Fläche, Höhe und Nutzung.",
+        "tag": "Dynamische Klassifizierung"
+      },
+      {
+        "number": "03",
+        "title": "Automatische Einordnung",
+        "description": "Das System bestimmt automatisch die Gebäudeklasse (GK 1–5) nach §2 LBO BW, das Genehmigungsverfahren (§§ 50–53) und ob ein Sonderbau vorliegt.",
+        "tag": "Regelwerk §2 LBO BW"
+      },
+      {
+        "number": "04",
+        "title": "Checkliste erhalten",
+        "description": "Sie erhalten eine vollständige, prüfbare Checkliste aller erforderlichen Dokumente mit Rechtsgrundlage, Hinweisen und PDF-Exportmöglichkeit.",
+        "tag": "PDF-Export"
+      }
+    ]
+  },
+  "benefits": {
+    "eyebrow": "WARUM PERMITPRO",
+    "title": "Acht Gründe,",
+    "titleHighlight": "die überzeugen",
+    "subtitle": "Entwickelt von Experten für deutsches Baurecht. Gebaut für Menschen, die einfach nur bauen möchten.",
+    "items": [
+      {
+        "icon": "euro",
+        "title": "100 % kostenlos",
+        "description": "Keine versteckten Kosten, kein Abo, keine Premium-Stufe. PermitPro ist und bleibt kostenlos für alle Bauherren."
+      },
+      {
+        "icon": "user-x",
+        "title": "Kein Konto erforderlich",
+        "description": "Datenschutz by Design: Starten Sie sofort, keine Registrierung, keine E-Mail, keine Cookies außer technisch notwendigen."
+      },
+      {
+        "icon": "map-pin",
+        "title": "Gemeindespezifisch",
+        "description": "Jede Ausgabe berücksichtigt die lokalen Satzungen und Bebauungspläne Ihrer Gemeinde – nicht nur das Landesbaurecht."
+      },
+      {
+        "icon": "scale",
+        "title": "Rechtlich fundiert",
+        "description": "Jede Anforderung ist mit der genauen Paragraphen-Referenz der LBO BW 2026 (zuletzt geändert 18.06.2024) verknüpft."
+      },
+      {
+        "icon": "languages",
+        "title": "Zweisprachig",
+        "description": "Alle Inhalte vollständig auf Deutsch und Englisch verfügbar – ideal für internationale Architekten und Bauherren."
+      },
+      {
+        "icon": "cpu",
+        "title": "Dynamische Checklisten",
+        "description": "Je nach Ihren Antworten erhalten Sie eine andere Checkliste. Kein Einheitsformular – sondern präzise auf Ihr Vorhaben zugeschnitten."
+      },
+      {
+        "icon": "file-down",
+        "title": "PDF-Export",
+        "description": "Laden Sie Ihre Checkliste als druckfertiges PDF herunter – mit Ihrem Projektnamen, Datum und allen Paragraphen-Verweisen."
+      },
+      {
+        "icon": "refresh-cw",
+        "title": "Immer aktuell",
+        "description": "Das Regelwerk wird bei jeder Gesetzesänderung aktualisiert. Sie arbeiten stets mit dem geltenden Baurecht – nie mit veralteten Vorlagen."
+      }
+    ]
+  },
+  "regions": {
+    "eyebrow": "ABDECKUNG",
+    "title": "Aktuell verfügbar",
+    "titleHighlight": "in Deutschland",
+    "subtitle": "Wir starten in Baden-Württemberg und erweitern schrittweise auf alle 16 Bundesländer.",
+    "bw": {
+      "flag": "BW",
+      "name": "Baden-Württemberg",
+      "status": "Aktiv · MVP",
+      "municipalities": "1.101 Gemeinden",
+      "law": "LBO BW 2026",
+      "lawDate": "Stand: 18.06.2024",
+      "feature1": "Alle Gebäudeklassen GK 1–5",
+      "feature2": "Vereinfachtes + Normales Verfahren",
+      "feature3": "Sonderbau-Erkennung",
+      "feature4": "Kenntnisgabeverfahren §50 LBO"
+    },
+    "bavaria": {
+      "flag": "BY",
+      "name": "Bayern",
+      "status": "Phase 2 · Geplant",
+      "municipalities": "2.056 Gemeinden",
+      "law": "BayBO 2025",
+      "lawDate": "Stand: 23.12.2025",
+      "feature1": "Vereinfachtes Verfahren Art. 59",
+      "feature2": "Genehmigungsfreistellung Art. 58",
+      "feature3": "Sonderbautenliste Art. 2 Abs. 4",
+      "feature4": "Abstandsflächenberechnung Art. 6"
+    },
+    "comingSoon": "Weitere Bundesländer folgen"
+  },
+  "audience": {
+    "eyebrow": "FÜR WEN",
+    "title": "Gemacht für alle,",
+    "titleHighlight": "die bauen",
+    "subtitle": "Ob privater Bauherr, Architekt oder Bauunternehmen – PermitPro liefert die richtige Tiefe an Information.",
+    "roles": [
+      {
+        "icon": "home",
+        "tag": "PRIVATPERSONEN",
+        "title": "Bauherren",
+        "description": "Sie bauen zum ersten Mal und wissen nicht, wo Sie anfangen sollen? PermitPro führt Sie Schritt für Schritt durch den Prozess und erklärt jeden Schritt verständlich.",
+        "points": [
+          "Kein Vorwissen erforderlich",
+          "Einfache Sprache mit Erklärungen",
+          "Direkte Links zu Formularen der Gemeinde"
+        ]
+      },
+      {
+        "icon": "drafting-compass",
+        "tag": "FACHLEUTE",
+        "title": "Architekten & Planer",
+        "description": "Schnell und zuverlässig prüfen, welche Unterlagen für ein Projekt erforderlich sind – mit direkter Paragraphen-Referenz für Ihre Dokumentation.",
+        "points": [
+          "Vollständige §-Referenzen in der Ausgabe",
+          "PDF-Export für Projektakten",
+          "Mehrere Projekte vergleichen"
+        ]
+      },
+      {
+        "icon": "hard-hat",
+        "tag": "UNTERNEHMEN",
+        "title": "Bauunternehmen",
+        "description": "Reduzieren Sie Planungsfehler und Rückfragen bei Behörden. PermitPro gibt Ihrem Team einen zuverlässigen Ausgangspunkt für jedes neue Projekt.",
+        "points": [
+          "Checklisten für verschiedene Projekttypen",
+          "Team-freundliche PDF-Dokumente",
+          "Nachvollziehbare Rechtsgrundlagen"
+        ]
+      }
+    ]
+  },
+  "trust": {
+    "eyebrow": "DATENSCHUTZ & SICHERHEIT",
+    "title": "Ihre Daten",
+    "titleHighlight": "gehören Ihnen",
+    "subtitle": "PermitPro wurde nach dem Prinzip \"Privacy by Default\" entwickelt. Wir speichern nicht, was wir nicht brauchen.",
+    "items": [
+      {
+        "icon": "shield",
+        "title": "DSGVO-konform",
+        "description": "Alle Daten werden ausschließlich in der EU verarbeitet. Keine Weitergabe an Dritte, keine Werbung, keine Tracker."
+      },
+      {
+        "icon": "user-x",
+        "title": "Kein Konto, kein Profil",
+        "description": "Wir legen kein Benutzerkonto an. Ihre Angaben verlassen Ihren Browser nicht – außer zur Generierung der Checkliste."
+      },
+      {
+        "icon": "book-open",
+        "title": "Offizielle Rechtsquellen",
+        "description": "Alle Regelwerke basieren auf den offiziellen Gesetzestexten des Landesrechtsbüros Baden-Württemberg (lrbw.landesrecht-bw.de)."
+      },
+      {
+        "icon": "git-branch",
+        "title": "Nachvollziehbar",
+        "description": "Jede Anforderung in der Checkliste enthält die genaue gesetzliche Grundlage – transparent, prüfbar, zitierbar."
+      }
+    ],
+    "disclaimer": "PermitPro ersetzt keine Rechtsberatung. Die generierten Checklisten sind Orientierungshilfen. Im Zweifelsfall konsultieren Sie Ihre zuständige Baubehörde.",
+    "lawLink": "Landesrecht BW"
+  },
+  "faq": {
+    "eyebrow": "HÄUFIGE FRAGEN",
+    "title": "Antworten auf",
+    "titleHighlight": "Ihre Fragen",
+    "subtitle": "Die häufigsten Fragen rund um Baugenehmigungen in Baden-Württemberg – direkt beantwortet.",
+    "items": [
+      {
+        "question": "Brauche ich für jeden Anbau eine Baugenehmigung?",
+        "answer": "Nicht immer. Kleinere Anbauten bis 40 m³ Brutto-Rauminhalt in Wohngebieten können in Baden-Württemberg nach §50 Abs. 1 LBO vom Baugenehmigungsverfahren freigestellt sein (Kenntnisgabeverfahren). Voraussetzung ist u.a. die Übereinstimmung mit dem Bebauungsplan. PermitPro prüft diese Schwellenwerte automatisch."
+      },
+      {
+        "question": "Was ist der Unterschied zwischen vereinfachtem und normalem Baugenehmigungsverfahren?",
+        "answer": "Im vereinfachten Verfahren nach §52 LBO BW prüft die Baubehörde nur ausgewählte öffentlich-rechtliche Vorschriften. Es gilt für Gebäude der Gebäudeklassen 1–3, die keine Sonderbauten sind. Das normale Verfahren nach §53 LBO BW umfasst eine vollständige bauordnungsrechtliche Prüfung und ist bei GK 4–5 sowie Sonderbauten erforderlich."
+      },
+      {
+        "question": "Was ist eine Gebäudeklasse und wie wird sie bestimmt?",
+        "answer": "Die Gebäudeklasse (GK 1–5) wird in §2 Abs. 4 LBO BW definiert und richtet sich nach der Höhe des Fußbodens des höchstgelegenen Aufenthaltsraums über der Geländeoberfläche sowie der Nutzungsart. GK 1: freistehend bis 7 m; GK 2: freistehend bis 7 m, mehrere Nutzungseinheiten; GK 3: sonstige bis 7 m; GK 4: bis 13 m; GK 5: über 13 m oder Sonderbauten."
+      },
+      {
+        "question": "Welche Unterlagen brauche ich für einen Neubau (Einfamilienhaus)?",
+        "answer": "Für ein Einfamilienhaus im vereinfachten Verfahren benötigen Sie in der Regel: Bauantrag (Formular der Gemeinde), Lageplan (von einem öffentl. bestellten Vermessungsingenieur), Bauzeichnungen (Grundrisse, Schnitte, Ansichten M 1:100), Baubeschreibung (Formblatt), Standsicherheitsnachweis, Wärmeschutznachweis (GEG), Freiflächenplan sowie ggf. Entwässerungsplan. PermitPro erstellt eine vollständige, auf Ihr Grundstück zugeschnittene Liste."
+      },
+      {
+        "question": "Wie lange dauert die Bearbeitung eines Bauantrags in BW?",
+        "answer": "Die gesetzliche Bearbeitungsfrist beträgt nach §54 Abs. 4 LBO BW maximal 3 Monate ab Eingang der vollständigen Unterlagen. In der Praxis variiert dies je nach Gemeinde und Auslastung der Baubehörde stark – von 4 Wochen bis zu 6 Monaten. Vollständige Unterlagen beim ersten Einreichen sind der wichtigste Faktor für eine schnelle Bearbeitung."
+      },
+      {
+        "question": "Kann ich ohne Baugenehmigung anfangen zu bauen?",
+        "answer": "Nein. Der Baubeginn ohne Genehmigung ist eine Ordnungswidrigkeit und kann zu Baustopp, Abbruchanordnung und Bußgeldern bis zu 500.000 € führen (§75 LBO BW). Beim Kenntnisgabeverfahren dürfen Sie erst nach Ablauf einer Wartefrist von 2 Wochen beginnen, sofern kein Widerspruch der Gemeinde eingeht."
+      },
+      {
+        "question": "Ist PermitPro kostenlos und muss ich mich registrieren?",
+        "answer": "PermitPro ist vollständig kostenlos und erfordert keine Registrierung. Sie geben Ihre Projektdaten ein, erhalten die Checkliste und können sie als PDF herunterladen – alles ohne Konto, ohne E-Mail-Adresse und ohne dass Ihre Daten gespeichert werden."
+      },
+      {
+        "question": "Ersetzt PermitPro die Beratung bei der Baubehörde?",
+        "answer": "Nein. PermitPro ist eine Orientierungshilfe, kein Rechtsgutachten. Die generierten Checklisten basieren auf dem aktuellen Landesbaurecht, berücksichtigen jedoch keine Einzelfallentscheidungen, Befreiungen oder Abweichungen. Wir empfehlen, die endgültige Liste vor Einreichung mit Ihrer zuständigen unteren Baubehörde zu besprechen."
+      },
+      {
+        "question": "Werden meine Eingaben gespeichert oder weitergegeben?",
+        "answer": "Nein. Ihre Angaben werden ausschließlich zur lokalen Generierung der Checkliste in Ihrem Browser verwendet und nicht auf unseren Servern gespeichert. Wir verwenden keine Analyse-Cookies oder Tracking-Tools. Weitere Informationen finden Sie in unserer Datenschutzerklärung."
+      },
+      {
+        "question": "Für welche Bundesländer ist PermitPro verfügbar?",
+        "answer": "Aktuell (MVP) ist PermitPro für Baden-Württemberg (LBO BW, Stand 18.06.2024) vollständig verfügbar. Bayern (BayBO) ist für Phase 2 geplant. Nordrhein-Westfalen, Hessen und weitere Bundesländer folgen schrittweise. Sie können sich für Updates registrieren."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "JETZT STARTEN",
+    "title": "Bereit für Ihre",
+    "titleHighlight": "Baugenehmigung?",
+    "subtitle": "Starten Sie jetzt und erhalten Sie in ca. 15 Minuten Ihre persönliche Checkliste – kostenlos, ohne Konto, rechtlich fundiert.",
+    "primary": "Bewertung starten",
+    "secondary": "Demo ansehen",
+    "stat1Value": "1.101",
+    "stat1Label": "Gemeinden in BW",
+    "stat2Value": "§§ 50–53",
+    "stat2Label": "LBO BW abgedeckt",
+    "stat3Value": "0 €",
+    "stat3Label": "Kosten, kein Abo"
+  },
+  "assessment": {
+    "step1": {
+      "title": "Gemeinde wählen",
+      "subtitle": "Suchen Sie nach Ihrer Gemeinde in Baden-Württemberg",
+      "searchPlaceholder": "Gemeinde, PLZ oder Landkreis …",
+      "noResults": "Keine Gemeinde gefunden",
+      "selected": "Ausgewählte Gemeinde",
+      "stepLabel": "Schritt 01",
+      "availableHint": "115 Gemeinden verfügbar · LBO BW & BayBO"
+    },
+    "step2": {
+      "title": "Vorhaben beschreiben",
+      "subtitle": "Wählen Sie die Art Ihres Bauvorhabens",
+      "stepLabel": "Schritt 02"
+    },
+    "step3": {
+      "title": "Projektdetails",
+      "subtitle": "Beantworten Sie die folgenden Fragen zu Ihrem Vorhaben",
+      "continueButton": "Prüfen & Herunterladen",
+      "backButton": "Zurück",
+      "stepLabel": "Schritt 03",
+      "answerAllFirst": "Bitte beantworten Sie alle Fragen, um die Checkliste zu generieren.",
+      "liveClassification": "LIVE-KLASSIFIZIERUNG",
+      "classificationHint": "Höhe + Nutzung eingeben für Klassifizierung",
+      "selectPlaceholder": "— auswählen —",
+      "answered": "beantwortet",
+      "allAnswered": "alle beantwortet"
+    },
+    "step4": {
+      "title": "Ihre Checkliste",
+      "subtitle": "Basierend auf Ihren Angaben",
+      "printButton": "PDF herunterladen",
+      "resetButton": "Neue Bewertung",
+      "generatedOn": "Erstellt am",
+      "totalItems": "Punkte",
+      "disclaimer": "Diese Checkliste ist eine Orientierungshilfe. Stimmen Sie die endgültige Liste mit Ihrer zuständigen Baubehörde ab.",
+      "classificationLabel": "Klassifizierung nach §2 Abs. 4 LBO BW",
+      "allDoneTitle": "Alle Punkte abgehakt!",
+      "allDoneSubtitle": "Ihre Checkliste ist vollständig – bereit zum Einreichen.",
+      "resetConfirm": "Neue Bewertung starten?",
+      "resetYes": "Ja, zurücksetzen",
+      "resetNo": "Abbrechen",
+      "filterAll": "Alle",
+      "filterCritical": "Kritisch",
+      "filterRequired": "Pflicht",
+      "filterConditional": "Bedingt",
+      "filterCompleted": "Erledigt",
+      "searchPlaceholder": "Suchen… (ID, Rechtsgrundlage)",
+      "copied": "Kopiert!",
+      "share": "Teilen",
+      "generatingPdf": "Generiere…",
+      "noItemsFound": "Keine Einträge gefunden",
+      "noItemsHint": "Filter oder Suche anpassen"
+    },
+    "back": "Zurück",
+    "steps": {
+      "1": "Gemeinde",
+      "2": "Vorhaben",
+      "3": "Details",
+      "4": "Checkliste"
+    },
+    "projectTypes": {
+      "neubau": {
+        "title": "Neubau",
+        "description": "Errichtung eines neuen Gebäudes auf bisher unbebauter oder bebauter Fläche"
+      },
+      "anbau": {
+        "title": "Anbau",
+        "description": "Erweiterung eines bestehenden Gebäudes durch Anbauten oder Aufstockungen"
+      },
+      "aufstockung": {
+        "title": "Aufstockung",
+        "description": "Erweiterung eines bestehenden Gebäudes um ein oder mehrere Geschosse (vertikale Erweiterung)"
+      },
+      "umbau": {
+        "title": "Umbau",
+        "description": "Bauliche Änderungen im Innern oder an der Außenhülle eines bestehenden Gebäudes"
+      },
+      "nutzungsaenderung": {
+        "title": "Nutzungsänderung",
+        "description": "Änderung der genehmigten Nutzung ohne wesentliche bauliche Änderungen"
+      },
+      "abbruch": {
+        "title": "Abbruch",
+        "description": "Vollständiger oder teilweiser Abbruch eines Gebäudes oder einer Anlage"
+      }
+    },
+    "questions": {
+      "hoehe": {
+        "label": "Höhe des Fußbodens des höchsten Aufenthaltsraums über Geländeoberfläche",
+        "hint": "Maßgeblich für die Gebäudeklasse nach §2 Abs. 4 LBO BW. Messen Sie vom natürlichen Gelände bis zum Fußboden des obersten Aufenthaltsraums."
+      },
+      "bestandHoehe": {
+        "label": "Höhe des bestehenden Gebäudes (Aufenthaltsraum über Gelände)",
+        "hint": "Höhe des Fußbodens des höchsten Aufenthaltsraums im Bestandsgebäude über der natürlichen Geländeoberfläche."
+      },
+      "nutzungsart": {
+        "label": "Nutzungsart des Gebäudes",
+        "wohnen": "Wohngebäude",
+        "gewerbe": "Gewerbebau / Büro",
+        "gemischt": "Gemischte Nutzung",
+        "sonderbau": "Sonderbau (Versammlungsstätte, Schule, Hotel …)"
+      },
+      "neueNutzung": {
+        "label": "Geplante neue Nutzungsart"
+      },
+      "freistehend": {
+        "label": "Ist das Gebäude freistehend?",
+        "hint": "Freistehend = kein unmittelbarer Anschluss an andere Gebäude auf dem gleichen oder benachbarten Grundstück. Relevant für GK 1 vs. GK 2."
+      },
+      "nutzungseinheiten": {
+        "label": "Anzahl der Nutzungseinheiten",
+        "hint": "Jede in sich abgeschlossene Wohnung oder Gewerbefläche zählt als eine Nutzungseinheit."
+      },
+      "bri": {
+        "label": "Brutto-Rauminhalt (BRI) des Gebäudes",
+        "hint": "Berechnet nach DIN 277. Für das Kenntnisgabeverfahren (§50 LBO BW) darf der BRI 1.500 m³ nicht überschreiten."
+      },
+      "anbauBri": {
+        "label": "Brutto-Rauminhalt des geplanten Anbaus",
+        "hint": "BRI des Anbaus allein (nicht Gesamtgebäude). Maßgeblich für §50 Kenntnisgabe: ≤ 1.500 m³."
+      },
+      "bebauungsplan": {
+        "label": "Liegt das Grundstück im Geltungsbereich eines qualifizierten Bebauungsplans?",
+        "hint": "Ein qualifizierter B-Plan (§30 BauGB) enthält Festsetzungen zu Art, Maß, Bauweise und überbaubarer Grundstücksfläche."
+      },
+      "konform": {
+        "label": "Entspricht das Vorhaben vollständig den Festsetzungen des Bebauungsplans?",
+        "hint": "Für §50 Kenntnisgabe muss das Vorhaben mit dem B-Plan übereinstimmen – ohne Ausnahmen oder Befreiungen."
+      },
+      "neueHoehe": {
+        "label": "Höhe nach der Aufstockung (neue Gesamtgebäudehöhe)",
+        "hint": "Gesamthöhe des Fußbodens des höchsten Aufenthaltsraums nach der Aufstockung – gemessen vom natürlichen Gelände."
+      },
+      "anzahlGeschosse": {
+        "label": "Anzahl der Geschosse (Vollgeschosse über Gelände)",
+        "hint": "Nur vollwertige oberirdische Geschosse zählen, einschließlich Dachgeschoss. Keller nur wenn Aufenthaltsräume geplant sind."
+      },
+      "bgf": {
+        "label": "Bruttogrundfläche (BGF) in m²",
+        "hint": "Berechnet nach DIN 277. Summe aller Grundflächen einschließlich Wanddicken auf allen Geschossebenen."
+      },
+      "denkmalschutz": {
+        "label": "Steht das Gebäude oder Grundstück unter Denkmalschutz?",
+        "hint": "Denkmäler nach §2 DSchG BW benötigen vor baulichen Änderungen zusätzliche Genehmigungen der Denkmalschutzbehörde."
+      },
+      "ueberschwemmungsgebiet": {
+        "label": "Liegt das Grundstück in einem Überschwemmungsgebiet?",
+        "hint": "Überschwemmungsgebiete nach §78 WHG erfordern eine Ausnahmegenehmigung der Wasserbehörde. Karte: LUBW Hochwassergefahrenkarte."
+      },
+      "holzbauweise": {
+        "label": "Ist das Gebäude oder der Anbau in Holzbauweise geplant?",
+        "hint": "Holzgebäude in GK 4/5 erfordern zusätzliche Brandschutzmaßnahmen nach §26 Abs. 3 LBO BW."
+      },
+      "kellerGeplant": {
+        "label": "Ist ein Keller geplant?",
+        "hint": "Ein Keller erfordert ein Abdichtungskonzept (DIN 18533), Entwässerungsnachweis und oft ein Baugrundgutachten."
+      },
+      "aufzugGeplant": {
+        "label": "Ist ein Aufzug geplant oder erforderlich?",
+        "hint": "Gebäude mit ≥4 Geschossen oder Fußbodenhöhe >7m müssen nach §39 LBO BW einen Personenaufzug haben."
+      },
+      "schadstoffe": {
+        "label": "Enthält das Gebäude wahrscheinlich Schadstoffe (z.B. Asbest)?",
+        "hint": "Gebäude vor 1993 enthalten fast immer Asbest. Ein Schadstoffgutachten nach TRGS 519 ist vor Abbruch oder größerer Sanierung Pflicht."
+      },
+      "heizungTyp": {
+        "label": "Art der geplanten Heizungsanlage",
+        "hint": "GEG 2024 §71 fordert, dass neue Heizungsanlagen mindestens 65 % erneuerbare Energie nutzen. Wärmepumpen und Fernwärme erfüllen dies i.d.R.",
+        "waermepumpe": "Wärmepumpe",
+        "fernwaerme": "Fernwärme",
+        "gas": "Gasheizung",
+        "holz": "Biomasse / Pellets",
+        "sonstige": "Sonstige / noch offen"
+      },
+      "erneuerbarEnergie": {
+        "label": "Können Sie ≥15 % erneuerbare Wärme nachweisen? (EWärmeG BW)",
+        "hint": "Das EWärmeG BW fordert für neue Wohngebäude mindestens 15 % Wärme aus erneuerbaren Quellen. Wärmepumpen und Solarthermie erfüllen dies i.d.R."
+      },
+      "photovoltaik": {
+        "label": "Ist eine Photovoltaikanlage (PV) geplant?",
+        "hint": "Neue Gebäude in BW müssen nach KlimaSchutzG BW §8a eine PV-Anlage errichten. Mindestens 0,3 kWp je m² nutzbarer Dachfläche."
+      },
+      "stellplaetze": {
+        "label": "Anzahl der auf dem Grundstück nachgewiesenen Stellplätze",
+        "hint": "Jede BW-Gemeinde hat eine Stellplatzsatzung mit Mindestvorgaben je Wohn- oder Nutzungseinheit."
+      },
+      "answerYes": "Ja",
+      "answerNo": "Nein"
+    },
+    "classification": {
+      "buildingClass": "Gebäudeklasse",
+      "procedure": "Verfahren",
+      "sonderbau": "Sonderbau",
+      "legalBasis": "Rechtsgrundlage",
+      "kenntnisgabe": "Kenntnisgabe",
+      "vereinfacht": "Vereinfacht",
+      "normal": "Normal",
+      "reasons": {
+        "gk1": "Freistehend, ≤7m, ≤2 NE, Wohngebäude → GK 1",
+        "gk2": "≤7m, Wohngebäude, >2 NE oder nicht freistehend → GK 2",
+        "gk3": "≤7m, nicht Wohngebäude → GK 3",
+        "gk4": "Höhe >7m und ≤13m → GK 4",
+        "gk5": "Höhe >13m → GK 5",
+        "sonderbau": "Sonderbau-Nutzung → GK 5 / Normales Verfahren",
+        "kenntnisgabe": "GK 1/2 + Bebauungsplan konform + BRI ≤1.500m³ → §50",
+        "vereinfacht": "GK 1–3, kein Sonderbau → §52",
+        "normal": "GK 4–5 oder Sonderbau → §53"
+      },
+      "kenntnisgabeFull": "Kenntnisgabe · §50",
+      "vereinfachtFull": "Vereinfacht · §52",
+      "normalFull": "Normal · §53",
+      "sonderbauLabel": "Sonderbau"
+    },
+    "sections": {
+      "A": { "title": "Formulare & Erklärungen",          "description": "Antragsformulare, Baubeschreibung, Eigentumsnachweis" },
+      "B": { "title": "Lageplan & Planungsunterlagen",    "description": "Amtlicher Lageplan, Dichte- und Flächenberechnungen" },
+      "C": { "title": "Bauzeichnungen",                   "description": "Grundrisse, Schnitte, Ansichten, Dachaufsicht — M 1:100" },
+      "D": { "title": "Standsicherheit & Konstruktion",   "description": "Standsicherheitsnachweis, Baugrundgutachten, Prüfingenieur" },
+      "E": { "title": "Energie & Wärmeschutz",            "description": "GEG-Nachweis, EWärmeG-Erklärung, Energieausweis" },
+      "F": { "title": "Brandschutz",                      "description": "Brandschutzkonzept, Prüfingenieur, Feuerwehrplan — nur GK4/5" },
+      "G": { "title": "Erschließung & Entwässerung",      "description": "Entwässerungsplan, Erschließung, Stellplätze, Versickerung" },
+      "H": { "title": "Schallschutz & Sondergutachten",   "description": "Schallschutz, Lärmgutachten, Artenschutz — bedingt erforderlich" },
+      "I": { "title": "Sonderbau",                        "description": "Zusätzliche Unterlagen nur für Sonderbauvorhaben" },
+      "J": { "title": "Abbruch",                          "description": "Abbruchantrag, Schadstoffgutachten, Entsorgungskonzept" }
+    },
+    "checklist": {
+      "A1": {
+        "title": "Bauantragsformular (Vordruck der Gemeinde)",
+        "description": "Amtliches Formular der zuständigen unteren Baubehörde",
+        "whatIsThis": "Das Bauantragsformular ist der Kernbestandteil jedes Baugenehmigungsverfahrens. Es muss auf dem Vordruck der jeweiligen Gemeinde ausgefüllt und sowohl vom Bauherrn als auch vom Entwurfsverfasser unterzeichnet werden.",
+        "tips": "Formular direkt von der Website der Gemeinde herunterladen — jede Gemeinde hat ihren eigenen Vordruck. Generische Formulare werden abgelehnt."
+      },
+      "A2": {
+        "title": "Baubeschreibung (LBOVVO Anlage 3)",
+        "description": "Standardisierte Beschreibung des Vorhabens nach LBOVVO BW Anlage 3",
+        "whatIsThis": "Die Baubeschreibung ist ein Standardformular (LBOVVO BW Anlage 3), das das geplante Bauwerk beschreibt: Bauweise, Materialien, Nutzung, Flächen und technische Merkmale. Ihr Architekt füllt dieses Formular aus.",
+        "tips": "Alle Felder vollständig ausfüllen — leere Felder sind der häufigste Grund für einen Unvollständigkeitsbescheid der Baubehörde."
+      },
+      "A3": {
+        "title": "Grundbuchauszug (aktuell, max. 6 Monate alt)",
+        "description": "Beglaubigter Grundbuchauszug als Eigentumsnachweis",
+        "whatIsThis": "Der Grundbuchauszug belegt das Eigentum am Grundstück. Er ist beim Grundbuchamt des zuständigen Amtsgerichts zu beantragen. Ein beglaubigter Auszug ist erforderlich — ein Online-Ausdruck genügt nicht.",
+        "tips": "Rechtzeitig beantragen — manche Amtsgerichte benötigen bis zu 3 Wochen. Der Auszug darf zum Zeitpunkt der Einreichung nicht älter als 6 Monate sein."
+      },
+      "A4": {
+        "title": "Kenntnisgabe-Erklärung (§50 LBO BW)",
+        "description": "Unterschriebene Erklärung zur Übereinstimmung mit dem Bebauungsplan",
+        "whatIsThis": "Nur für das Kenntnisgabeverfahren (§50 LBO BW). Diese Erklärung bestätigt, dass das Vorhaben vollständig mit dem qualifizierten Bebauungsplan übereinstimmt — keine Abweichungen, keine Ausnahmen, keine Befreiungen.",
+        "tips": "Vor der Unterzeichnung jeden Parameter (GRZ, GFZ, Gebäudehöhe, Abstandsflächen) gegen den tatsächlichen B-Plan prüfen. Ein einziger nicht konformer Punkt schließt das Vorhaben vom §50 aus."
+      },
+      "A5": {
+        "title": "Vollmacht (bei Antragstellung durch Dritte)",
+        "description": "Erforderlich wenn Architekt oder Planer den Antrag im Namen des Bauherrn stellt",
+        "whatIsThis": "Wenn jemand anderes als der Grundstückseigentümer den Bauantrag einreicht, ist eine schriftliche Vollmacht erforderlich. Standardformulare sind bei den meisten Baubehörden erhältlich.",
+        "tips": "In den meisten Fällen genügt ein einfaches unterschriebenes Schreiben — eine notarielle Beglaubigung ist nur in Ausnahmefällen erforderlich."
+      },
+      "B1": {
+        "title": "Amtlicher Lageplan (öff. best. Vermessungsingenieur)",
+        "description": "M 1:500 oder 1:1000, max. 3 Jahre alt, mit Originalstempel",
+        "whatIsThis": "Der Amtliche Lageplan ist die behördlich anerkannte Bestandsaufnahme des Grundstücks: Grenzen, Bestandsgebäude, Abstände, Erschließung und Ver-/Entsorgungsleitungen. Er muss von einem öffentlich bestellten Vermessungsingenieur erstellt werden.",
+        "tips": "Als erstes beauftragen — der Amtliche Lageplan hat die längste Vorlaufzeit (3–8 Wochen). Ohne gesicherte Grenzvermarkung kann keine endgültige Planung erfolgen."
+      },
+      "B2": {
+        "title": "GRZ / GFZ – Nachweis der Bebauungsdichte",
+        "description": "Berechnung der Grundflächenzahl und Geschossflächenzahl nach BauNVO",
+        "whatIsThis": "Die GRZ- und GFZ-Berechnungen belegen, dass das Vorhaben die Dichtekennzahlen des Bebauungsplans oder der BauNVO nicht überschreitet. Der Architekt erstellt diese Nachweise als Teil der Planunterlagen.",
+        "tips": "Darstellen, welche Flächen in die GRZ einfließen — viele Prüfer lehnen Anträge ab, bei denen die Berechnungsmethode nicht neben den Kennzahlen erläutert wird."
+      },
+      "B3": {
+        "title": "Wohnflächenberechnung / Flächennachweis DIN 277",
+        "description": "Wohnfläche nach WoFlV oder Bruttogrundfläche nach DIN 277",
+        "whatIsThis": "Die Flächenberechnung listet alle Räume mit Flächenmaßen auf. Wohngebäude verwenden die WoFlV; Gewerbegebäude die DIN 277. Die ermittelte Fläche ist Grundlage für Gebühren und zahlreiche Folgedokumente.",
+        "tips": "Richtigen Standard für die jeweilige Nutzung verwenden: WoFlV für Wohnungen, DIN 277 für Büro/Gewerbe. Eine Vermischung ist ein häufiger und kostspieliger Fehler."
+      },
+      "B4": {
+        "title": "Freianlagenplan (Außenanlagen)",
+        "description": "M 1:200 oder 1:500 mit Bepflanzung, Befestigung und Grünflächen",
+        "whatIsThis": "Der Freianlagenplan zeigt die Gestaltung der Außenanlagen: Bepflanzung, Befestigungen, Einfriedungen, Stützmauern und öffentliche Grünflächen. Erforderlich, wenn der B-Plan einen Mindest-Grünflächenanteil vorschreibt.",
+        "tips": "Prüfen, ob der B-Plan wasserdurchlässige Befestigung (Versickerungsflächen) vorschreibt — diese müssen im Freianlagenplan quantifiziert und nachgewiesen werden."
+      },
+      "C1": {
+        "title": "Grundrisse aller Geschosse (M 1:100)",
+        "description": "Grundrisse aller Ebenen einschließlich Keller und Dachgeschoss",
+        "whatIsThis": "Die Grundrisse zeigen die Raumaufteilung jedes Geschosses: Raummaße, Wandaufbau, Tür- und Fensteröffnungen sowie Treppenläufe. Sie sind die Primärunterlagen jedes Bauantrags — alle weiteren Zeichnungen leiten sich davon ab.",
+        "tips": "Alle Ebenen einschließlich Keller und Dachgeschoss einreichen, auch wenn diese unverändert bleiben. Fehlende Geschosse sind der häufigste Grund für einen Unvollständigkeitsbescheid."
+      },
+      "C2": {
+        "title": "Schnitte — Längs- und Querschnitt (M 1:100)",
+        "description": "Mindestens ein Längs- und ein Querschnitt durch die gesamte Gebäudehöhe",
+        "whatIsThis": "Schnittzeichnungen zeigen das Gebäude im vertikalen Längsschnitt: lichte Raumhöhen, Geschossdeckenstärken, Dachneigung und den Bezug des Gebäudes zum gewachsenen und zum geplanten Gelände — entscheidend für die Gebäudeklassenbestimmung.",
+        "tips": "Stets das Maß vom gewachsenen Boden bis zur Fußbodenkante des höchsten Aufenthaltsraums bemaßen — dies ist das maßgebliche Maß für die Gebäudeklasse (GK)."
+      },
+      "C3": {
+        "title": "Ansichten aller Außenwände (M 1:100)",
+        "description": "Ansichten aller vier Seiten mit Materialangaben, Öffnungen und Höhen",
+        "whatIsThis": "Ansichtszeichnungen zeigen die fertige Außenansicht des Gebäudes: Fassadenmaterialien, Fensterverhältnisse, Dachform und Geländebezug. Sie sind wesentlich für die Prüfung der Gestaltungssatzung.",
+        "tips": "Fertiggeländeoberkante (OKG) deutlich darstellen und von der gewachsenen Geländeoberkante unterscheiden, wo das Gelände abgetragen oder aufgefüllt wird."
+      },
+      "C4": {
+        "title": "Dachaufsicht (M 1:100)",
+        "description": "Draufsicht auf das Dach mit Neigung, First, Entwässerungsrichtung und Gauben",
+        "whatIsThis": "Die Dachaufsicht zeigt das Dach von oben: Firstlinien, Gratlinien, Neigungswinkel, Gaubenlagen, Dachflächenfenster und Fallrohrstandorte. Sie dient der Prüfung der Dachform gegenüber den B-Plan-Festsetzungen.",
+        "tips": "Dachneigung als Bemaßung eintragen und alle Entwässerungsabläufe einzeichnen — fehlende Angaben zur Dachentwässerung sind ein häufig monierter formaler Mangel."
+      },
+      "D1": {
+        "title": "Standsicherheitsnachweis (Statik, Eurocode)",
+        "description": "Vollständige Tragwerksberechnung für alle tragenden Bauteile nach Eurocode",
+        "whatIsThis": "Der Standsicherheitsnachweis ist ein vollständiger Satz von Ingenieurberechnungen, der nachweist, dass das Tragwerk alle vorgesehenen Einwirkungen (Eigenlasten, Nutzlasten, Schnee, Wind) nach Eurocode sicher aufnehmen kann. Er ist vom beauftragten Tragwerksplaner zu unterzeichnen.",
+        "tips": "Den Tragwerksplaner so früh wie möglich beauftragen — er benötigt die abgestimmten Grundrisse und Schnitte. Planänderungen nach Beginn der Tragwerksplanung sind teuer."
+      },
+      "D2": {
+        "title": "Baugrundgutachten (Geotechnischer Bericht)",
+        "description": "Bodengutachten mit Tragfähigkeit, Grundwasserstand und Setzungsrisiko",
+        "whatIsThis": "Das Baugrundgutachten untersucht die Bodenverhältnisse am Baustandort: Tragfähigkeit, Grundwasserspiegel, Setzungsrisiko und Frosttiefe. Erforderlich für Neubauten auf unbekanntem Untergrund oder in potenziell problematischen Lagen.",
+        "tips": "Viele BW-Grundstücke liegen auf quellfähigen Tonböden (Lias/Dogger). Im Zweifel vor Planungsbeginn eine Phase-1-Erkundung in Auftrag geben."
+      },
+      "D3": {
+        "title": "Prüfingenieur Standsicherheit (unabhängige Prüfung)",
+        "description": "Prüfbescheid eines staatlich anerkannten Prüfingenieurs für Standsicherheit",
+        "whatIsThis": "Für GK4/5-Gebäude müssen die Standsicherheitsnachweise von einem staatlich anerkannten Prüfingenieur für Standsicherheit unabhängig geprüft und mit einem Prüfbescheid freigegeben werden. Erst dann darf mit dem Bau begonnen werden.",
+        "tips": "Prüfingenieure sind unabhängig vom planenden Tragwerksplaner. Frühzeitig beauftragen — gefragte Prüfingenieure haben Wartezeiten von mehreren Wochen."
+      },
+      "E1": {
+        "title": "GEG-Nachweis (Energienachweis nach GEG 2024)",
+        "description": "Nachweis der Konformität mit dem Gebäudeenergiegesetz 2024",
+        "whatIsThis": "Der GEG-Nachweis belegt, dass das Gebäude die Anforderungen des Gebäudeenergiegesetzes an den Primärenergiebedarf und die Gebäudehülle erfüllt. Er wird vom Energieberater mit zertifizierter Berechnungssoftware erstellt.",
+        "tips": "Berechnungssoftware muss staatlich zugelassen sein (z. B. PHPP, IDA ICE, Hottgenroth). Prüfen, ob der Energieberater in der Energieeffizienz-Expertenliste eingetragen ist."
+      },
+      "E2": {
+        "title": "EWärmeG-Nachweis (Erneuerbare Wärme BW)",
+        "description": "Nachweis der Konformität mit dem Erneuerbare-Wärme-Gesetz Baden-Württemberg",
+        "whatIsThis": "Das EWärmeG BW verpflichtet neue Wohngebäude in BW, mindestens 15 % des Wärmebedarfs aus erneuerbaren Energien zu decken (oder gleichwertige Maßnahmen nach GEG §71 nachzuweisen). Diese Pflicht gilt zusätzlich zum Bundes-GEG.",
+        "tips": "Vor Abschluss der Heizungsplanung den gewählten Erfüllungsweg (Wärmepumpe, Solarthermie etc.) mit dem Energieberater abstimmen — ein Wechsel in der Planungsphase ist kostspielig."
+      },
+      "E3": {
+        "title": "Energieausweis (Bedarfsausweis, 10 Jahre gültig)",
+        "description": "Bedarfsausweis nach GEG auf der Skala A+ bis H",
+        "whatIsThis": "Der Energieausweis fasst die Energieeffizienz des Gebäudes auf der Skala A+ bis H zusammen und ist für Neubauten nach GEG Pflicht. Er wird auch beim Verkauf oder bei der Vermietung des Gebäudes benötigt.",
+        "tips": "Neubauten benötigen einen Bedarfsausweis (berechnet) — keinen Verbrauchsausweis. Er kann erstellt werden, sobald die GEG-Berechnung abgeschlossen ist."
+      },
+      "F1": {
+        "title": "Brandschutzkonzept (§15 LBO BW)",
+        "description": "Umfassendes Brandschutzkonzept für GK4- und GK5-Gebäude",
+        "whatIsThis": "Das Brandschutzkonzept dokumentiert alle vorbeugenden Brandschutzmaßnahmen: Brandabschnitte, Rettungswegdimensionierung, Sprinkleranlagen, Rauchabzug und Feuerwiderstandsklassen der Tragkonstruktion. Erforderlich für alle GK4/5- und Sonderbauvorhaben.",
+        "tips": "Das Brandschutzkonzept frühzeitig beauftragen — es definiert Anforderungen, die die Architektur beeinflussen. Nachträgliche Anpassungen sind unverhältnismäßig teuer."
+      },
+      "F2": {
+        "title": "Prüfingenieur Brandschutz (unabhängige Prüfung)",
+        "description": "Prüfbescheid eines staatlich anerkannten Prüfingenieurs für Brandschutz",
+        "whatIsThis": "Das Brandschutzkonzept muss für GK4/5-Gebäude von einem staatlich anerkannten Prüfingenieur für Brandschutz geprüft werden. Dessen Prüfbescheid ist Bestandteil der Baugenehmigung.",
+        "tips": "Der Prüfingenieur für Brandschutz ist nicht identisch mit dem planenden Brandschutzplaner. Auf gebäudetypspezifische Erfahrung achten — frühzeitig beauftragen."
+      },
+      "F3": {
+        "title": "Feuerwehrplan / Flucht- und Rettungswegeplan",
+        "description": "Grundrissplan mit DIN-ISO-23601-Symbolen für Rettungswege und Brandschutzeinrichtungen",
+        "whatIsThis": "Der Feuerwehrplan ist ein normierter Grundrissplan (DIN ISO 23601), der Rettungswege, Brandschutztüren, Feuerlöscher, Löschwasserentnahmestellen und sonstige Notfalleinrichtungen zeigt. Ein Exemplar muss im Gebäude ausgehängt werden.",
+        "tips": "Ausschließlich DIN-ISO-23601-konforme Symbole verwenden — Freihandzeichnungen werden abgelehnt. Örtliche Anforderungen der zuständigen Feuerwehr vorab abklären."
+      },
+      "G1": {
+        "title": "Entwässerungsplan (Trennkanalisation)",
+        "description": "Lageplan mit getrennter Führung von Schmutz- und Niederschlagswasser",
+        "whatIsThis": "Der Entwässerungsplan zeigt, wie Schmutzwasser und Regenwasser vom Gebäude zum öffentlichen Kanal oder zur Versickerungsanlage geführt werden. In BW gilt für Neubauten das Trennprinzip.",
+        "tips": "In BW ist die Einleitung von Regenwasser in den Schmutzwasserkanal verboten. Versickerungsfläche oder Rückhalteanlage von Beginn an in die Planung integrieren."
+      },
+      "G2": {
+        "title": "Erschließungsnachweis (Ver- und Entsorgung)",
+        "description": "Schriftliche Bestätigung der gesicherten Erschließung durch Versorgungsträger",
+        "whatIsThis": "Der Erschließungsnachweis belegt, dass das Grundstück rechtlich gesichert über Straße, Wasser, Abwasser und Strom erschlossen ist. Die Bestätigungen werden von den jeweiligen Versorgungsträgern und der Gemeinde eingeholt.",
+        "tips": "Versorgungsträger frühzeitig kontaktieren — einige benötigen einen förmlichen Antrag vor Ausstellung der Bestätigung, was bis zu 6 Wochen dauern kann."
+      },
+      "G3": {
+        "title": "Stellplatznachweis (Stellplatzsatzung Gemeinde)",
+        "description": "Berechnung der erforderlichen Kfz-Stellplätze nach gemeindlicher Stellplatzsatzung",
+        "whatIsThis": "Jede BW-Gemeinde hat eine Stellplatzsatzung, die die Mindestanzahl an Stellplätzen je Wohn- oder Nutzungseinheit vorschreibt. Der Nachweis belegt, dass die geforderte Anzahl bereitgestellt oder eine Ablöse entrichtet wird.",
+        "tips": "Falls das Grundstück die geforderte Stellplatzzahl nicht aufnehmen kann, prüfen, ob die Gemeinde eine Stellplatz-Ablöse anbietet — die Gebühr ist in der Satzung festgelegt."
+      },
+      "G4": {
+        "title": "Versickerungsnachweis (DWA-A 138)",
+        "description": "Hydraulische Dimensionierung einer Regenwasser-Versickerungsanlage",
+        "whatIsThis": "Erforderlich, wenn das Regenwasser des Neubaus auf dem Grundstück versickert werden soll. Der Nachweis zeigt, dass Bodendurchlässigkeit und Versickerungsfläche nach DWA-A 138 korrekt bemessen sind.",
+        "tips": "kf-Wert-Messung (Durchlässigkeitsversuch) frühzeitig in Auftrag geben — ohne gemessenen kf-Wert kann der Versickerungsnachweis nicht erbracht werden."
+      },
+      "H1": {
+        "title": "Schallschutznachweis (DIN 4109-1)",
+        "description": "Bautechnischer Schallschutznachweis für Luft- und Trittschalldämmung",
+        "whatIsThis": "Der Schallschutznachweis belegt, dass Wände, Decken und Böden zwischen unterschiedlichen Nutzungen oder Wohneinheiten die Mindestanforderungen der DIN 4109-1 für Luft- und Trittschalldämmung erfüllen. Erforderlich für GK4/5 und gemischt genutzte Gebäude.",
+        "tips": "Erhöhter Schallschutz nach VDI 4100 wird auch dort empfohlen, wo er nicht gesetzlich gefordert ist — er beeinflusst Wohnqualität und Immobilienwert erheblich."
+      },
+      "H2": {
+        "title": "Lärmgutachten (TA Lärm / RLS-19)",
+        "description": "Immissionsschutztechnische Untersuchung nach TA Lärm oder RLS-19",
+        "whatIsThis": "Erforderlich, wenn das geplante Gebäude erheblichem Verkehrs-, Gewerbe- oder Industrielärm ausgesetzt ist. Das Gutachten modelliert die Geräuschbelastung an den Fassaden und schlägt Maßnahmen zur Einhaltung der TA-Lärm-Richtwerte vor.",
+        "tips": "Vor der Fensterplanung in Auftrag geben — das Gutachten kann Schallschutzverglasungen oder mechanische Lüftung an bestimmten Fassaden erfordern, was die Architektur beeinflusst."
+      },
+      "H3": {
+        "title": "Artenschutzgutachten (§44 BNatSchG)",
+        "description": "Erfassung geschützter Arten in der geeigneten Jahreszeit",
+        "whatIsThis": "Vor Abbruch oder Neubau auf begrünten Grundstücken ist eine Begehung zur Erfassung geschützter Arten (Fledermäuse, Brutvögel, geschützte Pflanzen) erforderlich. Bei Nachweisen sind Vermeidungs- und Ausgleichsmaßnahmen festzulegen.",
+        "tips": "Die Begehung muss in der geeigneten Jahreszeit erfolgen (Frühling für Brutvögel, Herbst für Fledermäuse). Für Vorhaben auf begrünten Flächen mindestens 6–12 Monate einplanen."
+      },
+      "I1": {
+        "title": "Betriebsbeschreibung Sonderbau (§38 LBO BW)",
+        "description": "Detaillierte Beschreibung der Nutzung, Besucherzahl und Betriebsbedingungen",
+        "whatIsThis": "Für Sonderbauten ist eine ausführliche Betriebsbeschreibung erforderlich, die Nutzungsart, maximale Personenbelegung, Betriebszeiten und spezifische Betriebssituationen beschreibt, die für den Brandschutz und das Bauordnungsrecht relevant sind.",
+        "tips": "So präzise wie möglich beschreiben — vage Angaben führen zu wiederholten Rückfragen der Baubehörde und verzögern das Verfahren erheblich."
+      },
+      "I2": {
+        "title": "Fachgutachten Sonderbaurecht (VStättVO / BeVO / SchulbauR)",
+        "description": "Technisches Fachgutachten nach einschlägiger Sonderbauverordnung",
+        "whatIsThis": "Je nach Sonderbautyp sind spezifische Fachgutachten und Konformitätsnachweise nach der einschlägigen Sonderbauverordnung erforderlich: z. B. VStättVO für Versammlungsstätten, SchulbauR für Schulen, BeVO für Kaufhäuser.",
+        "tips": "Die zutreffende Sonderbauverordnung zu Beginn der Planung klären — die falsche Fachsparte zu beauftragen ist ein kostspieliger Fehler. Im Zweifelsfall Abstimmung mit der Baubehörde suchen."
+      },
+      "J1": {
+        "title": "Abbruchantrag / Abbruchanzeige (§58 LBO BW)",
+        "description": "Gemeindlicher Abbruchvordruck mit Eigentumsnachweis und Versorgungskündigung",
+        "whatIsThis": "Vor dem Abbruch eines Gebäudes ist gemäß §58 LBO BW eine Abbruchgenehmigung oder Abbruchanzeige bei der Gemeinde einzureichen. Das Formular ist bei der zuständigen Baubehörde erhältlich.",
+        "tips": "Alle Versorgungsträger (Gas, Wasser, Strom, Telekommunikation) vor Abbruchbeginn schriftlich abmelden — die Abmeldebestätigungen sind häufig als Auflage der Genehmigung beizufügen."
+      },
+      "J2": {
+        "title": "Schadstoffgutachten / Asbestanalyse (TRGS 519)",
+        "description": "Erkundung auf Asbest und Schadstoffe vor jeglichen Abbrucharbeiten",
+        "whatIsThis": "Vor dem Abbruch von Gebäuden aus der Zeit vor 1993 ist eine verpflichtende Erkundung auf Asbest und weitere Schadstoffe (PCB, KMF, Blei) nach TRGS 519 erforderlich. Bei Asbestnachweis ist vor dem Abbruch ein Sanierungsplan zu erstellen.",
+        "tips": "Gebäude aus den Jahren 1960–1992 enthalten mit hoher Wahrscheinlichkeit Asbest. Sanierungskosten einplanen — sie sind eine häufige Ursache erheblicher Kostensteigerungen bei Abbruchprojekten."
+      },
+      "J3": {
+        "title": "Entsorgungskonzept (KrWG / NachwV)",
+        "description": "Materialliste mit Entsorgungswegen und Nachweisen zertifizierter Entsorgungsfachbetriebe",
+        "whatIsThis": "Das Entsorgungskonzept listet alle Abbruchmaterialien mit Mengen, Abfallschlüssel und Entsorgungsweg auf. Es belegt nach KrWG, dass alle Materialien ordnungsgemäß entsorgt werden.",
+        "tips": "Frühzeitig Angebote von zertifizierten Entsorgungsbetrieben einholen — Kapazitäten für bestimmte gefährliche Abfallströme (insbesondere asbesthaltige Materialien) sind begrenzt."
+      },
+      "J4": {
+        "title": "Abbruchplan mit Abbruchreihenfolge",
+        "description": "Maßstäblicher Plan mit Abbruchreihenfolge, Sicherungsmaßnahmen und Schutz der Öffentlichkeit",
+        "whatIsThis": "Der Abbruchplan zeigt das abzubrechende Gebäude maßstäblich und legt die geplante Abbruchreihenfolge, temporäre Sicherungsmaßnahmen und den Schutz angrenzender Gebäude und des öffentlichen Raums während der Abbrucharbeiten fest.",
+        "tips": "Falls das Gebäude eine gemeinsame Grenzwand mit dem Nachbargebäude hat, muss der Abbruchplan ein Konzept zur Wetterschutzsicherung und strukturellen Sicherung der freigestellten Grenzwand enthalten."
+      },
+      "J5": {
+        "title": "Standsicherheitsnachweis für Nachbargebäude",
+        "description": "Tragwerksbeurteilung zur Sicherstellung der Standsicherheit angrenzender Gebäude",
+        "whatIsThis": "Erforderlich bei Teilabbruch oder Abbruch von Grenzbebauung. Ein zugelassener Tragwerksplaner muss bestätigen, dass die angrenzenden Gebäude nach dem Abbruch standsicher bleiben.",
+        "tips": "Zusammen mit dem Abbruchplan beauftragen — der Tragwerksplaner benötigt die Abbruchreihenfolge, um die Auswirkungen auf die Nachbargebäude korrekt beurteilen zu können."
+      },
+      "C5": {
+        "title": "Aufzugsschachtpläne (§39 LBO BW)",
+        "description": "Maßstäbliche Schnitt- und Grundrisspläne des Aufzugsschachts nach DIN EN 81-20/50",
+        "whatIsThis": "§39 LBO BW verpflichtet zur barrierefreien vertikalen Erschließung in mehrgeschossigen Gebäuden. Die Baugenehmigung muss Schachtschnitt und -grundriss im Maßstab 1:50, ggf. Triebwerksraumgrundriss sowie einen Nachweis der Konformität mit DIN EN 81-20/50 enthalten.",
+        "tips": "Eine zugelassene Überwachungsstelle nach BetrSichV frühzeitig einbinden. Die Baubehörde leitet die Aufzugspläne an die Staatliche Gewerbeaufsicht weiter — dieses Verfahren läuft parallel zur Baugenehmigung."
+      },
+      "D4": {
+        "title": "Abdichtungskonzept Kellergeschoss (DIN 18533)",
+        "description": "Nachweis der Kellerwandabdichtung mit Wassereinwirkungsklasse nach DIN 18533",
+        "whatIsThis": "Beim Kellerbau muss dem Bauantrag ein Abdichtungskonzept beiliegen, das die Wassereinwirkungsklasse (W1-E, W2-E oder W3-E nach DIN 18533) festlegt und das geeignete Abdichtungssystem beschreibt. Außerdem ist ein Baugrundgutachten zur Ermittlung des Grundwasserstands erforderlich.",
+        "tips": "Vor der Abdichtungsplanung einen Baugrundgutachter beauftragen, um den Grundwasserstand zu ermitteln. Bei W3-E (drückendes Wasser) ist in der Regel eine wasserundurchlässige Betonkonstruktion (Weiße Wanne) erforderlich, die in den Tragwerksplänen nachzuweisen ist."
+      },
+      "F4": {
+        "title": "Brandschutzkonzept Holzbauweise",
+        "description": "Ergänzender Brandschutznachweis für sichtbare brennbare Tragelemente nach §26 Abs. 3 LBO BW",
+        "whatIsThis": "§26 Abs. 3 LBO BW erlaubt sichtbare brennbare Baustoffe (Holz) unter bestimmten Voraussetzungen. Ein Brandschutzkonzept durch einen zugelassenen Brandschutzingenieur ist erforderlich, das Brandabschnitte, Rettungswege und ggf. Löschanlagen behandelt. Grundlage ist die Muster-Holzbaurichtlinie (M-HFHHolzR).",
+        "tips": "Frühzeitig Abstimmung mit der Brandschutzdienststelle suchen. Bei mehrgeschossigen Holzbauten werden häufig automatische Sprinkleranlagen als Kompensationsmaßnahme gefordert."
+      },
+      "G5": {
+        "title": "Genehmigung Überschwemmungsgebiet (§78 WHG)",
+        "description": "Genehmigung der Unteren Wasserbehörde für Vorhaben in festgesetzten Überschwemmungsgebieten",
+        "whatIsThis": "§78 WHG verbietet grundsätzlich Neubauten in HQ100-Überschwemmungsgebieten. Eine Ausnahmegenehmigung der Unteren Wasserbehörde ist erforderlich, der ein hydraulisches Gutachten (Hochwassernachweis) beizufügen ist, das belegt, dass das Vorhaben keine Erhöhung des Hochwasserrisikos für Nachbargrundstücke verursacht.",
+        "tips": "Den Antrag so früh wie möglich bei der Unteren Wasserbehörde stellen — dieses Verfahren läuft separat zur Baugenehmigung und dauert erfahrungsgemäß 3–6 Monate. Hochwasserangepasste Bauweisen werden in der Regel als Auflagen gefordert."
+      },
+      "H4": {
+        "title": "Denkmalschutzgenehmigung (§8 DSchG BW)",
+        "description": "Genehmigung der Unteren Denkmalschutzbehörde für Eingriffe in geschützte Bausubstanz",
+        "whatIsThis": "§8 DSchG BW erfordert vor jeder Veränderung an einem Kulturdenkmal oder in einem Denkmalbereich die Genehmigung der Unteren Denkmalschutzbehörde. Der Antrag muss ein denkmalpflegerisches Gutachten und Zeichnungen der geplanten Maßnahmen enthalten.",
+        "tips": "Frühzeitig einen Sachverständigen für Denkmalpflege einschalten. Vorabgespräche mit der Denkmalschutzbehörde sind dringend empfohlen — sie können das Verfahren erheblich beschleunigen und nehmen oft 4–8 Wochen in Anspruch."
+      },
+      "H5": {
+        "title": "Antragsformular denkmalschutzrechtliche Genehmigung",
+        "description": "Ausgefülltes Antragsformular zur denkmalschutzrechtlichen Genehmigung bei der Unteren Denkmalschutzbehörde",
+        "whatIsThis": "§8 Abs. 1 DSchG BW verpflichtet zur schriftlichen Antragstellung bei der Unteren Denkmalschutzbehörde des zuständigen Landkreises. Das Formular enthält Angaben zum Gebäude, zum Umfang der geplanten Maßnahme und zu den Antragstellern. Es ist das verfahrenstechnische Deckblatt des gesamten Antragspakets (mit H4-Gutachten und Plänen).",
+        "tips": "Das Formular auf der Website des Landkreises herunterladen. Das vollständige Paket (H4-Gutachten + Formular + Pläne) in einem Zug einreichen. Den abgestempelten Eingangsnachweis als Beleg des Einreichungsdatums aufbewahren."
+      },
+      "G6": {
+        "title": "Hydraulisches Gutachten (Hochwassernachweis)",
+        "description": "Hydraulisches Gutachten zum Nachweis der Hochwasserneutralität nach §78 Abs. 3 WHG",
+        "whatIsThis": "§78 Abs. 3 WHG fordert, dass ein Bauvorhaben im Überschwemmungsgebiet den Hochwasserabfluss nicht nachteilig verändert und den Wasserstand bei HQ100 nicht erhöht. Ein zugelassener Hydraulik-Ingenieur erstellt ein 2D- oder 1D-Strömungsmodell, das die Hochwasserneutralität des Vorhabens belegt.",
+        "tips": "Das Gutachten gleichzeitig mit der topografischen Vermessung beauftragen — der Ingenieur benötigt präzise Geländehöhen. Das Gutachten ist zusammen mit dem G5-Genehmigungsantrag bei der Unteren Wasserbehörde einzureichen."
+      },
+      "D5": {
+        "title": "Baugrundgutachten",
+        "description": "Geotechnischer Bericht nach DIN 4020 mit Bohrprofilen, Grundwasserstand und Baugrubenstabilitätsnachweis",
+        "whatIsThis": "Beim Kellerbau ist ein Baugrundgutachten nach DIN 4020 erforderlich, das Tragfähigkeit des Baugrunds, Grundwasserstände und die Standsicherheit der Baugrubenwände ermittelt. Es bildet die Grundlage für das D4-Abdichtungskonzept und die D1-Tragwerksplanung. Es ist von einem Sachverständigen für Geotechnik zu unterzeichnen.",
+        "tips": "Baugrunduntersuchung frühzeitig beauftragen — Bohrkernauswertungen dauern 2–4 Wochen. Liegt der Grundwasserstand in Höhe des Kellerfußbodens, kann das Gutachten eine wasserundurchlässige Betonkonstruktion (Weiße Wanne) erfordern, was erhebliche Auswirkungen auf das Tragwerkskonzept hat."
+      },
+      "A6": {
+        "title": "Vollmacht Entwurfsverfasser",
+        "description": "Schriftliche Bevollmächtigung des bauvorlageberechtigten Architekten, im Namen des Bauherrn zu handeln",
+        "whatIsThis": "Reicht der Entwurfsverfasser (bauvorlageberechtigter Architekt) den Bauantrag stellvertretend für den Bauherrn ein, ist eine schriftliche Vollmacht erforderlich. Dies ist gängige Praxis; die meisten Architekturbüros verwenden eigene Vordrucke.",
+        "tips": "Die Vollmacht bereits beim ersten Gespräch mit dem Architekten unterzeichnen — sie vermeidet spätere Rückfragen der Behörde und hält den Bearbeitungsprozess am Laufen."
+      },
+      "A7": {
+        "title": "Nachbarunterschriften",
+        "description": "Unterschriften betroffener Nachbarn bei Abstandsflächenunterschreitungen oder erforderlichen Zustimmungen nach §7 LBO BW",
+        "whatIsThis": "Unterschreitet ein Vorhaben Abstandsflächen oder ist die Zustimmung eines Nachbarn nach §7 LBO BW erforderlich, sind Nachbarunterschriften vor Einreichung des Antrags einzuholen. Dadurch wird die formelle Nachbarbenachrichtigung mit zusätzlichen Einspruchsfristen vermieden.",
+        "tips": "Unterschriften vor Antragstellung einholen — sobald die Behörde die Nachbarbenachrichtigung einleitet, entstehen zusätzliche Einspruchsfristen von vier bis acht Wochen."
+      },
+      "A8": {
+        "title": "Wohnflächenerklärung (Kostenabgabenerklärung WoGG)",
+        "description": "Erklärung der Wohnfläche nach WoFlV als Grundlage für Wohnraumbewilligungsabgaben",
+        "whatIsThis": "Bei neuen Wohngebäuden oder Anbauten ist nach dem Wohngeldgesetz (WoGG) eine Erklärung der Wohnfläche nach WoFlV mit dem Bauantrag einzureichen. Sie dient als Berechnungsgrundlage für etwaige Wohnraumbewilligungsabgaben und ist zusammen mit dem Bauantrag zu übersenden.",
+        "tips": "Die WoFlV-Berechnung vor der Unterzeichnung mit dem B3-Flächennachweis abgleichen — Abweichungen zwischen den Dokumenten veranlassen die Behörde zur Nachforderung."
+      },
+      "A1_BY": {
+        "title": "Bauantrag Bayern (Art. 64 BayBO)",
+        "description": "Amtlicher Bauantragsformular nach Art. 64 BayBO und BauVorlV Anlage 1",
+        "whatIsThis": "Der Bayerische Bauantrag (Art. 64 BayBO) ist das landesspezifische Antragsformular für Bauvorhaben in Bayern. Er unterscheidet sich vom BW-Formular in Aufbau, erforderlichen Anlagen und Verfahrenseinstufung. Er ist beim Bayerischen Landesamt für Digitalisierung (BayernAtlas) oder beim zuständigen Landratsamt herunterzuladen.",
+        "tips": "Stets die aktuelle Jahresversion des zuständigen Landratsamts verwenden — Bayern aktualisiert das amtliche Formular periodisch. Veraltete Formulare werden ohne Bearbeitung zurückgesendet."
+      },
+      "A4_BY": {
+        "title": "Mitteilung Freistellungsverfahren (Art. 58 BayBO)",
+        "description": "Mitteilungsformular für das vereinfachte Freistellungsverfahren in Bayern",
+        "whatIsThis": "Art. 58 BayBO sieht für einfache Bauvorhaben in Bayern ein Freistellungsverfahren vor, das dem BW-Kenntnisgabeverfahren entspricht. Die Mitteilung wird bei der Gemeinde eingereicht; nach Ablauf der Freistellungsfrist ohne Widerspruch der Behörde kann mit dem Bau begonnen werden.",
+        "tips": "Vor Einreichung mit der Gemeinde abstimmen, ob das Vorhaben die Freistellungsvoraussetzungen erfüllt — liegen diese nicht vor, muss die Gemeinde innerhalb von vier Wochen darauf hinweisen und das reguläre Genehmigungsverfahren ist durchzuführen."
+      },
+      "B5": {
+        "title": "Freiflächengestaltungsplan",
+        "description": "Lageplan 1:200 oder 1:500 mit Bepflanzung, Belägen, Grünflächen und Entwässerung",
+        "whatIsThis": "Der Freiflächengestaltungsplan dokumentiert die geplante Gestaltung aller Außenanlagen: Pflanzflächen, Baumarten, Belagsarten mit Permeabilitätsangabe, Einfriedungen, Spielflächen und Regenwasserbewirtschaftungsanlagen. Erforderlich bei Neubauten, wenn der Bebauungsplan einen Mindest-Grünflächenanteil vorschreibt.",
+        "tips": "Mit dem örtlichen Grünordnungsplan abstimmen — viele Kommunen haben verbindliche Artenlisten oder Mindestbepflanzungsanforderungen, die in diesen Plan einzuarbeiten sind."
+      },
+      "B6": {
+        "title": "Abstandsflächennachweis (§5 LBO BW)",
+        "description": "Tabellarischer Nachweis der eingehaltenen Abstandsflächen nach §5 LBO BW",
+        "whatIsThis": "Der Abstandsflächennachweis ist eine Tabelle mit Zeichnung, die belegt, dass die erforderlichen Abstände zu allen Grundstücksgrenzen eingehalten werden. Die Berechnung erfolgt nach der Wandhöhenformel des §5 LBO BW und ist im Plansatz oder als gesondertes Beiblatt vom Architekten zu unterzeichnen.",
+        "tips": "Besondere Aufmerksamkeit auf vortretende Bauteile (Balkone, Erker) richten — sie verringern die Abstandsflächen und müssen im Nachweis einzeln nachgewiesen werden."
+      },
+      "C6": {
+        "title": "Barrierefreiheitsplan (DIN 18040)",
+        "description": "Detailzeichnungen 1:50 mit Rollstuhlwendekreisen, Rampenneigungen und Schwellenmaßen nach DIN 18040-1",
+        "whatIsThis": "§39 LBO BW schreibt für bestimmte Gebäudetypen barrierefreie Gestaltung vor. Die C6-Zeichnungen ergänzen die Architekturpläne um Detaildarstellungen 1:50 mit Rollstuhlwendekreisen, Haltegriffspositionierungen, Schwellenhöhen ≤2 cm, Rampenneigungen ≤6 % und barrierefreien Sanitäranlagen nach DIN 18040-1.",
+        "tips": "Vor der Einreichung von einem DIN-18040-Sachverständigen prüfen lassen — Fehler in Barrierefreiheitsplänen sind bei GK4/5-Gebäuden die häufigste Ursache für Nachtragsforderungen."
+      },
+      "C7": {
+        "title": "Kostenberechnung nach DIN 276",
+        "description": "Geschätzte Projektkosten gegliedert nach DIN 276 bis zur dritten Kostengruppe",
+        "whatIsThis": "Die Kostenberechnung nach DIN 276 strukturiert die Projektkosten bis zur dritten Gliederungsebene. Die Baubehörde verwendet sie zur Berechnung der Baugenehmigungsgebühren, die üblicherweise auf Basis der anrechenbaren Kosten ermittelt werden. Der Architekt erstellt sie auf Grundlage der Entwurfszeichnungen.",
+        "tips": "Die kommunale Verwaltungsgebührenordnung prüfen, um zu verstehen, welche Kostengruppen in die Gebührenberechnung einfließen — manche Gemeinden begrenzen oder schließen bestimmte Kostengruppen aus."
+      },
+      "D6": {
+        "title": "Bewehrungsplan (EC 2)",
+        "description": "Stahlbetonbewehrungspläne mit Biegelisten und Stahlflächen nach Eurocode 2",
+        "whatIsThis": "Für Stahlbetonkonstruktionen in GK4/5-Gebäuden erstellt der Tragwerksplaner Bewehrungspläne im Maßstab 1:50. Diese zeigen Bewehrungsführung, Stabdurchmesser, Biegelisten und Übergreifungslängen nach DIN EN 1992-1-1 (EC2). Sie sind Bestandteil der Genehmigungsunterlagen für komplexe Betonkonstruktionen.",
+        "tips": "Bewehrungspläne müssen mit den Architekturplänen 1:50 koordiniert werden — nicht erkannte Kollisionen zwischen Tragwerk und Architektur (z. B. Hülsen, Aussparungen) verursachen teure Baustellenstillstände."
+      },
+      "D7": {
+        "title": "Holzbaustatik (EC 5)",
+        "description": "Tragwerksplanung und Anschlussdetails für Holzkonstruktionen nach Eurocode 5",
+        "whatIsThis": "Bei Holzrahmenbau oder Massivholzkonstruktionen (CLT, Brettschichtholz) erstellt ein Fachingenier Holzbau die Tragwerksplanung nach DIN EN 1995-1-1 (EC5). Dies umfasst Anschlussdetails, Holzfeuchteangaben, Brettschichtholzgüten und den Brandschutznachweis für tragende Holzbauteile nach §26 LBO BW.",
+        "tips": "Den EC5-Tragwerksplaner parallel zur Architekturplanung einschalten — die Geometrie der Holzanschlüsse bestimmt die Architekturdetails. Änderungen nach abgeschlossener Tragwerksplanung sind im Holzbau besonders kostenintensiv."
+      },
+      "E4": {
+        "title": "PV-Anlagenplanung (GEG §71b)",
+        "description": "Technische Unterlagen für die Photovoltaikanlage einschließlich Netzanschluss nach VDE-AR-N 4105",
+        "whatIsThis": "GEG §71b verlangt Nachweise für in Neubauten integrierte PV-Anlagen. Die Unterlagen umfassen: Anlagendatenblatt (Modultyp, Wechselrichter, kWp-Leistung), Montagezeichnung, Kabelführungsschema und Netzanschlussantrag nach VDE-AR-N 4105 beim Netzbetreiber. Die Netzeinspeisegenehmigung ist vor Inbetriebnahme einzuholen.",
+        "tips": "Den Netzanschlussantrag beim Netzbetreiber parallel zum Bauantrag stellen — die Netzeinspeisegenehmigung dauert in der Regel 6–12 Wochen und liegt auf dem kritischen Pfad der Inbetriebnahme."
+      },
+      "E5": {
+        "title": "Heizungsplanung (GEG §§71–71h)",
+        "description": "Heizungskonzept mit hydraulischem Abgleich und Heizlastberechnung nach EN 12831",
+        "whatIsThis": "GEG §§71–71h fordern Heizungsunterlagen für alle Neubauten und vollständigen Heizungsaustausche. Die Heizungsplanung umfasst: Heizlastberechnung nach EN 12831, hydraulischen Abgleich, Trinkwarmwasserbedarf und ein Verteilungsschema. Sie dient dem Nachweis, dass das Heizsystem die Anforderungen des GEG 2024 erfüllt.",
+        "tips": "Bei Wärmepumpenanlage die COP-Kennwerte bei A2/W35 und A7/W35 angeben — die Behörde prüft damit die GEG-§71-Konformität und ob das Heizsystem die 65-%-Erneuerbare-Anforderung erfüllt."
+      },
+      "F5": {
+        "title": "Feuerwehrplan DIN 14095 (Sonderbau)",
+        "description": "Feuerwehr-Einsatzpläne nach DIN 14095 für Sonderbauten",
+        "whatIsThis": "Feuerwehrpläne nach DIN 14095 sind operative Dokumente für den Feuerwehreinsatz. Sie zeigen Grundrisse mit DIN-ISO-23601-Symbolen für Brandschutztüren, Löschmittel, Wasserentnahmestellen, Feuerwehraufzüge, Gasabsperr- und Elektroverteileranlagen. Für alle Sonderbauten sind sie Bestandteil der Baugenehmigungsunterlagen.",
+        "tips": "Ein laminiertes Exemplar muss nach §35 LBO BW im Gebäudeeingang ausgehängt werden. Das Symbolschema vorab mit dem zuständigen Kreisbrandmeister abstimmen — manche Feuerwehren haben ergänzende Anforderungen."
+      },
+      "F6": {
+        "title": "Sprinkleranlage (DIN 14461 / DIN EN 12845)",
+        "description": "Hydraulische Auslegung der automatischen Feuerlöschanlage nach DIN EN 12845 und DIN 14461",
+        "whatIsThis": "GK5-Sonderbauten und große Versammlungsstätten erfordern nach VStättVO BW oder dem Brandschutzkonzept in der Regel eine automatische Sprinkleranlage (Selbsttätige Feuerlöschanlage). Die Planung umfasst hydraulische Berechnungen, Pumpstationsdatenblätter und einen raumweisen Abdeckungsplan nach DIN EN 12845.",
+        "tips": "Den Sprinklerplaner gleichzeitig mit dem Brandschutzingenieur einschalten — die Sprinkleranlage beeinflusst Deckenkonstruktion, Lasten (wasserführende Rohre sind schwer) und die Brandabschnittseinteilung."
+      },
+      "G7": {
+        "title": "Feuerungsplanung und Schornsteinberechnung",
+        "description": "Schornsteinquerschnitt und Förderdruck-Nachweis nach 1. BImSchV mit Schornsteinfegerbescheinigung",
+        "whatIsThis": "Für gas- oder holzbetriebene Heizsysteme sind beim Bauantrag Feuerungsunterlagen einzureichen: Schornsteinquerschnitt mit Abmessungen und Materialangaben, Förderdruck-Berechnung nach 1. BImSchV und Bestätigung durch einen bevollmächtigten Schornsteinfegermeister. Gilt für alle neuen oder veränderten Feuerungsanlagen.",
+        "tips": "Den zuständigen Bezirksschornsteinfegermeister frühzeitig einbinden — er muss die Schornsteinplanung genehmigen und nach Fertigstellung abnehmen. Eine Vorabgenehmigung der Schornsteinzeichnung beschleunigt die Baugenehmigungsprüfung erheblich."
+      },
+      "G8": {
+        "title": "Zisternengenehmigung (§37 LBO BW)",
+        "description": "Genehmigung für Regenwassernutzungsanlage und Zisterne nach §37 LBO BW",
+        "whatIsThis": "Ober- und unterirdische Regenwasserzisternen zur Toilettenspülung oder Gartenbewässerung sind nach §8 und §37 LBO BW sowie der kommunalen Wasserversorgungssatzung genehmigungspflichtig. Hydraulische Dimensionierung nach DWA-A 138, Überlauf- und Rückflussschutz sind nachzuweisen.",
+        "tips": "Die kommunale Wasserversorgungssatzung vorab prüfen — manche Gemeinden verbieten Grauwassernutzung für die Toilettenspülung, andere fördern sie. Der Trinkwasserschutz (Systemtrennung) ist in jedem Fall zwingend vorgeschrieben."
+      },
+      "H6": {
+        "title": "Erschütterungsnachweis (DIN 4150)",
+        "description": "Erschütterungsprognose für Verkehrs- oder Bauerschütterungen nach DIN 4150-2",
+        "whatIsThis": "Bei GK4/5-Neubauten in der Nähe von Bahnlinien, Straßenbahnen oder stark befahrenen Straßen ist eine Erschütterungsprognose nach DIN 4150-2 erforderlich. Diese modelliert die auf das Gebäude übertragene Schwingungsenergie und prüft die Einhaltung der KB-Richtwerte zum Schutz der Gesundheit der Nutzer und empfindlicher Nutzungen.",
+        "tips": "Erschütterungsempfindliche Nutzungen (Krankenhäuser, Präzisionslabore, Tonstudios) erfordern strengere KB-Richtwerte. Den Nachweis vor der endgültigen Fundamentplanung beauftragen — schwingungsisolierende Gründungen beeinflussen das Tragwerkskonzept erheblich."
+      },
+      "H7": {
+        "title": "Bodenverunreinigungsgutachten (BBodSchG)",
+        "description": "Historische Recherche (Phase I) und Beprobung (Phase II) nach BBodSchG für Altlastenverdachtsflächen",
+        "whatIsThis": "§9 BBodSchG und das LBodSchG BW verpflichten zur Erkundung bei Altlastenverdacht vor einer Neubebauung. Eine Phase-I-Recherche identifiziert Kontaminationsrisiken; Phase II umfasst physische Beprobung und Laboranalysen. Bei Nachweis einer Kontamination ist ein Sanierungsplan nach §4 Abs. 3 BBodSchG erforderlich.",
+        "tips": "Vor der Phase-I-Recherche historische Nutzungskarten und Luftbilder des Grundstücks sichten — dies identifiziert die wahrscheinlichsten Kontaminationsquellen und fokussiert das Phase-II-Probenahmeprogramm, was Kosten reduziert."
+      },
+      "I3": {
+        "title": "Barrierefreiheitsnachweis Sonderbau (DIN 18040-1)",
+        "description": "Detaillierter Barrierefreiheitsnachweis für öffentlich zugängliche Sonderbauten",
+        "whatIsThis": "Öffentlich zugängliche Sonderbauten (Büros, Krankenhäuser, Schulen, Versammlungsstätten) müssen nach §39 LBO BW und DIN 18040-1 detailliert nachweisen, dass barrierefreies Bauen gewährleistet ist. Das I3-Dokument ist eine formelle Konformitätserklärung mit 1:50-Zeichnungen für Wendebereiche, Rampenneigungen, barrierefreie Sanitäranlagen und Evakuierungsplanung für Rollstuhlfahrer.",
+        "tips": "Vor der Einreichung einen Sachverständigen für barrierefreies Bauen hinzuziehen — fehlende Maßangaben für die Barrierefreiheit sind die am häufigsten beanstandeten Mängel bei Sonderbau-Anträgen."
+      },
+      "I4": {
+        "title": "Betriebskonzept Sonderbau",
+        "description": "Schriftliches Betriebskonzept mit Personenzahl, Betriebszeiten und Notfallmanagement",
+        "whatIsThis": "§38 LBO BW verlangt für Sonderbauten ein schriftliches Betriebskonzept, das beschreibt: maximale gleichzeitige Personenzahl, Betriebszeiten, Veranstaltungs-/Nutzungsszenarien, Personalverantwortlichkeiten, Notfallmanagementprozeduren sowie Reinigungs- und Wartungskonzepte. Es wird von der Baubehörde und der Feuerwehr für die Beurteilung von Brandschutz und Betriebsfähigkeit verwendet.",
+        "tips": "Das Betriebskonzept in enger Abstimmung mit dem Brandschutzkonzept verfassen — Personenzahlen und Nutzungsszenarien müssen in beiden Dokumenten übereinstimmen; Abweichungen lösen Rückfragen der Behörde aus."
+      },
+      "J6": {
+        "title": "Fotodokumentation Bestand",
+        "description": "Fotografischer Nachweis aller Außenansichten und Innenräume vor Abbruchbeginn",
+        "whatIsThis": "Die Baubehörde fordert als Teil des Abbruchantrags eine fotografische Bestandsdokumentation. Diese belegt den aktuellen Bauzustand, das Baualter (relevant für die Asbestrisikobeurteilung) und dient als Beweismittel bei Streitigkeiten über Schäden an Nachbargebäuden durch den Abbruch.",
+        "tips": "GPS-georeferenzierte Fotos mit Zeitstempel von allen vier Seiten, dem Dach, sämtlichen Innenräumen und den Grenzsituationen zu Nachbargebäuden einreichen. Mindestens 20 Fotos sind Standard — mehr ist immer besser."
+      },
+      "J7": {
+        "title": "Nachbarliche Sicherungsmaßnahmen",
+        "description": "Absteifungs- und Einrüstungskonzept zum Schutz von Nachbargebäuden beim Abbruch",
+        "whatIsThis": "Bei Abbruch von Grenzwandgebäuden oder teilweisem Abbruch mit Freilegung von Nachbarwänden schreiben §15 ArbSchG und DGUV Regel 101-004 ein bauliches Schutzkonzept vor. Ein zugelassener Tragwerksplaner plant temporäre Absteifungen, Unterfangungen und Wetterschutz für die freigelegte Brandwand. Einrüstung und Absperrung öffentlicher Gehwege sind mit der Straßenbaubehörde abzustimmen.",
+        "tips": "Betroffene Nachbarn vor Antragstellung schriftlich informieren — ihre schriftliche Kenntnisnahme des Schutzkonzepts reduziert das Risiko von Einsprüchen oder Nachbarbenachrichtigungs-Verzögerungen im Genehmigungsverfahren."
+      },
+      "required": "Pflicht",
+      "optional": "Bedingt"
+    },
+    "print": {
+      "title": "Bauantrags-Checkliste",
+      "generatedBy": "Erstellt mit PermitPro",
+      "municipality": "Gemeinde",
+      "projectType": "Vorhaben",
+      "disclaimer": "Diese Checkliste ersetzt keine Rechtsberatung. Im Zweifelsfall wenden Sie sich an Ihre zuständige Baubehörde.",
+      "classificationLabel": "Klassifizierung",
+      "subtitle": "Bauantrags-Checkliste · LBO BW 2026",
+      "generatedPrefix": "Erstellt am",
+      "procedureFull": {
+        "kenntnisgabe": "Kenntnisgabeverfahren §50 LBO BW",
+        "vereinfacht": "Vereinfachtes Verfahren §52 LBO BW",
+        "normal": "Normales Verfahren §53 LBO BW"
+      }
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "PermitPro – Baugenehmigung Checkliste Baden-Württemberg",
+      "description": "Kostenlose Baugenehmigungscheckliste für Baden-Württemberg. LBO BW 2026 konform, ohne Registrierung, in ~15 Minuten. Für Neubau, Anbau, Umbau und Nutzungsänderung."
+    },
+    "assessment": {
+      "title": "Bewertung starten",
+      "description": "Starten Sie Ihre individuelle Baugenehmigungsbewertung nach LBO BW 2026. Gemeinde wählen, Vorhaben beschreiben und Checkliste sofort erhalten."
+    },
+    "impressum": { "title": "Impressum" },
+    "datenschutz": { "title": "Datenschutzerklärung" },
+    "nutzungsbedingungen": { "title": "Nutzungsbedingungen" }
+  },
+  "footer": {
+    "tagline": "Baurecht verstehen. Richtig beantragen.",
+    "description": "PermitPro ist ein digitales Werkzeug zur Orientierung im deutschen Baurecht. Kein Rechtsrat. Stets aktuell.",
+    "colProduct": "Produkt",
+    "colLegal": "Rechtliches",
+    "colRegions": "Bundesländer",
+    "links": {
+      "howItWorks": "So funktioniert's",
+      "features": "Funktionen",
+      "legalBasis": "Rechtsgrundlage",
+      "changelog": "Änderungsprotokoll",
+      "impressum": "Impressum",
+      "datenschutz": "Datenschutz",
+      "nutzungsbedingungen": "Nutzungsbedingungen",
+      "bw": "Baden-Württemberg",
+      "bavaria": "Bayern (Phase 2)",
+      "nrw": "NRW (geplant)",
+      "hessen": "Hessen (geplant)"
+    },
+    "disclaimer": "Keine Rechtsberatung. Alle Angaben ohne Gewähr. Für verbindliche Auskünfte wenden Sie sich an Ihre zuständige Baubehörde.",
+    "copyright": "PermitPro. Alle Rechte vorbehalten.",
+    "lawVersion": "LBO BW Stand 18.06.2024"
+  }
+}

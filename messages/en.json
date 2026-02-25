@@ -1,0 +1,943 @@
+{
+  "nav": {
+    "howItWorks": "How It Works",
+    "features": "Features",
+    "legalBasis": "Legal Basis",
+    "docs": "Docs",
+    "getStarted": "Get started",
+    "language": "Language"
+  },
+  "hero": {
+    "badge": "LBO BW 2026 COMPLIANT",
+    "headlineLine1": "Your building",
+    "headlineHighlight": "permit,",
+    "headlineLine3": "simplified.",
+    "description": "Answer a few questions about your project and get a complete, ready-to-use permit checklist — specific to your municipality and current building law.",
+    "ctaPrimary": "Start assessment",
+    "ctaSecondary": "How it works",
+    "trust1": "FREE TO USE",
+    "trust2": "NO ACCOUNT",
+    "trust3": "~15 MIN",
+    "trustRef": "DRG NO. PP-BW-2026"
+  },
+  "diagram": {
+    "classLabel": "GK-CLASS",
+    "classValue": "GK 2",
+    "classNote": "≤ 7 m height",
+    "procedureLabel": "PROCEDURE",
+    "procedureValue": "Simplified",
+    "procedureRef": "§ 52 LBO BW",
+    "itemsLabel": "ITEMS",
+    "itemsValue": "14",
+    "itemsBlockers": "0 blockers",
+    "scale": "SCALE 1:100"
+  },
+  "howItWorks": {
+    "eyebrow": "THE PROCESS",
+    "title": "From question to checklist",
+    "titleHighlight": "in four steps",
+    "subtitle": "Our rule-based system analyses your construction project against current state building law and generates an authority-compliant document list.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Select municipality",
+        "description": "Choose your municipality from over 1,101 communities in Baden-Württemberg. Each municipality has specific local development plans and requirements.",
+        "tag": "Municipality-specific"
+      },
+      {
+        "number": "02",
+        "title": "Describe your project",
+        "description": "Specify the type and scope of your construction project: new build, extension, conversion or change of use — including area, height and intended use.",
+        "tag": "Dynamic classification"
+      },
+      {
+        "number": "03",
+        "title": "Automatic classification",
+        "description": "The system automatically determines the building class (GK 1–5) under §2 LBO BW, the approval procedure (§§ 50–53) and whether a special structure is involved.",
+        "tag": "Rule engine §2 LBO BW"
+      },
+      {
+        "number": "04",
+        "title": "Receive checklist",
+        "description": "You receive a complete, auditable checklist of all required documents with legal basis, notes and a PDF export option.",
+        "tag": "PDF export"
+      }
+    ]
+  },
+  "benefits": {
+    "eyebrow": "WHY PERMITPRO",
+    "title": "Eight reasons",
+    "titleHighlight": "to choose us",
+    "subtitle": "Built by experts in German building law. Designed for people who just want to build.",
+    "items": [
+      {
+        "icon": "euro",
+        "title": "100% free",
+        "description": "No hidden costs, no subscription, no premium tier. PermitPro is and remains free for all property owners."
+      },
+      {
+        "icon": "user-x",
+        "title": "No account required",
+        "description": "Privacy by design: start immediately, no registration, no email, no cookies except technically necessary ones."
+      },
+      {
+        "icon": "map-pin",
+        "title": "Municipality-specific",
+        "description": "Every output considers the local statutes and development plans of your municipality — not just state building law."
+      },
+      {
+        "icon": "scale",
+        "title": "Legally grounded",
+        "description": "Every requirement is linked to the exact paragraph reference in LBO BW 2026 (last amended 18.06.2024)."
+      },
+      {
+        "icon": "languages",
+        "title": "Bilingual",
+        "description": "All content fully available in German and English — ideal for international architects and property developers."
+      },
+      {
+        "icon": "cpu",
+        "title": "Dynamic checklists",
+        "description": "Depending on your answers you get a different checklist. No one-size-fits-all form — precisely tailored to your project."
+      },
+      {
+        "icon": "file-down",
+        "title": "PDF export",
+        "description": "Download your checklist as a print-ready PDF — with your project name, date and all paragraph references."
+      },
+      {
+        "icon": "refresh-cw",
+        "title": "Always up to date",
+        "description": "The rule set is updated with every legislative change. You always work with current building law — never with outdated templates."
+      }
+    ]
+  },
+  "regions": {
+    "eyebrow": "COVERAGE",
+    "title": "Currently available",
+    "titleHighlight": "in Germany",
+    "subtitle": "We start in Baden-Württemberg and gradually expand to all 16 German federal states.",
+    "bw": {
+      "flag": "BW",
+      "name": "Baden-Württemberg",
+      "status": "Active · MVP",
+      "municipalities": "1,101 municipalities",
+      "law": "LBO BW 2026",
+      "lawDate": "As of: 18.06.2024",
+      "feature1": "All building classes GK 1–5",
+      "feature2": "Simplified + standard procedure",
+      "feature3": "Special structure detection",
+      "feature4": "Notification procedure §50 LBO"
+    },
+    "bavaria": {
+      "flag": "BY",
+      "name": "Bavaria",
+      "status": "Phase 2 · Planned",
+      "municipalities": "2,056 municipalities",
+      "law": "BayBO 2025",
+      "lawDate": "As of: 23.12.2025",
+      "feature1": "Simplified procedure Art. 59",
+      "feature2": "Exemption from approval Art. 58",
+      "feature3": "Special structures list Art. 2 para. 4",
+      "feature4": "Setback calculation Art. 6"
+    },
+    "comingSoon": "More federal states to follow"
+  },
+  "audience": {
+    "eyebrow": "WHO IT'S FOR",
+    "title": "Built for everyone",
+    "titleHighlight": "who builds",
+    "subtitle": "Whether private property owner, architect or construction company — PermitPro delivers the right depth of information.",
+    "roles": [
+      {
+        "icon": "home",
+        "tag": "INDIVIDUALS",
+        "title": "Property Owners",
+        "description": "Building for the first time and don't know where to start? PermitPro guides you step by step through the process and explains every step in plain language.",
+        "points": [
+          "No prior knowledge required",
+          "Plain language with explanations",
+          "Direct links to municipal forms"
+        ]
+      },
+      {
+        "icon": "drafting-compass",
+        "tag": "PROFESSIONALS",
+        "title": "Architects & Planners",
+        "description": "Quickly and reliably check which documents are required for a project — with direct paragraph references for your documentation.",
+        "points": [
+          "Full § references in the output",
+          "PDF export for project files",
+          "Compare multiple projects"
+        ]
+      },
+      {
+        "icon": "hard-hat",
+        "tag": "COMPANIES",
+        "title": "Construction Companies",
+        "description": "Reduce planning errors and queries to authorities. PermitPro gives your team a reliable starting point for every new project.",
+        "points": [
+          "Checklists for different project types",
+          "Team-friendly PDF documents",
+          "Traceable legal foundations"
+        ]
+      }
+    ]
+  },
+  "trust": {
+    "eyebrow": "PRIVACY & SECURITY",
+    "title": "Your data",
+    "titleHighlight": "belongs to you",
+    "subtitle": "PermitPro was built on the principle of \"Privacy by Default\". We don't store what we don't need.",
+    "items": [
+      {
+        "icon": "shield",
+        "title": "GDPR compliant",
+        "description": "All data is processed exclusively within the EU. No sharing with third parties, no advertising, no trackers."
+      },
+      {
+        "icon": "user-x",
+        "title": "No account, no profile",
+        "description": "We don't create a user account. Your data does not leave your browser — except for generating the checklist."
+      },
+      {
+        "icon": "book-open",
+        "title": "Official legal sources",
+        "description": "All rule sets are based on official legislative texts from the Baden-Württemberg state law office (lrbw.landesrecht-bw.de)."
+      },
+      {
+        "icon": "git-branch",
+        "title": "Fully traceable",
+        "description": "Every requirement in the checklist contains the exact legal basis — transparent, auditable, citable."
+      }
+    ],
+    "disclaimer": "PermitPro does not replace legal advice. The generated checklists are guidance tools. When in doubt, consult your responsible building authority.",
+    "lawLink": "State law BW"
+  },
+  "faq": {
+    "eyebrow": "FREQUENTLY ASKED",
+    "title": "Answers to",
+    "titleHighlight": "your questions",
+    "subtitle": "The most common questions about building permits in Baden-Württemberg — answered directly.",
+    "items": [
+      {
+        "question": "Do I need a building permit for every extension?",
+        "answer": "Not always. Smaller extensions up to 40 m³ gross volume in residential areas can be exempt from the building permit procedure in Baden-Württemberg under §50 para. 1 LBO (notification procedure). A prerequisite is, among other things, compliance with the development plan. PermitPro checks these thresholds automatically."
+      },
+      {
+        "question": "What is the difference between the simplified and standard building permit procedure?",
+        "answer": "In the simplified procedure under §52 LBO BW, the building authority only checks selected public law requirements. It applies to buildings of classes 1–3 that are not special structures. The standard procedure under §53 LBO BW includes a full building regulation review and is required for GK 4–5 and special structures."
+      },
+      {
+        "question": "What is a building class and how is it determined?",
+        "answer": "The building class (GK 1–5) is defined in §2 para. 4 LBO BW and depends on the floor height of the highest habitable room above the terrain surface and the type of use. GK 1: detached up to 7 m; GK 2: detached up to 7 m, multiple units; GK 3: other up to 7 m; GK 4: up to 13 m; GK 5: over 13 m or special structures."
+      },
+      {
+        "question": "What documents do I need for a new build (single-family house)?",
+        "answer": "For a single-family house in the simplified procedure you typically need: building application (municipal form), site plan (by a publicly appointed surveyor), building drawings (floor plans, sections, elevations at 1:100 scale), building description (standard form), structural analysis, thermal insulation proof (GEG), open space plan and, if applicable, drainage plan. PermitPro creates a complete list tailored to your plot."
+      },
+      {
+        "question": "How long does processing a building application take in BW?",
+        "answer": "The statutory processing period is a maximum of 3 months from receipt of complete documents under §54 para. 4 LBO BW. In practice this varies greatly by municipality and authority workload — from 4 weeks to 6 months. Submitting complete documents the first time is the most important factor for fast processing."
+      },
+      {
+        "question": "Can I start building without a permit?",
+        "answer": "No. Starting construction without a permit is a regulatory offence and can result in a stop-work order, demolition order and fines of up to €500,000 (§75 LBO BW). With the notification procedure you may only begin after a 2-week waiting period expires, provided no objection is received from the municipality."
+      },
+      {
+        "question": "Is PermitPro free and do I need to register?",
+        "answer": "PermitPro is completely free and requires no registration. You enter your project data, receive the checklist and can download it as a PDF — all without an account, without an email address and without your data being stored."
+      },
+      {
+        "question": "Does PermitPro replace consultation with the building authority?",
+        "answer": "No. PermitPro is a guidance tool, not a legal opinion. The generated checklists are based on current state building law but do not account for individual decisions, exemptions or derogations. We recommend discussing the final list with your responsible lower building authority before submission."
+      },
+      {
+        "question": "Are my entries stored or shared?",
+        "answer": "No. Your data is used solely for local checklist generation in your browser and is not stored on our servers. We use no analytics cookies or tracking tools. For more information see our privacy policy."
+      },
+      {
+        "question": "For which federal states is PermitPro available?",
+        "answer": "Currently (MVP) PermitPro is fully available for Baden-Württemberg (LBO BW, as of 18.06.2024). Bavaria (BayBO) is planned for Phase 2. North Rhine-Westphalia, Hesse and further states will follow gradually. You can register for updates."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "GET STARTED",
+    "title": "Ready for your",
+    "titleHighlight": "building permit?",
+    "subtitle": "Start now and receive your personal checklist in approximately 15 minutes — free, no account, legally grounded.",
+    "primary": "Start assessment",
+    "secondary": "Watch demo",
+    "stat1Value": "1,101",
+    "stat1Label": "Municipalities in BW",
+    "stat2Value": "§§ 50–53",
+    "stat2Label": "LBO BW covered",
+    "stat3Value": "€ 0",
+    "stat3Label": "Cost, no subscription"
+  },
+  "assessment": {
+    "step1": {
+      "title": "Select municipality",
+      "subtitle": "Search for your municipality in Baden-Württemberg",
+      "searchPlaceholder": "Municipality, ZIP code or district …",
+      "noResults": "No municipality found",
+      "selected": "Selected municipality",
+      "stepLabel": "Step 01",
+      "availableHint": "115 municipalities available · LBO BW & BayBO"
+    },
+    "step2": {
+      "title": "Describe your project",
+      "subtitle": "Select the type of your construction project",
+      "stepLabel": "Step 02"
+    },
+    "step3": {
+      "title": "Project details",
+      "subtitle": "Answer the following questions about your project",
+      "continueButton": "Review & Download",
+      "backButton": "Back",
+      "stepLabel": "Step 03",
+      "answerAllFirst": "Please answer all questions to generate the checklist.",
+      "liveClassification": "LIVE CLASSIFICATION",
+      "classificationHint": "enter height + usage to see classification",
+      "selectPlaceholder": "— select —",
+      "answered": "answered",
+      "allAnswered": "all answered"
+    },
+    "step4": {
+      "title": "Your checklist",
+      "subtitle": "Based on your answers",
+      "printButton": "Download PDF",
+      "resetButton": "New assessment",
+      "generatedOn": "Generated on",
+      "totalItems": "items",
+      "disclaimer": "This checklist is a guidance tool. Please confirm the final list with your responsible building authority.",
+      "classificationLabel": "Classification under §2 para. 4 LBO BW",
+      "allDoneTitle": "All items checked!",
+      "allDoneSubtitle": "Your checklist is complete — ready to submit.",
+      "resetConfirm": "Start a new assessment?",
+      "resetYes": "Yes, reset",
+      "resetNo": "Cancel",
+      "filterAll": "All",
+      "filterCritical": "Critical",
+      "filterRequired": "Required",
+      "filterConditional": "Conditional",
+      "filterCompleted": "Completed",
+      "searchPlaceholder": "Search… (ID, legal ref)",
+      "copied": "Copied!",
+      "share": "Share",
+      "generatingPdf": "Generating…",
+      "noItemsFound": "No items found",
+      "noItemsHint": "Try adjusting the filter or search"
+    },
+    "back": "Back",
+    "steps": {
+      "1": "Municipality",
+      "2": "Project",
+      "3": "Details",
+      "4": "Checklist"
+    },
+    "projectTypes": {
+      "neubau": { "title": "New Build", "description": "Construction of a new building on previously undeveloped or developed land" },
+      "anbau": { "title": "Extension", "description": "Expansion of an existing building through additions or additional floors" },
+      "aufstockung": { "title": "Adding Storeys", "description": "Adding one or more floors to an existing building (vertical extension)" },
+      "umbau": { "title": "Conversion", "description": "Structural changes inside or to the outer shell of an existing building" },
+      "nutzungsaenderung": { "title": "Change of Use", "description": "Change of the approved use without significant structural changes" },
+      "abbruch": { "title": "Demolition", "description": "Full or partial demolition of a building or structure" }
+    },
+    "questions": {
+      "hoehe": {
+        "label": "Height of the highest habitable floor above ground level",
+        "hint": "Relevant for the building class under §2 para. 4 LBO BW. Measure from natural ground to the floor of the uppermost habitable room."
+      },
+      "bestandHoehe": {
+        "label": "Height of existing building (habitable floor above ground)",
+        "hint": "Height of the floor of the highest habitable room in the existing building above the natural ground surface."
+      },
+      "nutzungsart": {
+        "label": "Type of use of the building",
+        "wohnen": "Residential building",
+        "gewerbe": "Commercial / office",
+        "gemischt": "Mixed use",
+        "sonderbau": "Special structure (assembly hall, school, hotel …)"
+      },
+      "neueNutzung": { "label": "Planned new type of use" },
+      "freistehend": {
+        "label": "Is the building detached (freistehend)?",
+        "hint": "Detached = no direct connection to other buildings on the same or adjacent plot. Relevant for GK 1 vs. GK 2."
+      },
+      "nutzungseinheiten": {
+        "label": "Number of use units (Nutzungseinheiten)",
+        "hint": "Each self-contained apartment or commercial unit counts as one use unit."
+      },
+      "bri": {
+        "label": "Gross volume (BRI) of the building",
+        "hint": "Calculated per DIN 277. For the notification procedure (§50 LBO BW) the BRI must not exceed 1,500 m³."
+      },
+      "anbauBri": {
+        "label": "Gross volume of the planned extension",
+        "hint": "BRI of the extension alone. Relevant for §50 notification: ≤ 1,500 m³."
+      },
+      "bebauungsplan": {
+        "label": "Is the plot within the scope of a qualified development plan (Bebauungsplan)?",
+        "hint": "A qualified development plan (§30 BauGB) specifies the type, scale, design and buildable area."
+      },
+      "konform": {
+        "label": "Does the project fully comply with the development plan?",
+        "hint": "For §50 notification the project must comply with the development plan without any exceptions or exemptions."
+      },
+      "neueHoehe": {
+        "label": "Height after adding storeys (new total building height)",
+        "hint": "Total height of the floor of the highest habitable room after adding the new storey(s) — measured from natural ground level."
+      },
+      "anzahlGeschosse": {
+        "label": "Number of storeys (floors above ground)",
+        "hint": "Count only full above-ground floors including Dachgeschoss. Basement counts only if habitable rooms are planned there."
+      },
+      "bgf": {
+        "label": "Gross floor area (BGF) in m²",
+        "hint": "Calculated per DIN 277. Total of all floor areas including wall thicknesses at every level."
+      },
+      "denkmalschutz": {
+        "label": "Is the building or plot listed as a heritage monument?",
+        "hint": "Listed buildings under §2 DSchG BW require additional permits from the Denkmalschutzbehörde before any structural changes."
+      },
+      "ueberschwemmungsgebiet": {
+        "label": "Is the plot within a designated flood zone (Überschwemmungsgebiet)?",
+        "hint": "Flood zones per §78 WHG require a waiver (Ausnahmegenehmigung) from the water authority. Check the LUBW flood hazard map."
+      },
+      "holzbauweise": {
+        "label": "Is the building or extension planned in timber construction (Holzbauweise)?",
+        "hint": "Timber buildings in GK 4/5 require additional fire protection measures per §26 Abs. 3 LBO BW."
+      },
+      "kellerGeplant": {
+        "label": "Is a basement (Keller) planned?",
+        "hint": "A basement requires a waterproofing concept (Abdichtung per DIN 18533), drainage plan, and often a geotechnical report."
+      },
+      "aufzugGeplant": {
+        "label": "Is a lift (Aufzug) planned or required?",
+        "hint": "Buildings with ≥4 storeys or floor height >7m must provide a passenger lift under §39 LBO BW."
+      },
+      "schadstoffe": {
+        "label": "Is the building likely to contain hazardous materials (e.g. asbestos)?",
+        "hint": "Buildings constructed before 1993 almost certainly contain asbestos. A hazardous materials survey per TRGS 519 is mandatory before demolition or extensive renovation."
+      },
+      "heizungTyp": {
+        "label": "Type of heating system planned",
+        "hint": "GEG 2024 §71 requires new heating systems to use at least 65% renewable energy. Heat pumps and district heating typically comply.",
+        "waermepumpe": "Heat pump (Wärmepumpe)",
+        "fernwaerme": "District heating (Fernwärme)",
+        "gas": "Gas boiler",
+        "holz": "Biomass / pellet boiler",
+        "sonstige": "Other / not yet decided"
+      },
+      "erneuerbarEnergie": {
+        "label": "Can you demonstrate ≥15% renewable heat share? (EWärmeG BW)",
+        "hint": "Baden-Württemberg's EWärmeG requires new residential buildings to cover at least 15% of heat demand from renewable sources."
+      },
+      "photovoltaik": {
+        "label": "Is a photovoltaic (PV) system planned?",
+        "hint": "New buildings in BW must include PV per KlimaSchutzG BW §8a. Minimum 0.3 kWp per m² of usable roof area."
+      },
+      "stellplaetze": {
+        "label": "Number of parking spaces (Stellplätze) provided on the plot",
+        "hint": "Every BW municipality has a Stellplatzsatzung defining how many spaces are required per dwelling or use unit."
+      },
+      "answerYes": "Yes",
+      "answerNo": "No"
+    },
+    "classification": {
+      "buildingClass": "Building class",
+      "procedure": "Procedure",
+      "sonderbau": "Special structure",
+      "legalBasis": "Legal basis",
+      "kenntnisgabe": "Notification",
+      "vereinfacht": "Simplified",
+      "normal": "Standard",
+      "reasons": {
+        "gk1": "Detached, ≤7m, ≤2 units, residential → GK 1",
+        "gk2": "≤7m, residential, >2 units or not detached → GK 2",
+        "gk3": "≤7m, non-residential → GK 3",
+        "gk4": "Height >7m and ≤13m → GK 4",
+        "gk5": "Height >13m → GK 5",
+        "sonderbau": "Special structure use → GK 5 / Standard procedure",
+        "kenntnisgabe": "GK 1/2 + development plan compliant + BRI ≤1,500m³ → §50",
+        "vereinfacht": "GK 1–3, not special structure → §52",
+        "normal": "GK 4–5 or special structure → §53"
+      },
+      "kenntnisgabeFull": "Notification · §50",
+      "vereinfachtFull": "Simplified · §52",
+      "normalFull": "Standard · §53",
+      "sonderbauLabel": "Special Structure"
+    },
+    "sections": {
+      "A": { "title": "Forms & Declarations",       "description": "Application forms, building description, ownership proof" },
+      "B": { "title": "Site Plan & Planning Docs",  "description": "Official site plan, density & area calculations" },
+      "C": { "title": "Building Drawings",           "description": "Floor plans, sections, elevations, roof plan — 1:100" },
+      "D": { "title": "Structural Analysis",         "description": "Stability proof, soil report, independent review" },
+      "E": { "title": "Energy & Thermal",            "description": "GEG proof, renewable heating declaration, energy certificate" },
+      "F": { "title": "Fire Protection",             "description": "Fire concept, review engineer, escape routes — GK4/5 only" },
+      "G": { "title": "Infrastructure & Drainage",   "description": "Drainage plan, utilities, parking, infiltration" },
+      "H": { "title": "Acoustics & Special Reports", "description": "Sound insulation, noise, species protection — conditional" },
+      "I": { "title": "Special Structures",          "description": "Additional requirements for Sonderbau only" },
+      "J": { "title": "Demolition",                  "description": "Demolition permit, hazardous materials, waste disposal" }
+    },
+    "checklist": {
+      "A1": {
+        "title": "Building application form (municipal form)",
+        "description": "Official form from the responsible lower building authority",
+        "whatIsThis": "The official building application initiates the permit procedure. It must be completed on the municipality's official form and signed by both the property owner and the licensed architect (Entwurfsverfasser).",
+        "tips": "Download the form directly from your municipality's website — each Gemeinde uses its own version; generic forms are rejected."
+      },
+      "A2": {
+        "title": "Building description (Baubeschreibung)",
+        "description": "Standardised description of the planned structure per LBOVVO Anlage 3",
+        "whatIsThis": "The Baubeschreibung is a standardised form (LBOVVO BW Anlage 3) that describes the building: construction method, materials, usage, floor area, and technical features. Your architect completes it.",
+        "tips": "Fill in every field — blank fields are the most common reason authorities issue an Unvollständigkeitsbescheid and pause the clock."
+      },
+      "A3": {
+        "title": "Land register extract (Grundbuchauszug)",
+        "description": "Current extract from the land register, not older than 6 months",
+        "whatIsThis": "The Grundbuchauszug proves legal ownership of the plot. Obtain it from the Grundbuchamt at your local Amtsgericht. A certified (beglaubigter) extract is required — an online print is not sufficient.",
+        "tips": "Order this early — some Amtsgerichte take up to 3 weeks. It must not be older than 6 months at the time of submission."
+      },
+      "A4": {
+        "title": "Notification declaration (§50 LBO BW)",
+        "description": "Signed declaration confirming development plan compliance for the Kenntnisgabe procedure",
+        "whatIsThis": "Only for the Kenntnisgabe procedure (§50 LBO BW). This declaration confirms that the project fully complies with the qualified Bebauungsplan — no deviations, no exceptions, no Befreiungen.",
+        "tips": "Cross-check every parameter (GRZ, GFZ, building height, setbacks) against the actual B-Plan before signing. One non-compliant item disqualifies the project from §50."
+      },
+      "A5": {
+        "title": "Power of attorney (if submitted by third party)",
+        "description": "Required if an architect or planner submits the application on the owner's behalf",
+        "whatIsThis": "If anyone other than the property owner submits the building application, a written Vollmacht authorising them to act is required. Standard forms are available from most building authorities.",
+        "tips": "A simple signed letter works in most cases — notarisation is only required in exceptional circumstances such as GbR or company ownership."
+      },
+      "B1": {
+        "title": "Official site plan (Amtlicher Lageplan)",
+        "description": "Scale 1:500 or 1:1000, by a publicly appointed surveyor, max. 3 years old",
+        "whatIsThis": "The Amtlicher Lageplan is the official survey plan showing plot boundaries, existing structures, distances to boundaries, access routes, and public utilities. It must be produced by a publicly appointed land surveyor (öff. best. Vermessungsingenieur).",
+        "tips": "Order this first — it has the longest lead time (3–8 weeks). No other planning can be finalised without confirmed boundary data."
+      },
+      "B2": {
+        "title": "GRZ / GFZ density calculation",
+        "description": "Calculation of site coverage and floor area ratios per BauNVO",
+        "whatIsThis": "The GRZ (Grundflächenzahl) and GFZ (Geschossflächenzahl) calculations prove that the project does not exceed the density limits in the Bebauungsplan or BauNVO. Your architect prepares this as part of the drawing set.",
+        "tips": "Show which footprints count toward GRZ — many reviewers reject applications where the calculation method is not clearly shown alongside the figures."
+      },
+      "B3": {
+        "title": "Area calculation (Wohnflächenberechnung / DIN 277)",
+        "description": "Residential area per WoFlV or gross floor area per DIN 277",
+        "whatIsThis": "The area calculation lists all rooms with measured areas. Residential buildings use WoFlV; commercial buildings use DIN 277. This figure determines building fees and appears in multiple downstream documents.",
+        "tips": "Use the correct standard for your use type: WoFlV for apartments, DIN 277 for offices or commercial. Mixing them is a common and costly error."
+      },
+      "B4": {
+        "title": "Open space / outdoor facilities plan (Freianlagenplan)",
+        "description": "Scale 1:200 or 1:500 showing landscaping, surfaces, and green areas",
+        "whatIsThis": "The Freianlagenplan shows how the outdoor areas will be designed: planted areas, paved surfaces, fencing, retaining walls, and public green space. Required where the B-Plan specifies a minimum Grünflächenanteil.",
+        "tips": "Check whether your municipality's B-Plan requires permeable surfacing (wasserdurchlässige Befestigung) — this must be quantified and shown on this plan."
+      },
+      "C1": {
+        "title": "Floor plans — all storeys (scale 1:100)",
+        "description": "Floor plans of every level including basement and roof space",
+        "whatIsThis": "Floor plans show the layout of each storey: room dimensions, wall construction, door/window positions, and staircase layout. They are the primary drawing in any building application — all other drawings derive from them.",
+        "tips": "Include every floor including Keller and Dachgeschoss, even if unchanged. Missing levels are the single most common reason for incomplete applications."
+      },
+      "C2": {
+        "title": "Sections — longitudinal and cross-sections (scale 1:100)",
+        "description": "At least one longitudinal and one cross-section through the full building height",
+        "whatIsThis": "Section drawings cut vertically through the building to show interior heights, floor-to-floor dimensions, roof pitch, and the relationship between the building and natural/finished ground levels — critical for building class determination.",
+        "tips": "Always dimension the height from gewachsener Boden (natural terrain) to the floor of the highest habitable room — this is the key measurement for determining the building class (GK)."
+      },
+      "C3": {
+        "title": "Elevations — all external walls (scale 1:100)",
+        "description": "Elevations of all four sides showing materials, openings, and heights",
+        "whatIsThis": "Elevation drawings show the finished external appearance: façade materials, window proportions, roof form, and relationship to surrounding terrain. They are essential for assessing compliance with local Gestaltungssatzung provisions.",
+        "tips": "Show the finished grade line (OKG) clearly and distinguish it from the natural ground level wherever the site is being cut or filled — this affects building class and setback calculations."
+      },
+      "C4": {
+        "title": "Roof plan (Dachaufsicht, scale 1:100)",
+        "description": "Overhead view showing roof pitch, ridge, drainage direction, chimneys and dormers",
+        "whatIsThis": "The Dachaufsicht shows the roof from above: ridge lines, hip ends, pitch angles, dormer positions, skylights, and rainwater outlet locations. Used to check roof shape against the Bebauungsplan.",
+        "tips": "Label the Dachneigung (pitch angle) explicitly and show all rainwater outlets — missing drainage routing is a common minor deficiency that triggers a correction request."
+      },
+      "D1": {
+        "title": "Structural analysis (Standsicherheitsnachweis)",
+        "description": "Full structural calculations for all load-bearing elements per Eurocode",
+        "whatIsThis": "The Standsicherheitsnachweis is a complete set of engineering calculations demonstrating that the structure safely carries all anticipated loads (dead, live, snow, wind) per Eurocode. It must be stamped and signed by a licensed Tragwerksplaner.",
+        "tips": "Commission your structural engineer as early as possible — they need finalised floor plans and sections. Design changes after structural work begins are expensive and time-consuming."
+      },
+      "D2": {
+        "title": "Geotechnical report (Baugrundgutachten)",
+        "description": "Soil investigation report including bearing capacity and groundwater level",
+        "whatIsThis": "The Baugrundgutachten investigates the ground conditions: soil bearing capacity, groundwater level, settlement risk, and frost depth. Required for new builds on unfamiliar ground or sites with potential issues (expansive clay, fill, mining history).",
+        "tips": "Many BW plots are on Lias/Dogger clay soils prone to shrinkage. When in doubt, commission a Phase 1 desktop study before committing to a foundation design."
+      },
+      "D3": {
+        "title": "Independent structural review (Prüfingenieur Standsicherheit)",
+        "description": "Review and approval stamp from a state-accredited structural review engineer",
+        "whatIsThis": "For GK4/5 buildings, the structural calculations must be independently reviewed and approved by a state-appointed Prüfingenieur für Standsicherheit. Their Prüfbescheid is required before building work can begin.",
+        "tips": "Prüfingenieure are independent from your structural engineer — engage them early as popular ones have waiting lists. The review process typically takes 3–6 weeks."
+      },
+      "E1": {
+        "title": "Energy performance proof (GEG-Nachweis)",
+        "description": "Proof of compliance with the Building Energy Act GEG 2024",
+        "whatIsThis": "The GEG-Nachweis demonstrates that the building meets the primary energy demand and thermal envelope requirements of the Gebäudeenergiegesetz. Prepared by an energy consultant using certified calculation software.",
+        "tips": "Software must be state-certified (e.g. PHPP, IDA ICE, Hottgenroth). Check that your energy consultant is listed in the Energieeffizienz-Expertenliste before commissioning."
+      },
+      "E2": {
+        "title": "Renewable heating proof (EWärmeG BW)",
+        "description": "Proof of compliance with Baden-Württemberg's Erneuerbare-Wärme-Gesetz",
+        "whatIsThis": "The EWärmeG BW requires new residential buildings in BW to cover at least 15 % of their heat demand from renewable sources (or meet equivalent alternative measures under GEG §71). Specific to Baden-Württemberg in addition to federal GEG.",
+        "tips": "Confirm with your energy consultant which compliance path you will use (heat pump, solar thermal, etc.) before finalising the heating system design — changing it late is costly."
+      },
+      "E3": {
+        "title": "Energy performance certificate (Energieausweis)",
+        "description": "Demand-based energy certificate (Bedarfsausweis), valid for 10 years",
+        "whatIsThis": "The Energieausweis summarises the building's energy performance on an A+–H scale and is mandatory for new buildings under GEG. It is also required when selling or renting the property.",
+        "tips": "New builds require a Bedarfsausweis (demand-based, calculated) — not a Verbrauchsausweis (consumption-based). Order it once the GEG calculation is complete."
+      },
+      "F1": {
+        "title": "Fire protection concept (Brandschutzkonzept)",
+        "description": "Comprehensive fire safety design document for GK4 and GK5 buildings",
+        "whatIsThis": "The Brandschutzkonzept documents all fire protection measures: compartmentation, escape route distances, sprinkler systems, smoke extraction, and fire resistance ratings. Required for all GK4/5 and Sonderbau projects.",
+        "tips": "Commission the Brandschutzkonzept early — it defines requirements that must shape the architectural design. Retrofitting fire safety measures after design completion is expensive."
+      },
+      "F2": {
+        "title": "Independent fire protection review (Prüfingenieur Brandschutz)",
+        "description": "Approval stamp from a state-accredited fire protection review engineer",
+        "whatIsThis": "The Brandschutzkonzept must be independently reviewed and approved by a state-accredited Prüfingenieur für Brandschutz for GK4/5 buildings. Their Prüfbescheid is part of the building permit.",
+        "tips": "The review engineer is different from your Brandschutzplaner. Many specialise in specific building types — confirm their experience with your building type before commissioning."
+      },
+      "F3": {
+        "title": "Emergency escape and fire brigade plan (Feuerwehrplan)",
+        "description": "Floor plan with DIN ISO 23601 symbols showing escape routes and fire equipment",
+        "whatIsThis": "The Feuerwehrplan is a standardised floor plan showing escape routes, fire doors, fire extinguishers, water inlets, and emergency infrastructure — used by the fire brigade during emergencies. One copy must be posted in the building.",
+        "tips": "Use DIN ISO 23601-compliant symbols — freehand drawings are rejected. Check with your local fire brigade (Feuerwehr) for any specific formatting requirements."
+      },
+      "G1": {
+        "title": "Drainage plan (Entwässerungsplan)",
+        "description": "Site plan showing separate routing of foul water and rainwater",
+        "whatIsThis": "The Entwässerungsplan shows how sewage (Schmutzwasser) and rainwater (Regenwasser) are routed from the building to the public sewer or infiltration system. BW requires complete separation for all new builds.",
+        "tips": "In BW, direct discharge of rainwater to the public foul sewer is prohibited. Include your infiltration area or retention facility on this plan from the start of design."
+      },
+      "G2": {
+        "title": "Utility supply confirmation (Erschließungsnachweis)",
+        "description": "Written confirmation of secured road access, water, sewage and energy connections",
+        "whatIsThis": "The Erschließungsnachweis confirms that the plot has legally secured connections to road access, water supply, sewage network, and electricity. Obtained from the road authority, utility operators, and the municipality.",
+        "tips": "Contact utility operators early — some require a formal application before issuing confirmation letters, which can take 4–6 weeks."
+      },
+      "G3": {
+        "title": "Parking space proof (Stellplatznachweis)",
+        "description": "Calculation proving provision of required parking spaces per municipal Stellplatzsatzung",
+        "whatIsThis": "Every BW municipality has a Stellplatzsatzung specifying how many parking spaces must be provided per dwelling or use unit. The Stellplatznachweis shows the calculation and proves sufficient spaces are provided or ablöse has been paid.",
+        "tips": "If your plot cannot accommodate the required spaces, check whether your municipality offers a Stellplatz-Ablöse (buy-out) — the fee is set in the municipal statute."
+      },
+      "G4": {
+        "title": "Rainwater infiltration proof (Versickerungsnachweis)",
+        "description": "Hydraulic calculation for on-site rainwater infiltration per DWA-A 138",
+        "whatIsThis": "Required when rainwater from the development will be infiltrated on-site rather than discharged to the sewer. Demonstrates that soil permeability and infiltration area are correctly sized per DWA-A 138.",
+        "tips": "Commission a kf value measurement (soil permeability test) early — without a measured kf, the infiltration calculation cannot be completed and the entire drainage concept may need redesigning."
+      },
+      "H1": {
+        "title": "Acoustic performance proof (Schallschutznachweis)",
+        "description": "Structural sound insulation proof per DIN 4109-1",
+        "whatIsThis": "Demonstrates that walls, floors, and ceilings between different uses or apartments provide the required airborne and impact sound insulation per DIN 4109-1. Required for GK4/5 and multi-use buildings.",
+        "tips": "Enhanced sound insulation (erhöhter Schallschutz per VDI 4100) is strongly recommended in multi-family buildings even where not legally required — it significantly affects property value."
+      },
+      "H2": {
+        "title": "External noise impact assessment (Lärmgutachten)",
+        "description": "Environmental noise simulation per TA Lärm or RLS-19",
+        "whatIsThis": "Required when a new building will be exposed to significant traffic, industrial, or commercial noise. Models noise levels at the building façades and proposes mitigation measures to comply with TA Lärm limit values.",
+        "tips": "Order this before finalising window placement — it may require noise protection glazing or mechanical ventilation on certain façades, which affects the architectural design."
+      },
+      "H3": {
+        "title": "Species protection survey (Artenschutzgutachten)",
+        "description": "Survey of protected species per §44 BNatSchG, carried out in appropriate season",
+        "whatIsThis": "Before demolition or significant development on vegetated sites, a survey identifies protected species (bats, nesting birds, protected plants). If found, mitigation measures or construction timing restrictions may apply.",
+        "tips": "The survey must be done in the appropriate season (spring for nesting birds, autumn for bats). Plan at least 6–12 months ahead for green-field or heavily vegetated sites."
+      },
+      "I1": {
+        "title": "Special structure operational description (Betriebsbeschreibung Sonderbau)",
+        "description": "Detailed description of intended use, maximum occupancy, and operating conditions",
+        "whatIsThis": "For Sonderbau buildings, a detailed Betriebsbeschreibung must describe the intended use, maximum occupancy, operating hours, and specific operational scenarios that affect fire safety and building law requirements.",
+        "tips": "Be as specific as possible — vague descriptions lead to repeated requests for clarification from the authority, significantly delaying the permit process."
+      },
+      "I2": {
+        "title": "Special structure expert report (Fachgutachten Sonderbaurecht)",
+        "description": "Technical expert report per applicable Sonderbauverordnung (VStättVO, BeVO, SchulbauR)",
+        "whatIsThis": "Depending on the type of special structure, specific compliance proofs are required under the relevant Sonderbauverordnung: e.g. VStättVO for assembly halls, SchulbauR for schools, BeVO for department stores.",
+        "tips": "Identify the correct Sonderbauverordnung at the outset — engaging the wrong specialist is a costly mistake. Confirm with the building authority which regulations apply to your project."
+      },
+      "J1": {
+        "title": "Demolition permit application (Abbruchantrag)",
+        "description": "Municipal demolition form with proof of ownership and utility notification",
+        "whatIsThis": "A demolition permit (Abbruchgenehmigung) or notice (Abbruchanzeige) is required under §58 LBO BW before demolishing any building. The applicable form is obtained from your municipality.",
+        "tips": "Notify all utility operators (gas, water, electricity, telecoms) before demolition — disconnection must be confirmed in writing and is often a precondition of the permit."
+      },
+      "J2": {
+        "title": "Hazardous materials survey (Schadstoffgutachten)",
+        "description": "Survey for asbestos and hazardous materials per TRGS 519 before any demolition work",
+        "whatIsThis": "Before demolishing any building constructed before 1993, a mandatory survey for asbestos and other hazardous materials (PCB, KMF, lead paint) is required per TRGS 519. If asbestos is confirmed, a remediation plan must be prepared.",
+        "tips": "Buildings from 1960–1992 almost certainly contain asbestos. Budget for remediation — it is a common cause of major cost overruns on demolition projects."
+      },
+      "J3": {
+        "title": "Waste disposal concept (Entsorgungskonzept)",
+        "description": "Material list with disposal routes and certified waste carrier contracts",
+        "whatIsThis": "The Entsorgungskonzept lists all demolition materials with quantities, hazard classification, and disposal routes. Required under KrWG to prove all materials will be disposed of in accordance with waste law.",
+        "tips": "Get preliminary quotes from certified disposal companies early — capacity for certain hazardous waste streams (especially asbestos-contaminated material) is limited and prices vary significantly."
+      },
+      "J4": {
+        "title": "Demolition plan with work sequence (Abbruchplan)",
+        "description": "Scaled drawing showing demolition sequence, shoring, and public safety protection",
+        "whatIsThis": "The Abbruchplan shows the building to be demolished in a scaled drawing and specifies the work sequence, temporary shoring measures, and how adjacent buildings and public spaces are protected during demolition.",
+        "tips": "If the building shares a party wall (Grenzwand) with a neighbour, the Abbruchplan must include a detailed weatherproofing and structural securing concept for the exposed party wall."
+      },
+      "J5": {
+        "title": "Structural proof for adjacent buildings",
+        "description": "Assessment proving demolition does not endanger neighbouring structures",
+        "whatIsThis": "Required for partial demolition or demolition of boundary buildings. A licensed Tragwerksplaner must assess and confirm that adjacent buildings remain structurally stable after the demolition.",
+        "tips": "Commission this alongside the Abbruchplan — the structural engineer needs the demolition sequence to assess impact on neighbouring structures correctly."
+      },
+      "C5": {
+        "title": "Elevator shaft plans (§39 LBO BW)",
+        "description": "Scaled drawings of elevator shaft, doors, and machine room per DIN EN 81-20/50",
+        "whatIsThis": "§39 LBO BW requires buildings with multiple floors to provide accessible vertical circulation. The building permit must include shaft section and plan drawings at 1:50, machine room layout (if applicable), and a note confirming compliance with DIN EN 81-20/50.",
+        "tips": "Involve an accredited lift inspector (Sachverständige nach BetrSichV) from the outset. The building authority forwards lift plans to the Staatliche Gewerbeaufsicht for separate approval, which runs in parallel with the building permit."
+      },
+      "D4": {
+        "title": "Basement waterproofing concept (DIN 18533)",
+        "description": "Proof of basement waterproofing design with water exposure classification",
+        "whatIsThis": "For basement construction, the building application must include a waterproofing concept classifying the water exposure class (W1-E, W2-E, or W3-E per DIN 18533) and specifying the waterproofing system. A soil investigation report to assess groundwater levels is also required.",
+        "tips": "Engage a geotechnical engineer to determine groundwater levels before designing the waterproofing system. For W3-E (hydrostatic pressure), a structural waterproof concrete construction (Weiße Wanne) is typically required and must be detailed in the structural drawings."
+      },
+      "F4": {
+        "title": "Timber construction fire protection concept",
+        "description": "Supplementary fire protection evidence for exposed timber load-bearing elements",
+        "whatIsThis": "§26 Abs. 3 LBO BW permits exposed combustible building materials under specific conditions. A fire protection concept by a licensed Brandschutzingenieur is required, covering fire compartments, escape routes, and suppression systems. References the Muster-Holzbaurichtlinie (M-HFHHolzR).",
+        "tips": "Coordinate with the Brandschutzdienststelle before submitting. For multi-storey timber buildings, automatic sprinkler systems are commonly required as a compensatory measure."
+      },
+      "G5": {
+        "title": "Flood zone construction permit (§78 WHG)",
+        "description": "Permit from the Untere Wasserbehörde for development in designated flood zones",
+        "whatIsThis": "§78 WHG generally prohibits new buildings in HQ100 flood areas. An exception permit from the Untere Wasserbehörde is required, accompanied by a hydraulic engineer's report (Hochwassernachweis) demonstrating no increase in flood risk to neighbouring properties.",
+        "tips": "Apply to the Untere Wasserbehörde as early as possible — this approval runs separately from the building permit and typically takes 3–6 months. Flood-adapted construction measures are normally required as conditions of approval."
+      },
+      "H4": {
+        "title": "Monument protection authority approval (§8 DSchG BW)",
+        "description": "Approval from Untere Denkmalschutzbehörde required for modifications to listed buildings",
+        "whatIsThis": "§8 DSchG BW requires approval from the Untere Denkmalschutzbehörde before any modifications to listed buildings (Kulturdenkmale) or buildings in conservation areas. The application must include a heritage impact assessment and drawings showing proposed interventions.",
+        "tips": "Engage a conservation specialist (Sachverständiger für Denkmalpflege) early. Pre-application discussions with the authority are strongly recommended — they can take 4–8 weeks and significantly influence the design."
+      },
+      "H5": {
+        "title": "Denkmalschutz permit application form",
+        "description": "Completed application form for denkmalschutzrechtliche Genehmigung submitted to the Untere Denkmalschutzbehörde",
+        "whatIsThis": "§8 Abs. 1 DSchG BW requires a formal written application to the Untere Denkmalschutzbehörde. The form specifies the building address, scope of proposed works, and applicant details. This is the procedural cover sheet to the full application package (including the H4 heritage assessment and drawings).",
+        "tips": "Download the application form from your Landkreis website. Submit the complete package (H4 assessment + this form + drawings) together to avoid delays. Keep a stamped copy as proof of submission date."
+      },
+      "G6": {
+        "title": "Hydraulic impact assessment (Hochwassernachweis)",
+        "description": "Hydraulic engineer's report proving zero increase in flood risk per §78 Abs. 3 WHG",
+        "whatIsThis": "§78 Abs. 3 WHG requires that any development in a flood zone must not raise water levels or increase flooding risk for neighbouring properties. A licensed hydraulic engineer prepares a 2D/1D flow model calibrated to the official HQ100 event, demonstrating that retained flood volumes are compensated.",
+        "tips": "Commission the hydraulic assessment alongside the topographic survey — the engineer needs accurate ground level data. Submit together with the G5 permit application to the Wasserbehörde."
+      },
+      "D5": {
+        "title": "Geotechnical site investigation (Baugrundgutachten)",
+        "description": "Soil report per DIN 4020 with borehole logs, groundwater level, and excavation stability analysis",
+        "whatIsThis": "For basement construction, a Baugrundgutachten per DIN 4020 is required to determine soil bearing capacity, groundwater levels, and excavation stability. It forms the technical basis for the D4 waterproofing concept and D1 structural design. Must be signed by a qualified geotechnical engineer (Sachverständiger für Geotechnik).",
+        "tips": "Commission the ground investigation early — borehole results take 2–4 weeks. If the water table is near the basement floor level, the report may require a waterproof concrete construction (Weiße Wanne), which significantly affects the structural concept."
+      },
+      "A6": {
+        "title": "Power of attorney for architect (Vollmacht Entwurfsverfasser)",
+        "description": "Written authorisation for the licensed architect to act on the owner's behalf",
+        "whatIsThis": "Where the Entwurfsverfasser (licensed design architect) submits and represents the application on behalf of the property owner, a signed Vollmacht is required. This is standard practice and most architects have their own template.",
+        "tips": "Have this signed at the very first meeting with your architect — it saves a round-trip request from the authority later in the process."
+      },
+      "A7": {
+        "title": "Neighbour consent declarations (Nachbarunterschriften)",
+        "description": "Signed declarations from affected neighbours where setbacks or easements apply",
+        "whatIsThis": "Where a project encroaches on setback lines or requires a neighbour's consent under §7 LBO BW, affected neighbours must sign a consent form before submission. This avoids formal neighbour notification delays (Nachbarbenachrichtigung) during the procedure.",
+        "tips": "Obtain neighbours' signatures before submission — once the authority triggers the formal Nachbarbenachrichtigung, additional objection periods apply that can delay the permit by 4–8 weeks."
+      },
+      "A8": {
+        "title": "Construction cost declaration / housing benefit levy (Wohnflächenerklärung)",
+        "description": "Declaration of residential floor area for housing benefit calculation per WoGG",
+        "whatIsThis": "For residential new builds or extensions, a declaration of the residential floor area (Wohnfläche per WoFlV) is required under WoGG. This is used as the basis for any housing subsidy levy calculation. The form is submitted alongside the Bauantrag.",
+        "tips": "Cross-check your WoFlV calculation against the B3 area schedule before signing — discrepancies between documents trigger a correction request from the authority."
+      },
+      "A1_BY": {
+        "title": "Building permit application form — Bavaria (Bauantrag BayBO)",
+        "description": "Official Bayerische Bauantrag form per Art. 64 BayBO and BauVorlV Anlage 1",
+        "whatIsThis": "The Bayerische Bauantrag (Art. 64 BayBO) is the state-specific application form for buildings in Bavaria. It differs from the BW form in structure, required attachments, and procedure classification. It must be downloaded from the Bayerisches Landesamt für Digitalisierung (BayernAtlas) or your local Landratsamt.",
+        "tips": "Use the current year's version from your Landratsamt — Bavaria updates the official form periodically. Outdated forms are returned without processing."
+      },
+      "A4_BY": {
+        "title": "Freistellung notification (Mitteilung nach Art. 58 BayBO)",
+        "description": "Notification form for the simplified Freistellungsverfahren in Bavaria",
+        "whatIsThis": "Art. 58 BayBO provides a Freistellungsverfahren (exemption procedure) for simple building types in Bavaria that is equivalent to the BW Kenntnisgabe. A specific notification form is submitted to the municipality, and construction can begin after the Freistellungsfrist expires without authority objection.",
+        "tips": "Confirm with your Gemeinde that the project qualifies for Freistellung before using this form — if the preconditions are not met, the Gemeinde must inform you within 4 weeks and the standard permit procedure applies."
+      },
+      "B5": {
+        "title": "Landscaping and open space plan (Freiflächengestaltungsplan)",
+        "description": "Site plan at 1:200 or 1:500 showing planting, paving, green areas, and drainage",
+        "whatIsThis": "The Freiflächengestaltungsplan documents the planned design of all outdoor areas: planted areas, tree species, paved surfaces (specifying permeability), fencing, play areas, and rainwater management features. Required for new builds where the B-Plan specifies a minimum Grünflächenanteil.",
+        "tips": "Coordinate with the local Grünordnungsplan — some municipalities have specific species lists or minimum planting requirements that must be integrated into this plan."
+      },
+      "B6": {
+        "title": "Setback area calculation (Abstandsflächennachweis)",
+        "description": "Tabular calculation proving compliance with §5 LBO BW setback rules",
+        "whatIsThis": "The Abstandsflächennachweis is a table and drawing showing that the required setback distances from plot boundaries are maintained on all sides. Calculated per §5 LBO BW using the wall height formula. Included in the drawing set or as a separate schedule signed by the architect.",
+        "tips": "Pay particular attention to projecting elements (balconies, bay windows) — they reduce setback distances and must be shown individually in the calculation."
+      },
+      "C6": {
+        "title": "Accessibility / barrier-free design drawings (DIN 18040)",
+        "description": "1:50 detail drawings showing DIN 18040-1 compliance (wheelchair turning circles, ramps, thresholds)",
+        "whatIsThis": "§39 LBO BW requires accessible design for certain building types. The C6 drawings supplement the architectural plans with detailed 1:50 layouts showing wheelchair turning circles, grip rail positions, threshold heights ≤2 cm, ramp gradients ≤6%, and accessible sanitary provisions per DIN 18040-1.",
+        "tips": "Involve a DIN 18040 specialist for review before submission — errors in accessibility drawings are a leading cause of supplementary requests (Nachtragsforderungen) for GK4/5 buildings."
+      },
+      "C7": {
+        "title": "Cost breakdown DIN 276 (Kostenberechnung)",
+        "description": "Estimated project cost structured per DIN 276 to cost group level 3",
+        "whatIsThis": "The Kostenberechnung per DIN 276 is a structured cost estimate breaking down project costs to third-level cost groups. The building authority uses it to calculate building permit fees, which are typically based on anrechenbare Kosten. Prepared by the architect from the design drawings.",
+        "tips": "Check your municipality's fee schedule (Verwaltungsgebührenordnung) to understand which cost groups feed into the fee calculation — some municipalities cap or exclude certain cost groups."
+      },
+      "D6": {
+        "title": "Reinforcement drawings (Bewehrungsplan EC2)",
+        "description": "Reinforced concrete bar bending schedules and steel area plans per Eurocode 2",
+        "whatIsThis": "For reinforced concrete structures in GK4/5 buildings, the structural engineer produces detailed reinforcement drawings (Bewehrungspläne) at 1:50 scale. These show rebar placement, bar diameters, bending schedules, and lap lengths per DIN EN 1992-1-1 (EC2). Required for building permit submission for complex concrete structures.",
+        "tips": "Reinforce drawings must be coordinated with architectural plans at 1:50 — clashes between structural and architectural elements (e.g. sleeves, recesses) cause expensive site delays if not resolved before permit submission."
+      },
+      "D7": {
+        "title": "Timber structural design (Holzbaustatik EC5)",
+        "description": "Structural calculations and connection details for timber construction per Eurocode 5",
+        "whatIsThis": "For timber-frame or mass-timber (CLT, glulam) buildings, a specialist structural engineer prepares timber-specific calculations per DIN EN 1995-1-1 (EC5). This covers connection details, moisture content specifications, glulam grades, and fire resistance of load-bearing timber elements per §26 LBO BW.",
+        "tips": "Commission the EC5 structural engineer in parallel with the architectural design phase — timber connection geometry strongly constrains the architectural details. Changes after structural design is complete are particularly expensive in timber."
+      },
+      "E4": {
+        "title": "Photovoltaic system design documents (PV-Anlagenplanung)",
+        "description": "Technical documentation for rooftop PV system including grid connection per VDE-AR-N 4105",
+        "whatIsThis": "GEG §71b requires documentation of PV systems integrated into new builds. The documents include: PV system design data (module type, inverter, kWp rating), mounting drawing, cable routing, and grid connection application per VDE-AR-N 4105 to the Netzbetreiber. The Netzeinspeisegenehmigung must be obtained before commissioning.",
+        "tips": "Submit the grid connection application to your Netzbetreiber at the same time as the building permit — the Netzeinspeisegenehmigung typically takes 6–12 weeks and is on the critical path for commissioning."
+      },
+      "E5": {
+        "title": "Heating system design (Heizungsplanung GEG §71)",
+        "description": "Heating system technical concept with hydraulic balance and heat load calculation per EN 12831",
+        "whatIsThis": "GEG §§71–71h require heating system documentation for all new buildings and full heating replacements. The Heizungsplanung includes: heat load calculation per EN 12831, hydraulic balance, hot water demand calculation, and a distribution schematic. Required to confirm compliance with the heating technology requirements of GEG 2024.",
+        "tips": "For heat pump systems, provide the COP data at A2/W35 and A7/W35 operating points — the authority uses these to verify GEG §71 compliance and confirm the heating system qualifies as renewable under the 65 % rule."
+      },
+      "F5": {
+        "title": "Fire brigade floor plans (Feuerwehrplan DIN 14095) — Sonderbau",
+        "description": "Standardised fire brigade operational plans per DIN 14095 for Sonderbau buildings",
+        "whatIsThis": "DIN 14095 fire brigade plans are operational documents prepared for use by the Feuerwehr during emergency response. They show floor layouts using DIN ISO 23601 symbols, marking fire doors, extinguisher locations, water inlets, fire lifts, gas shutoffs, and electrical distribution boards. Required for all Sonderbau buildings at permit stage.",
+        "tips": "One laminated copy must be posted in the building entrance (mandatory under §35 LBO BW). Coordinate the symbol scheme with your local Kreisbrandmeister — some fire brigades have additional symbol requirements."
+      },
+      "F6": {
+        "title": "Sprinkler system design (Sprinkleranlage DIN 14461)",
+        "description": "Hydraulic design of automatic sprinkler system per DIN EN 12845 / DIN 14461",
+        "whatIsThis": "GK5 Sonderbau buildings and large assembly halls typically require an automatic sprinkler system (Selbsttätige Feuerlöschanlage) as a compensatory fire protection measure under VStättVO BW or the Brandschutzkonzept. The system design includes hydraulic calculations, pump station data sheets, and a room-by-room coverage plan per DIN EN 12845.",
+        "tips": "Commission the sprinkler designer at the same time as the Brandschutzplaner — the sprinkler system influences the ceiling design, structural loads (water-filled pipes are heavy), and the fire compartment layout."
+      },
+      "G7": {
+        "title": "Chimney and combustion system documentation (Feuerungsplanung)",
+        "description": "Chimney calculation and Schornsteinfeger certificate per 1. BImSchV",
+        "whatIsThis": "For gas or wood-burning heating systems, the building permit must include chimney documentation: a chimney cross-section with dimensions and materials, a draught calculation per 1. BImSchV proving adequate exhaust, and confirmation by an authorised Schornsteinfegermeister. Applies to all new or modified combustion systems.",
+        "tips": "Involve the local Bezirksschornsteinfegermeister early — they must approve the chimney design and sign off after installation. Pre-approval of the chimney drawing can accelerate the permit review significantly."
+      },
+      "G8": {
+        "title": "Rainwater cistern permit (Zisternengenehmigung)",
+        "description": "Approval for on-site rainwater harvesting and cistern installation per §37 LBO BW",
+        "whatIsThis": "Above-ground or below-ground rainwater cisterns used for toilet flushing or garden irrigation require approval under §8 and §37 LBO BW and the municipal water supply statutes (Wasserversorgungssatzung). Hydraulic sizing per DWA-A 138 is required, together with overflow and backflow protection details.",
+        "tips": "Check your municipality's Wasserversorgungssatzung before designing the cistern system — some municipalities prohibit greywater reuse for toilet flushing; others incentivise it. Cross-connection protection between cistern water and drinking water is mandatory."
+      },
+      "H6": {
+        "title": "Vibration impact assessment (Erschütterungsnachweis DIN 4150)",
+        "description": "Prognosis of vibration loads from traffic or construction on the building per DIN 4150-2",
+        "whatIsThis": "For GK4/5 new builds near railways, trams, or heavy road traffic, a vibration impact assessment per DIN 4150-2 is required. This prognosis models the vibration energy transmitted to the building structure and checks compliance with the KB limit values to protect occupant health and sensitive building uses.",
+        "tips": "Vibration-sensitive uses (hospitals, precision laboratories, recording studios) require stricter KB limit values. Commission the assessment before finalising the foundation design — anti-vibration foundation pads significantly affect the structural concept."
+      },
+      "H7": {
+        "title": "Soil contamination report (Bodenverunreinigungsgutachten BBodSchG)",
+        "description": "Phase I desk study + Phase II sampling per BBodSchG for brownfield and contamination-risk plots",
+        "whatIsThis": "§9 BBodSchG and LBodSchG BW require investigation of suspected soil contamination before new construction. A Phase I historical research study identifies contamination risk; Phase II involves physical sampling and laboratory testing. If contamination is found, a remediation plan per BBodSchG §4 Abs. 3 is required.",
+        "tips": "Review historical land-use maps and aerial photos for the site before commissioning the Phase I study — this identifies the most likely contamination sources and focuses the Phase II sampling programme, reducing costs."
+      },
+      "I3": {
+        "title": "Accessibility compliance statement — Sonderbau (DIN 18040-1)",
+        "description": "Detailed written and drawn accessibility compliance proof for Sonderbau public buildings",
+        "whatIsThis": "Sonderbau buildings open to the public (offices, hospitals, schools, assembly halls) must demonstrate compliance with §39 LBO BW and DIN 18040-1 in detail. The I3 document is a formal compliance statement supplemented by 1:50 drawings showing turning circles, ramp gradients, accessible sanitary facilities, and evacuation provisions for wheelchair users.",
+        "tips": "Engage a Sachverständiger für barrierefreies Bauen to review the design before permit submission — missing accessibility dimensions are the most frequently raised deficiency in Sonderbau applications."
+      },
+      "I4": {
+        "title": "Operational concept — Sonderbau (Betriebskonzept)",
+        "description": "Formal operational description covering occupancy, operating hours, and emergency management",
+        "whatIsThis": "§38 LBO BW requires a written Betriebskonzept for Sonderbau projects, describing: maximum simultaneous occupancy, operating hours, event/usage scenarios, staff roles, emergency management procedures, and cleaning and maintenance plans. It is used by the building authority and fire brigade to assess fire safety and operational feasibility.",
+        "tips": "Write the Betriebskonzept in close coordination with the Brandschutzkonzept — the occupancy numbers and usage scenarios must be consistent between both documents, as discrepancies trigger requests for clarification."
+      },
+      "J6": {
+        "title": "Existing condition photo documentation (Fotodokumentation Bestand)",
+        "description": "Photographic record of all elevations and interior before demolition",
+        "whatIsThis": "The building authority requires a photographic record of the existing structure as part of the demolition application. This documents the current condition, establishes the building's age (relevant for asbestos risk assessment), and provides evidence in case of disputes about damage to neighbouring properties during demolition.",
+        "tips": "Include GPS-tagged photos with timestamps covering all four elevations, the roof, all interior spaces, and the boundary conditions with neighbouring structures. A minimum of 20 photos is standard — more is always safer."
+      },
+      "J7": {
+        "title": "Neighbour protection measures plan (Nachbarliche Sicherungsmaßnahmen)",
+        "description": "Structural shoring and hoarding concept for protecting neighbouring buildings during demolition",
+        "whatIsThis": "Where demolition involves a party wall or boundary building, §15 ArbSchG and DGUV Regel 101-004 require a structural protection concept. A licensed Tragwerksplaner designs temporary shoring, underpinning, and weatherproofing for the exposed party wall. Fencing and hoarding of public footpaths must be approved by the road authority.",
+        "tips": "Pre-notify the affected neighbours in writing before submission — their written acknowledgement of the protection measures reduces the risk of objections or Nachbarbenachrichtigung delays during the permit procedure."
+      },
+      "required": "Required",
+      "optional": "Conditional"
+    },
+    "print": {
+      "title": "Building permit checklist",
+      "generatedBy": "Generated with PermitPro",
+      "municipality": "Municipality",
+      "projectType": "Project type",
+      "disclaimer": "This checklist does not replace legal advice. When in doubt contact your responsible building authority.",
+      "classificationLabel": "Classification",
+      "subtitle": "Building permit checklist · LBO BW 2026",
+      "generatedPrefix": "Generated on",
+      "procedureFull": {
+        "kenntnisgabe": "Notification procedure §50 LBO BW",
+        "vereinfacht": "Simplified procedure §52 LBO BW",
+        "normal": "Standard procedure §53 LBO BW"
+      }
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "PermitPro – Building Permit Checklist Baden-Württemberg",
+      "description": "Free building permit checklist for Baden-Württemberg. LBO BW 2026 compliant, no registration required, in ~15 minutes. For new builds, extensions, conversions and change of use."
+    },
+    "assessment": {
+      "title": "Start assessment",
+      "description": "Start your individual building permit assessment under LBO BW 2026. Select your municipality, describe your project and receive your checklist immediately."
+    },
+    "impressum": { "title": "Legal Notice" },
+    "datenschutz": { "title": "Privacy Policy" },
+    "nutzungsbedingungen": { "title": "Terms of Use" }
+  },
+  "footer": {
+    "tagline": "Understand building law. Apply correctly.",
+    "description": "PermitPro is a digital tool for orientation in German building law. Not legal advice. Always up to date.",
+    "colProduct": "Product",
+    "colLegal": "Legal",
+    "colRegions": "Federal States",
+    "links": {
+      "howItWorks": "How It Works",
+      "features": "Features",
+      "legalBasis": "Legal Basis",
+      "changelog": "Changelog",
+      "impressum": "Impressum",
+      "datenschutz": "Privacy Policy",
+      "nutzungsbedingungen": "Terms of Use",
+      "bw": "Baden-Württemberg",
+      "bavaria": "Bavaria (Phase 2)",
+      "nrw": "NRW (planned)",
+      "hessen": "Hesse (planned)"
+    },
+    "disclaimer": "Not legal advice. All information without warranty. For binding information contact your responsible building authority.",
+    "copyright": "PermitPro. All rights reserved.",
+    "lawVersion": "LBO BW as of 18.06.2024"
+  }
+}
