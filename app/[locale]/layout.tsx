@@ -44,20 +44,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       siteName: 'PermitPro',
       title: t('home.title'),
       description: t('home.description'),
-      images: [
-        {
-          url: '/og-image.png',
-          width: 1200,
-          height: 630,
-          alt: 'PermitPro — Building Permit Checklist',
-        },
-      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('home.title'),
       description: t('home.description'),
-      images: ['/og-image.png'],
     },
   };
 }
