@@ -30,6 +30,14 @@ export interface TranslatedSection {
   items: TranslatedItem[];
 }
 
+export interface TranslatedExcludedItem {
+  id: string;
+  title: string;
+  legalRef: string;
+  sectionId: string;
+  reason: string;
+}
+
 export interface ChecklistPDFData {
   checklist: GeneratedChecklist;
   sections: TranslatedSection[];
@@ -37,6 +45,7 @@ export interface ChecklistPDFData {
   translatedAnswers: TranslatedAnswer[];
   projectTypeLabel: string;
   specialConditions: string[];
+  excludedItems?: TranslatedExcludedItem[];
 }
 
 // ── Colours ────────────────────────────────────────────────────────────────────
@@ -1162,10 +1171,81 @@ function NextStepsPage({ sections, checklist, locale }: {
   );
 }
 
+// ── Excluded Items Page ──────────────────────────────────────────────────────
+
+function ExcludedItemsPage({ excludedItems, checklist, locale }: {
+  excludedItems: TranslatedExcludedItem[];
+  checklist: GeneratedChecklist;
+  locale: string;
+}) {
+  const de   = locale === 'de';
+  const date = localDate(checklist.generatedAt, de);
+  const { municipality } = checklist;
+
+  return (
+    <Page size="A4" style={s.page}>
+      <View style={s.pageHeader} fixed>
+        <Text style={s.pageHeaderTitle}>
+          {de ? 'AUSGESCHLOSSENE DOKUMENTE' : 'EXCLUDED DOCUMENTS'} — {municipality.name}
+        </Text>
+        <Text
+          render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
+          style={s.footerText}
+        />
+      </View>
+
+      <View style={{ marginBottom: 12 }}>
+        <Text style={{ fontSize: 8.5, color: C.muted, lineHeight: 1.5 }}>
+          {de
+            ? `Die folgenden ${excludedItems.length} Dokumente sind für Ihr Projekt nicht erforderlich. Die Begründung zeigt, warum jedes Dokument nicht zutreffend ist.`
+            : `The following ${excludedItems.length} documents are not required for your project. The reasoning explains why each document does not apply.`}
+        </Text>
+      </View>
+
+      <View style={s.sectionCard}>
+        <View style={s.sectionHeader}>
+          <Text style={[s.sectionTitle, { color: C.muted }]}>
+            {de ? 'Nicht zutreffende Dokumente' : 'Non-applicable documents'}
+          </Text>
+          <Text style={s.sectionMeta}>
+            {excludedItems.length} {de ? 'Dok.' : 'docs'}
+          </Text>
+        </View>
+
+        {excludedItems.map((item, idx) => {
+          const isLast = idx === excludedItems.length - 1;
+          return (
+            <View
+              key={item.id}
+              style={isLast ? [s.itemRow, { borderBottomWidth: 0 }] : s.itemRow}
+              wrap={false}
+            >
+              <Text style={[s.itemId, { color: C.subtle }]}>{item.id}</Text>
+              <View style={s.itemContent}>
+                <Text style={[s.itemTitle, { color: C.muted, textDecoration: 'line-through' }]}>
+                  {item.title}
+                </Text>
+                <Text style={{ fontSize: 7.5, color: C.amber, marginTop: 2, lineHeight: 1.4, fontFamily: 'Helvetica-Oblique' }}>
+                  {item.reason}
+                </Text>
+                <Text style={[s.legalRef, { color: C.subtle, marginTop: 1 }]}>
+                  {item.legalRef}
+                </Text>
+              </View>
+            </View>
+          );
+        })}
+      </View>
+
+      <PageFooter left={`${municipality.name} · PermitPro`} date={date} />
+    </Page>
+  );
+}
+
 // ── Document assembly ──────────────────────────────────────────────────────────
 
 function ChecklistPDFDoc(data: ChecklistPDFData) {
-  const { checklist, sections, locale, translatedAnswers, projectTypeLabel, specialConditions } = data;
+  const { checklist, sections, locale, translatedAnswers, projectTypeLabel, specialConditions, excludedItems } = data;
   const de = locale === 'de';
 
   return (
@@ -1191,6 +1271,13 @@ function ChecklistPDFDoc(data: ChecklistPDFData) {
         checklist={checklist}
         locale={locale}
       />
+      {excludedItems && excludedItems.length > 0 && (
+        <ExcludedItemsPage
+          excludedItems={excludedItems}
+          checklist={checklist}
+          locale={locale}
+        />
+      )}
       <NextStepsPage
         sections={sections}
         checklist={checklist}

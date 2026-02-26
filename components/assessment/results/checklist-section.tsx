@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import type { ChecklistSection as ChecklistSectionType, ItemStatus } from '@/lib/assessment/types';
+import type { ChecklistSection as ChecklistSectionType, ItemStatus, RelevanceReason } from '@/lib/assessment/types';
 import { ChecklistItemRow } from './checklist-item-row';
 
 // ── Per-section accent colours ─────────────────────────────────────────────────
@@ -47,6 +47,7 @@ interface ChecklistSectionProps {
   itemStatuses: Record<string, ItemStatus>;
   onCycle: (id: string) => void;
   delay?: number;
+  inclusionReasons?: Record<string, RelevanceReason>;
 }
 
 export function ChecklistSection({
@@ -54,6 +55,7 @@ export function ChecklistSection({
   itemStatuses,
   onCycle,
   delay = 0,
+  inclusionReasons,
 }: ChecklistSectionProps) {
   const t      = useTranslations('assessment.sections');
   const locale = useLocale();
@@ -165,6 +167,7 @@ export function ChecklistSection({
               item={item}
               status={itemStatuses[item.id] ?? 'missing'}
               onCycle={() => onCycle(item.id)}
+              inclusionReason={inclusionReasons?.[item.id]}
             />
           ))}
         </div>

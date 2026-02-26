@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
-import { Download, RotateCcw, CheckCircle2, PartyPopper, Share2, Check, Loader2, Search, X, Mail, TableProperties } from 'lucide-react';
+import { Download, RotateCcw, CheckCircle2, PartyPopper, Share2, Check, Loader2, Search, X, Mail, TableProperties, EyeOff, ChevronDown } from 'lucide-react';
 import { useAssessmentStore } from '@/store/assessment-store';
 import { ChecklistSection } from './results/checklist-section';
 import { ChecklistOverview } from './results/checklist-overview';
@@ -12,7 +12,8 @@ import { Button } from '@/components/ui/button';
 import { BuildingPreview } from './building-preview';
 // ── Lazy-load the PDF renderer (~500 KB) only when the user clicks Download ──
 import { getVisibleQuestions } from '@/lib/data/question-trees';
-import type { ProjectTypeId } from '@/lib/assessment/types';
+import { getInclusionReason } from '@/lib/assessment/checklist-gen';
+import type { ProjectTypeId, RelevanceReason } from '@/lib/assessment/types';
 
 // Section name translations (for PDF — react-pdf can't use hooks)
 const SECTION_NAMES_EN: Record<string, string> = {
@@ -55,6 +56,109 @@ const PROC_COLOR: Record<string, { bg: string; text: string }> = {
   vereinfacht:  { bg: 'bg-amber-500/10 border-amber-500/20',     text: 'text-amber-400'   },
   normal:       { bg: 'bg-red-500/10 border-red-500/20',         text: 'text-red-400'     },
 };
+
+// ── Excluded Items Section ───────────────────────────────────────────────────
+
+import type { ExcludedItem } from '@/lib/assessment/types';
+import { cn } from '@/lib/utils';
+
+function ExcludedItemsSection({ excludedItems, locale }: {
+  excludedItems: ExcludedItem[];
+  locale: string;
+}) {
+  const t  = useTranslations('assessment.step4');
+  const tRoot = useTranslations();
+  const de = locale === 'de';
+  const [open, setOpen] = useState(false);
+
+  // Group by section
+  const grouped = excludedItems.reduce<Record<string, ExcludedItem[]>>((acc, ei) => {
+    const sec = ei.item.sectionId;
+    (acc[sec] ??= []).push(ei);
+    return acc;
+  }, {});
+
+  return (
+    <div className="print:hidden">
+      {/* Header — clickable toggle */}
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-white/6 bg-white/2 hover:bg-white/4 transition-all duration-150 group"
+      >
+        <EyeOff size={14} className="text-slate-600 shrink-0" />
+        <div className="flex flex-col items-start min-w-0">
+          <span className="text-[12px] font-semibold text-slate-400 group-hover:text-slate-300 transition-colors">
+            {t('excludedTitle')}
+          </span>
+          <span className="text-[10px] text-slate-600">
+            {excludedItems.length} {t('excludedCount')} — {t('excludedSubtitle')}
+          </span>
+        </div>
+        <div className="ml-auto shrink-0">
+          <ChevronDown
+            size={14}
+            className={cn(
+              'text-slate-600 transition-transform duration-200',
+              open && 'rotate-180',
+            )}
+          />
+        </div>
+      </button>
+
+      {/* Expandable content */}
+      <div
+        style={{
+          maxHeight: open ? `${excludedItems.length * 60 + 200}px` : '0px',
+          overflow: 'hidden',
+          transition: 'max-height 0.3s ease-in-out',
+        }}
+      >
+        <div className="mt-2 flex flex-col gap-2">
+          {Object.entries(grouped).map(([sectionId, items]) => (
+            <div key={sectionId} className="rounded-lg border border-white/5 overflow-hidden">
+              {/* Section header */}
+              <div className="px-3 py-1.5 bg-white/2 border-b border-white/5">
+                <span className="text-[10px] font-mono font-bold text-slate-600 uppercase tracking-wider">
+                  {de ? (SECTION_NAMES_DE[sectionId] ?? sectionId) : (SECTION_NAMES_EN[sectionId] ?? sectionId)}
+                </span>
+              </div>
+              {/* Items */}
+              {items.map((ei) => (
+                <div
+                  key={ei.item.id}
+                  className="flex items-start gap-3 px-3 py-2.5 border-b border-white/3 last:border-b-0"
+                >
+                  {/* Strikethrough indicator */}
+                  <span className="shrink-0 w-5 h-5 mt-0.5 rounded border-2 border-slate-700/50 flex items-center justify-center">
+                    <X size={9} className="text-slate-700" />
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-baseline gap-1.5 flex-wrap">
+                      <span className="text-[10px] font-mono font-bold text-slate-700 shrink-0">
+                        {ei.item.id}
+                      </span>
+                      <span className="text-[12px] text-slate-600 line-through">
+                        {tRoot(ei.item.titleKey as Parameters<typeof tRoot>[0])}
+                      </span>
+                    </div>
+                    {/* Reason */}
+                    <p className="text-[10px] text-amber-500/70 mt-0.5 leading-relaxed">
+                      {de ? ei.reason.de : ei.reason.en}
+                    </p>
+                    {/* Legal ref */}
+                    <span className="text-[9px] font-mono text-slate-700 mt-0.5 inline-block">
+                      {ei.item.legalRef}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // ── Component ──────────────────────────────────────────────────────────────────
 
@@ -152,6 +256,15 @@ export function Step4Results() {
       if (answers.aufzugGeplant === true)
         specialConditions.push(de ? 'Aufzug geplant' : 'Elevator Planned');
 
+      // Translate excluded items for PDF
+      const translatedExcluded = (result.excludedItems ?? []).map((ei) => ({
+        id:        ei.item.id,
+        title:     tRoot(ei.item.titleKey as Parameters<typeof tRoot>[0]),
+        legalRef:  ei.item.legalRef,
+        sectionId: ei.item.sectionId,
+        reason:    de ? ei.reason.de : ei.reason.en,
+      }));
+
       const { downloadChecklistPDF } = await import('./results/checklist-pdf');
       await downloadChecklistPDF({
         checklist: result,
@@ -160,6 +273,7 @@ export function Step4Results() {
         translatedAnswers,
         projectTypeLabel,
         specialConditions,
+        excludedItems: translatedExcluded,
       });
     } catch (err) {
       console.error('PDF generation failed:', err);
@@ -211,6 +325,12 @@ export function Step4Results() {
         })
         .filter((a): a is { questionLabel: string; answer: string } => a !== null);
 
+      // Build locale-specific relevance reasons for Excel
+      const excelReasons: Record<string, string> = {};
+      for (const [id, reason] of Object.entries(inclusionReasons)) {
+        excelReasons[id] = de ? reason.de : reason.en;
+      }
+
       const { downloadChecklistExcel } = await import('@/lib/assessment/excel-export');
       await downloadChecklistExcel({
         checklist: result,
@@ -218,6 +338,7 @@ export function Step4Results() {
         translatedAnswers,
         projectTypeLabel,
         itemStatuses,
+        relevanceReasons: excelReasons,
         locale,
       });
     } catch (err) {
@@ -284,9 +405,19 @@ export function Step4Results() {
       if (result.classification.isSonderbau)
         specialConditions.push(de ? 'Sonderbau' : 'Special Building');
 
+      // Translate excluded items for email PDF
+      const emailExcluded = (result.excludedItems ?? []).map((ei) => ({
+        id:        ei.item.id,
+        title:     tRoot(ei.item.titleKey as Parameters<typeof tRoot>[0]),
+        legalRef:  ei.item.legalRef,
+        sectionId: ei.item.sectionId,
+        reason:    de ? ei.reason.de : ei.reason.en,
+      }));
+
       const { getChecklistPDFBase64 } = await import('./results/checklist-pdf');
       const { base64, filename } = await getChecklistPDFBase64({
         checklist: result, sections, locale, translatedAnswers, projectTypeLabel, specialConditions,
+        excludedItems: emailExcluded,
       });
 
       const res = await fetch('/api/send-pdf', {
@@ -385,6 +516,19 @@ export function Step4Results() {
     .filter((s) => s.items.length > 0);
 
   const isFiltered = filterMode !== 'all' || qLower.length > 0;
+
+  // ── Inclusion reasons map — WHY each item is relevant ──────────────────────
+  const inclusionReasons = useMemo<Record<string, RelevanceReason>>(() => {
+    if (!result) return {};
+    const state = result.municipality.state ?? 'BW';
+    const map: Record<string, RelevanceReason> = {};
+    for (const section of result.sections) {
+      for (const item of section.items) {
+        map[item.id] = getInclusionReason(item, result.classification, result.projectType as ProjectTypeId, state);
+      }
+    }
+    return map;
+  }, [result]);
 
   // ── Stats for classification bar ─────────────────────────────────────────────
   const allResultItems = result.sections.flatMap((s) => s.items);
@@ -621,6 +765,7 @@ export function Step4Results() {
                   itemStatuses={itemStatuses}
                   onCycle={cycleItemStatus}
                   delay={0}
+                  inclusionReasons={inclusionReasons}
                 />
               ))
             ) : (
@@ -631,6 +776,14 @@ export function Step4Results() {
               </div>
             )}
           </div>
+
+          {/* ── Excluded Items Section ── */}
+          {!isFiltered && result.excludedItems.length > 0 && (
+            <ExcludedItemsSection
+              excludedItems={result.excludedItems}
+              locale={locale}
+            />
+          )}
         </div>
 
         {/* ── Disclaimer ── */}

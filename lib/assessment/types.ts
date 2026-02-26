@@ -143,6 +143,16 @@ export interface ChecklistSection {
   items: ChecklistItem[];
 }
 
+export interface RelevanceReason {
+  de: string;
+  en: string;
+}
+
+export interface ExcludedItem {
+  item: ChecklistItem;
+  reason: RelevanceReason;
+}
+
 export interface GeneratedChecklist {
   sections: ChecklistSection[];
   totalItems: number;
@@ -151,6 +161,7 @@ export interface GeneratedChecklist {
   projectType: ProjectTypeId;
   answers: Answers;
   generatedAt: string;
+  excludedItems: ExcludedItem[];
 }
 
 // ─── History ───────────────────────────────────────────────────────────────

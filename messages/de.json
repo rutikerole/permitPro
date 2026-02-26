@@ -328,7 +328,10 @@
       "share": "Teilen",
       "generatingPdf": "Generiere…",
       "noItemsFound": "Keine Einträge gefunden",
-      "noItemsHint": "Filter oder Suche anpassen"
+      "noItemsHint": "Filter oder Suche anpassen",
+      "excludedTitle": "Ausgeschlossene Dokumente",
+      "excludedSubtitle": "Für Ihr Projekt nicht erforderlich",
+      "excludedCount": "Dokumente ausgeschlossen"
     },
     "back": "Zurück",
     "steps": {

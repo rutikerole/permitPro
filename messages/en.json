@@ -328,7 +328,10 @@
       "share": "Share",
       "generatingPdf": "Generating…",
       "noItemsFound": "No items found",
-      "noItemsHint": "Try adjusting the filter or search"
+      "noItemsHint": "Try adjusting the filter or search",
+      "excludedTitle": "Excluded Items",
+      "excludedSubtitle": "Not required for your project",
+      "excludedCount": "items excluded"
     },
     "back": "Back",
     "steps": {

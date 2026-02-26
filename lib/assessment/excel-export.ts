@@ -84,11 +84,13 @@ export interface ExcelExportOptions {
   projectTypeLabel: string;
   /** 3-state status map from the store */
   itemStatuses: Record<string, ItemStatus>;
+  /** Pre-computed relevance reasons: Record<itemId, reason string> */
+  relevanceReasons?: Record<string, string>;
   locale: string;
 }
 
 export async function downloadChecklistExcel(opts: ExcelExportOptions): Promise<void> {
-  const { checklist, itemTitles, translatedAnswers, projectTypeLabel, itemStatuses, locale } = opts;
+  const { checklist, itemTitles, translatedAnswers, projectTypeLabel, itemStatuses, relevanceReasons, locale } = opts;
   const de = locale === 'de';
 
   const wb = new ExcelJS.Workbook();
@@ -167,6 +169,7 @@ export async function downloadChecklistExcel(opts: ExcelExportOptions): Promise<
     { key: 'id',       width: 10 },
     { key: 'section',  width: 8  },
     { key: 'relevant', width: 16 },
+    { key: 'reason',   width: 48 },
     { key: 'xbauTag',  width: 32 },
     { key: 'xbauSec',  width: 14 },
     { key: 'projDat',  width: 14 },
@@ -180,6 +183,7 @@ export async function downloadChecklistExcel(opts: ExcelExportOptions): Promise<
     'ID',
     de ? 'Abschnitt' : 'Section',
     de ? 'Relevant'  : 'Relevant',
+    de ? 'Begründung' : 'Reason',
     'XBau Tag',
     de ? 'XBau-Kap.' : 'XBau Ch.',
     'ProjektDaten',
@@ -190,16 +194,28 @@ export async function downloadChecklistExcel(opts: ExcelExportOptions): Promise<
   ]);
   applyHeaderStyle(h2, C.headerBg, C.headerFg);
 
+  // Build exclusion reason map from checklist.excludedItems
+  const excludedReasonMap = new Map<string, string>();
+  if (checklist.excludedItems) {
+    for (const ei of checklist.excludedItems) {
+      excludedReasonMap.set(ei.item.id, de ? ei.reason.de : ei.reason.en);
+    }
+  }
+
   ALL_CHECKLIST_ITEMS.forEach((item, idx) => {
     const isRelevant = relevantIds.has(item.id);
     const status     = isRelevant ? itemStatuses[item.id] : undefined;
     const relevantStr = isRelevant
       ? (de ? 'Ja' : 'Yes')
       : (de ? 'Nicht relevant' : 'Not relevant');
+    const reasonStr = isRelevant
+      ? (relevanceReasons?.[item.id] ?? '')
+      : (excludedReasonMap.get(item.id) ?? '');
     const row = s2.addRow([
       item.id,
       item.sectionId,
       relevantStr,
+      reasonStr,
       item.xbauTag      ?? '',
       item.xbauSection  ?? '',
       item.projektDatenId ?? '',
@@ -221,18 +237,24 @@ export async function downloadChecklistExcel(opts: ExcelExportOptions): Promise<
       bold: isRelevant, name: 'Calibri', size: 10,
       color: hex(isRelevant ? C.green : C.slate),
     };
+    // Reason column — amber for included, slate for excluded
+    row.getCell(4).font = {
+      name: 'Calibri', size: 9, italic: true,
+      color: hex(isRelevant ? C.amber : C.slate),
+    };
+    row.getCell(4).alignment = { vertical: 'middle', wrapText: true };
     // XBau tag — highlight if present
     if (item.xbauTag) {
-      row.getCell(4).font = { name: 'Calibri', size: 10, color: hex(isRelevant ? C.blue : C.slate) };
+      row.getCell(5).font = { name: 'Calibri', size: 10, color: hex(isRelevant ? C.blue : C.slate) };
     }
-    // Status color (col 8)
+    // Status color (col 9)
     if (isRelevant) {
-      row.getCell(8).font = { bold: true, name: 'Calibri', size: 10, color: hex(statusColor(status)) };
+      row.getCell(9).font = { bold: true, name: 'Calibri', size: 10, color: hex(statusColor(status)) };
     }
     row.height = 16;
   });
 
-  s2.autoFilter = { from: { row: 1, column: 1 }, to: { row: 1, column: 10 } };
+  s2.autoFilter = { from: { row: 1, column: 1 }, to: { row: 1, column: 11 } };
   s2.views = [{ state: 'frozen', xSplit: 0, ySplit: 1, showGridLines: false }];
 
   // ── Sheet 3: Checkliste (nur relevante) ────────────────────────────────────

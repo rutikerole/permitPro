@@ -8,7 +8,7 @@ import {
   Info, Lightbulb, Clock, Copy, Ruler,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import type { ChecklistItem, ItemProvider, ItemPriority, ItemStatus } from '@/lib/assessment/types';
+import type { ChecklistItem, ItemProvider, ItemPriority, ItemStatus, RelevanceReason } from '@/lib/assessment/types';
 
 // ── Config maps ────────────────────────────────────────────────────────────────
 
@@ -128,9 +128,10 @@ interface ChecklistItemRowProps {
   item: ChecklistItem;
   status: ItemStatus;
   onCycle: () => void;
+  inclusionReason?: RelevanceReason;
 }
 
-export function ChecklistItemRow({ item, status, onCycle }: ChecklistItemRowProps) {
+export function ChecklistItemRow({ item, status, onCycle, inclusionReason }: ChecklistItemRowProps) {
   const t      = useTranslations();
   const locale = useLocale();
   const [expanded, setExpanded] = useState(false);
@@ -262,6 +263,15 @@ export function ChecklistItemRow({ item, status, onCycle }: ChecklistItemRowProp
         }}
       >
         <div className="px-4 pb-4 pt-2 border-t border-white/8 flex flex-col gap-2.5">
+
+          {/* Why required — inclusion reason */}
+          {inclusionReason && (
+            <div className="flex items-start gap-2 px-2.5 py-1.5 rounded-lg bg-emerald-500/6 border border-emerald-500/12">
+              <span className="text-[10px] text-emerald-400/80 leading-relaxed">
+                {locale === 'de' ? inclusionReason.de : inclusionReason.en}
+              </span>
+            </div>
+          )}
 
           {/* Who provides */}
           {item.providers && item.providers.length > 0 && (
