@@ -53,7 +53,7 @@ export function QuestionCard({ question, value, onChange, isAnswered = false }: 
       <div>
         {question.inputType === 'number' && (
           <InputText
-            value={value as number | undefined}
+            value={value as number | string | undefined}
             onChange={(v) => onChange(v)}
             unit={question.unit}
             min={question.min}
