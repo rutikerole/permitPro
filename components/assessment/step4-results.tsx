@@ -550,7 +550,7 @@ export function Step4Results() {
     <div className="flex h-[calc(100vh-64px)] overflow-hidden bg-[#080d1a]">
 
       <motion.div
-        className="flex flex-col w-3/5 overflow-hidden"
+        className="flex flex-col w-full lg:w-3/5 overflow-hidden"
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: 'easeOut' }}
