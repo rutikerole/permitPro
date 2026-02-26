@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Search, MapPin, ArrowRight } from 'lucide-react';
 import { searchMunicipalities, MUNICIPALITIES } from '@/lib/data/municipalities';
 import { useAssessmentStore } from '@/store/assessment-store';
@@ -17,8 +17,8 @@ const STATE_CONFIG: Record<FederalState, {
   law: string;
   lawRef: string;
   color: string;
-  stats: { value: string; label: string }[];
-  legalRefs: { ref: string; desc: string }[];
+  stats: { value: string; label: string; labelDe: string }[];
+  legalRefs: { ref: string; desc: string; descDe: string }[];
 }> = {
   BW: {
     name: 'Baden-Württemberg',
@@ -27,16 +27,16 @@ const STATE_CONFIG: Record<FederalState, {
     lawRef: 'Stand 18.06.2024',
     color: 'amber',
     stats: [
-      { value: '1,101', label: 'Municipalities' },
-      { value: '35',    label: 'Districts'       },
-      { value: 'GK 1–5', label: 'Building classes' },
-      { value: '2026',  label: 'LBO BW edition'  },
+      { value: '1,101',  label: 'Municipalities',   labelDe: 'Gemeinden'       },
+      { value: '35',     label: 'Districts',         labelDe: 'Landkreise'      },
+      { value: 'GK 1–5', label: 'Building classes', labelDe: 'Gebäudeklassen'  },
+      { value: '2026',   label: 'LBO BW edition',   labelDe: 'LBO BW Fassung'  },
     ],
     legalRefs: [
-      { ref: '§2 Abs. 4',  desc: 'Building class definition' },
-      { ref: '§50 LBO BW', desc: 'Notification procedure'    },
-      { ref: '§52 LBO BW', desc: 'Simplified procedure'      },
-      { ref: '§53 LBO BW', desc: 'Standard procedure'        },
+      { ref: '§2 Abs. 4',  desc: 'Building class definition', descDe: 'Gebäudeklassendefinition' },
+      { ref: '§50 LBO BW', desc: 'Notification procedure',    descDe: 'Kenntnisgabeverfahren'    },
+      { ref: '§52 LBO BW', desc: 'Simplified procedure',      descDe: 'Vereinfachtes Verfahren'  },
+      { ref: '§53 LBO BW', desc: 'Standard procedure',        descDe: 'Genehmigungsverfahren'    },
     ],
   },
   BY: {
@@ -46,16 +46,16 @@ const STATE_CONFIG: Record<FederalState, {
     lawRef: 'Stand 23.12.2025',
     color: 'blue',
     stats: [
-      { value: '2,056', label: 'Municipalities' },
-      { value: '71',    label: 'Districts'       },
-      { value: 'GK 1–5', label: 'Building classes' },
-      { value: '2025',  label: 'BayBO edition'   },
+      { value: '2,056',  label: 'Municipalities',   labelDe: 'Gemeinden'       },
+      { value: '71',     label: 'Districts',         labelDe: 'Landkreise'      },
+      { value: 'GK 1–5', label: 'Building classes', labelDe: 'Gebäudeklassen'  },
+      { value: '2025',   label: 'BayBO edition',    labelDe: 'BayBO Fassung'   },
     ],
     legalRefs: [
-      { ref: 'Art. 2 Abs. 3', desc: 'Building class definition' },
-      { ref: 'Art. 58 BayBO', desc: 'Exemption procedure'       },
-      { ref: 'Art. 59 BayBO', desc: 'Simplified procedure'      },
-      { ref: 'Art. 60 BayBO', desc: 'Standard procedure'        },
+      { ref: 'Art. 2 Abs. 3', desc: 'Building class definition', descDe: 'Gebäudeklassendefinition' },
+      { ref: 'Art. 58 BayBO', desc: 'Exemption procedure',       descDe: 'Genehmigungsfreiheit'     },
+      { ref: 'Art. 59 BayBO', desc: 'Simplified procedure',      descDe: 'Vereinfachtes Verfahren'  },
+      { ref: 'Art. 60 BayBO', desc: 'Standard procedure',        descDe: 'Genehmigungsverfahren'    },
     ],
   },
 };
@@ -64,6 +64,8 @@ const STATE_CONFIG: Record<FederalState, {
 
 function StateInfoPanel({ state }: { state: FederalState }) {
   const cfg      = STATE_CONFIG[state];
+  const locale   = useLocale();
+  const de       = locale === 'de';
   const cityNames = MUNICIPALITIES.filter((m) => m.state === state).map((m) => m.name);
   const row1 = [...cityNames.slice(0, 15), ...cityNames.slice(0, 15)];
   const row2 = [...cityNames.slice(15, 30), ...cityNames.slice(15, 30)];
@@ -99,7 +101,7 @@ function StateInfoPanel({ state }: { state: FederalState }) {
         className="relative z-10"
       >
         <p className={`text-[10px] font-mono font-bold tracking-[0.3em] ${accentColor} uppercase mb-3`}>
-          REGION · GERMANY
+          {de ? 'REGION · DEUTSCHLAND' : 'REGION · GERMANY'}
         </p>
         <h2 className="text-[clamp(28px,3.5vw,48px)] font-black text-white leading-[1.05] tracking-tight">
           {state === 'BW' ? (
@@ -130,7 +132,7 @@ function StateInfoPanel({ state }: { state: FederalState }) {
             className="flex flex-col gap-1 p-4 rounded-xl bg-white/[0.03] border border-white/6 backdrop-blur-sm"
           >
             <span className="text-[22px] font-black text-white tracking-tight font-mono">{s.value}</span>
-            <span className="text-[11px] text-[#4A6080] font-mono tracking-wider uppercase">{s.label}</span>
+            <span className="text-[11px] text-[#4A6080] font-mono tracking-wider uppercase">{de ? s.labelDe : s.label}</span>
           </motion.div>
         ))}
       </motion.div>
@@ -143,7 +145,7 @@ function StateInfoPanel({ state }: { state: FederalState }) {
         transition={{ delay: 0.4 }}
         className="relative z-10 flex flex-col gap-2"
       >
-        <p className="text-[9px] font-mono tracking-[0.25em] text-[#2A3A50] uppercase mb-1">Legal framework</p>
+        <p className="text-[9px] font-mono tracking-[0.25em] text-[#2A3A50] uppercase mb-1">{de ? 'Rechtsgrundlage' : 'Legal framework'}</p>
         <div className="flex flex-wrap gap-2">
           {cfg.legalRefs.map((l) => (
             <div
@@ -152,7 +154,7 @@ function StateInfoPanel({ state }: { state: FederalState }) {
               title={l.desc}
             >
               <span className={`text-[10px] font-mono font-bold ${accentColor}/70`}>{l.ref}</span>
-              <span className="text-[9.5px] text-[#2A3A50]">{l.desc}</span>
+              <span className="text-[9.5px] text-[#2A3A50]">{de ? l.descDe : l.desc}</span>
             </div>
           ))}
         </div>
@@ -206,7 +208,9 @@ function StateInfoPanel({ state }: { state: FederalState }) {
 // ─── Main Step 1 ──────────────────────────────────────────────────────────────
 
 export function Step1Municipality() {
-  const t = useTranslations('assessment.step1');
+  const t      = useTranslations('assessment.step1');
+  const locale = useLocale();
+  const de     = locale === 'de';
   const { setMunicipality, history, restoreFromHistory } = useAssessmentStore();
 
   const [selectedState, setSelectedState] = useState<FederalState>('BW');
@@ -274,7 +278,7 @@ export function Step1Municipality() {
           {/* ── State selector ── */}
           <div className="flex flex-col gap-3">
             <p className="text-[10px] font-mono font-bold tracking-[0.22em] text-[#2A3A50] uppercase">
-              Federal state
+              {de ? 'Bundesland' : 'Federal state'}
             </p>
             <div className="grid grid-cols-2 gap-2">
               {(['BW', 'BY'] as FederalState[]).map((s) => {

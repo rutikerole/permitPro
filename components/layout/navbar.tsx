@@ -62,7 +62,7 @@ export function Navbar() {
             <PermitProLogo />
 
             {/* Desktop nav links */}
-            <ul className="hidden md:flex items-center gap-1">
+            <ul className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -76,7 +76,7 @@ export function Navbar() {
             </ul>
 
             {/* Desktop right side */}
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3">
               {/* Language switcher */}
               <Link
                 href={`/${otherLocale}`}
@@ -96,7 +96,7 @@ export function Navbar() {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors"
+              className="lg:hidden p-2 text-text-secondary hover:text-text-primary transition-colors"
               onClick={() => setMobileOpen((v) => !v)}
               aria-label="Toggle menu"
             >
@@ -110,7 +110,7 @@ export function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            className="fixed inset-0 z-40 pt-16 bg-canvas/95 backdrop-blur-lg md:hidden"
+            className="fixed inset-0 z-40 pt-16 bg-canvas/95 backdrop-blur-lg lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

@@ -63,12 +63,12 @@ export function HeroSection() {
               <motion.div variants={item} className="flex flex-col gap-0">
                 <h1 className="font-black leading-[1.0] tracking-tight">
                   {/* Line 1 — white */}
-                  <span className="block text-[clamp(44px,7vw,80px)] text-white">
+                  <span className="block text-[clamp(32px,5vw,60px)] text-white">
                     {t('headlineLine1')}
                   </span>
                   {/* Line 2 — amber (the highlighted word) */}
                   <span
-                    className="block text-[clamp(44px,7vw,80px)] text-amber-400"
+                    className="block text-[clamp(32px,5vw,60px)] text-amber-400"
                     style={{
                       textShadow: '0 0 80px rgba(245,158,11,0.25)',
                     }}
@@ -76,7 +76,7 @@ export function HeroSection() {
                     {t('headlineHighlight')}
                   </span>
                   {/* Line 3 — white */}
-                  <span className="block text-[clamp(44px,7vw,80px)] text-white">
+                  <span className="block text-[clamp(32px,5vw,60px)] text-white">
                     {t('headlineLine3')}
                   </span>
                 </h1>
