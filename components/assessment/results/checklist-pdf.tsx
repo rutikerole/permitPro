@@ -792,7 +792,7 @@ function SummaryPage({ checklist, locale, translatedAnswers, projectTypeLabel, s
               ? (isAlt ? s.summaryRowLastAlt : s.summaryRowLast)
               : (isAlt ? s.summaryRowAlt     : s.summaryRow);
             return (
-              <View key={idx} style={rowStyle}>
+              <View key={idx} style={rowStyle} wrap={false}>
                 <Text style={s.summaryLabel}>{qa.questionLabel}</Text>
                 <Text style={s.summaryValue}>{qa.answer}</Text>
               </View>
@@ -1389,8 +1389,8 @@ function XBauFlowPage({ checklist, locale }: { checklist: GeneratedChecklist; lo
       <View style={{ marginBottom: 12 }}>
         <Text style={{ fontSize: 8.5, color: C.muted, lineHeight: 1.5 }}>
           {de
-            ? 'Digitaler Nachrichtenfluss nach XBau-Standard v2.2 für Ihr Genehmigungsverfahren.'
-            : 'Digital message flow per XBau standard v2.2 for your permit procedure.'}
+            ? 'Digitaler Nachrichtenfluss nach XBau-Standard v2.6 für Ihr Genehmigungsverfahren.'
+            : 'Digital message flow per XBau standard v2.6 for your permit procedure.'}
         </Text>
       </View>
 
@@ -1438,7 +1438,7 @@ function XBauFlowPage({ checklist, locale }: { checklist: GeneratedChecklist; lo
 
       <View style={{ marginTop: 8 }}>
         <Text style={{ fontSize: 7.5, color: C.subtle, fontStyle: 'italic' }}>
-          XBau — XML-Standard für die Baugenehmigung · Datenmodell v2.2
+          XBau — XML-Standard für die Baugenehmigung · Datenmodell v2.6
         </Text>
       </View>
 

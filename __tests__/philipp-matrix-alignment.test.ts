@@ -22,12 +22,12 @@ describe('projektDatenId — Philipp mapping', () => {
   it('every projektDatenId matches pattern 05.0xx', () => {
     for (const item of ALL_CHECKLIST_ITEMS) {
       if (item.projektDatenId) {
-        expect(item.projektDatenId).toMatch(/^05\.\d{3}$/);
+        expect(item.projektDatenId).toMatch(/^05\.\d{3}(-BY)?$/);
       }
     }
   });
 
-  it('no duplicate projektDatenIds except BY variants sharing base IDs', () => {
+  it('no duplicate projektDatenIds', () => {
     const seen = new Map<string, string[]>();
     for (const item of ALL_CHECKLIST_ITEMS) {
       if (!item.projektDatenId) continue;
@@ -36,12 +36,7 @@ describe('projektDatenId — Philipp mapping', () => {
       seen.set(item.projektDatenId, list);
     }
     for (const [pdId, ids] of seen) {
-      if (ids.length > 1) {
-        // Only acceptable if it's a BY variant sharing with base item
-        const hasBase = ids.some((id) => !id.endsWith('_BY'));
-        const hasBY   = ids.some((id) => id.endsWith('_BY'));
-        expect(hasBase && hasBY).toBe(true);
-      }
+      expect(ids.length).toBe(1);
     }
   });
 
@@ -130,6 +125,7 @@ const MOCK_MUNICIPALITY: Municipality = {
   zip: '70173',
   landkreis: 'Stuttgart',
   state: 'BW',
+  hasBebaungsplan: true,
 };
 
 describe('GK2 simple residential — conditional items', () => {

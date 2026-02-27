@@ -757,10 +757,10 @@
         "tips": "Commission the hydraulic assessment alongside the topographic survey — the engineer needs accurate ground level data. Submit together with the G5 permit application to the Wasserbehörde."
       },
       "D5": {
-        "title": "Geotechnical site investigation (Baugrundgutachten)",
-        "description": "Soil report per DIN 4020 with borehole logs, groundwater level, and excavation stability analysis",
-        "whatIsThis": "For basement construction, a Baugrundgutachten per DIN 4020 is required to determine soil bearing capacity, groundwater levels, and excavation stability. It forms the technical basis for the D4 waterproofing concept and D1 structural design. Must be signed by a qualified geotechnical engineer (Sachverständiger für Geotechnik).",
-        "tips": "Commission the ground investigation early — borehole results take 2–4 weeks. If the water table is near the basement floor level, the report may require a waterproof concrete construction (Weiße Wanne), which significantly affects the structural concept."
+        "title": "Foundation Design Proof (Gründungsnachweis)",
+        "description": "Foundation design verification per DIN EN 1997-1 (Eurocode 7) with bearing capacity, settlement analysis, and foundation type selection",
+        "whatIsThis": "The Gründungsnachweis per DIN EN 1997-1 verifies that the chosen foundation type (strip, slab, or deep foundations) can safely transfer building loads to the subsoil. It covers bearing resistance, settlement limits, and ground failure checks. Based on the D2 soil investigation, it specifies foundation geometry, reinforcement, and construction requirements. Must be prepared by the structural engineer.",
+        "tips": "The foundation design depends on the D2 soil investigation — ensure borehole data is available before starting. For difficult ground conditions (soft clay, high water table), consider early coordination between geotechnical and structural engineers."
       },
       "A6": {
         "title": "Power of attorney for architect (Vollmacht Entwurfsverfasser)",

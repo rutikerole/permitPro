@@ -360,8 +360,8 @@ export function XBauFlowDiagram({ checklist, itemStatuses, locale }: XBauFlowDia
       {/* Footer note */}
       <p className="text-[10px] text-slate-600 italic px-1">
         {de
-          ? 'XBau — XML-Standard für die Baugenehmigung · Datenmodell v2.2'
-          : 'XBau — XML standard for building permits · Data model v2.2'}
+          ? 'XBau — XML-Standard für die Baugenehmigung · Datenmodell v2.6'
+          : 'XBau — XML standard for building permits · Data model v2.6'}
       </p>
     </div>
   );

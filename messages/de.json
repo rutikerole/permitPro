@@ -777,10 +777,10 @@
         "tips": "Das Gutachten gleichzeitig mit der topografischen Vermessung beauftragen — der Ingenieur benötigt präzise Geländehöhen. Das Gutachten ist zusammen mit dem G5-Genehmigungsantrag bei der Unteren Wasserbehörde einzureichen."
       },
       "D5": {
-        "title": "Baugrundgutachten",
-        "description": "Geotechnischer Bericht nach DIN 4020 mit Bohrprofilen, Grundwasserstand und Baugrubenstabilitätsnachweis",
-        "whatIsThis": "Beim Kellerbau ist ein Baugrundgutachten nach DIN 4020 erforderlich, das Tragfähigkeit des Baugrunds, Grundwasserstände und die Standsicherheit der Baugrubenwände ermittelt. Es bildet die Grundlage für das D4-Abdichtungskonzept und die D1-Tragwerksplanung. Es ist von einem Sachverständigen für Geotechnik zu unterzeichnen.",
-        "tips": "Baugrunduntersuchung frühzeitig beauftragen — Bohrkernauswertungen dauern 2–4 Wochen. Liegt der Grundwasserstand in Höhe des Kellerfußbodens, kann das Gutachten eine wasserundurchlässige Betonkonstruktion (Weiße Wanne) erfordern, was erhebliche Auswirkungen auf das Tragwerkskonzept hat."
+        "title": "Gründungsnachweis",
+        "description": "Gründungsbemessung nach DIN EN 1997-1 (Eurocode 7) mit Tragfähigkeitsnachweis, Setzungsberechnung und Gründungstyp-Auswahl",
+        "whatIsThis": "Der Gründungsnachweis nach DIN EN 1997-1 weist nach, dass der gewählte Gründungstyp (Streifen-, Platten- oder Tiefgründung) die Gebäudelasten sicher in den Baugrund abtragen kann. Er umfasst den Grundbruchnachweis, Setzungsbegrenzungen und die Standsicherheit. Basierend auf dem D2-Baugrundgutachten werden Gründungsgeometrie, Bewehrung und Ausführungsanforderungen festgelegt. Er ist vom Tragwerksplaner zu erstellen.",
+        "tips": "Die Gründungsbemessung hängt vom D2-Baugrundgutachten ab — stellen Sie sicher, dass die Bohrdaten vorliegen, bevor Sie beginnen. Bei schwierigen Baugrundverhältnissen (weicher Ton, hoher Grundwasserstand) frühzeitig die Abstimmung zwischen Geotechniker und Tragwerksplaner einplanen."
       },
       "A6": {
         "title": "Vollmacht Entwurfsverfasser",

@@ -15,6 +15,7 @@ import { XBauFlowDiagram } from './results/xbau-flow';
 // ── Lazy-load the PDF renderer (~500 KB) only when the user clicks Download ──
 import { getVisibleQuestions } from '@/lib/data/question-trees';
 import { getInclusionReason } from '@/lib/assessment/checklist-gen';
+import { ALL_CHECKLIST_ITEMS } from '@/lib/data/checklist-items';
 import type { ProjectTypeId, RelevanceReason } from '@/lib/assessment/types';
 
 // Section name translations (for PDF — react-pdf can't use hooks)
@@ -294,7 +295,7 @@ export function Step4Results() {
       const nameMap = de ? SECTION_NAMES_DE : SECTION_NAMES_EN;
       void nameMap; // used above for PDF; Excel uses itemTitles
       const itemTitles: Record<string, string> = {};
-      result.sections.flatMap((s) => s.items).forEach((item) => {
+      ALL_CHECKLIST_ITEMS.forEach((item) => {
         itemTitles[item.id] = tRoot(item.titleKey as Parameters<typeof tRoot>[0]);
       });
 
