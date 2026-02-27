@@ -778,7 +778,7 @@ export function Step4Results() {
           </div>
 
           {/* ── Excluded Items Section ── */}
-          {!isFiltered && result.excludedItems.length > 0 && (
+          {!isFiltered && (result.excludedItems?.length ?? 0) > 0 && (
             <ExcludedItemsSection
               excludedItems={result.excludedItems}
               locale={locale}
