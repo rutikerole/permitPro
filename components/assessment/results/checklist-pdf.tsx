@@ -763,7 +763,7 @@ function SummaryPage({ checklist, locale, translatedAnswers, projectTypeLabel, s
 
       {/* Special conditions */}
       {specialConditions.length > 0 && (
-        <View style={[s.summaryBlock, { marginBottom: 14 }]}>
+        <View style={[s.summaryBlock, { marginBottom: 8 }]}>
           <View style={s.summaryBlockHeader}>
             <Text style={s.summaryBlockTitle}>
               {de ? 'BESONDERE BEDINGUNGEN' : 'SPECIAL CONDITIONS'}
@@ -777,10 +777,10 @@ function SummaryPage({ checklist, locale, translatedAnswers, projectTypeLabel, s
         </View>
       )}
 
-      {/* Q&A answers */}
+      {/* Q&A answers — compact rows to prevent orphan page */}
       {translatedAnswers.length > 0 && (
-        <View style={s.summaryBlock}>
-          <View style={s.summaryBlockHeader}>
+        <View style={[s.summaryBlock, { marginBottom: 8 }]}>
+          <View style={[s.summaryBlockHeader, { paddingVertical: 5 }]}>
             <Text style={s.summaryBlockTitle}>
               {de ? 'IHRE ANGABEN' : 'YOUR ANSWERS'}
             </Text>
@@ -788,13 +788,17 @@ function SummaryPage({ checklist, locale, translatedAnswers, projectTypeLabel, s
           {translatedAnswers.map((qa, idx) => {
             const isLast = idx === translatedAnswers.length - 1;
             const isAlt  = idx % 2 === 1;
-            const rowStyle = isLast
-              ? (isAlt ? s.summaryRowLastAlt : s.summaryRowLast)
-              : (isAlt ? s.summaryRowAlt     : s.summaryRow);
+            const base = {
+              flexDirection: 'row' as const,
+              paddingHorizontal: 10,
+              paddingVertical: 3,
+              ...(isAlt ? { backgroundColor: C.surface } : {}),
+              ...(!isLast ? { borderBottomWidth: 0.5, borderBottomColor: C.border, borderBottomStyle: 'solid' as const } : {}),
+            };
             return (
-              <View key={idx} style={rowStyle} wrap={false}>
-                <Text style={s.summaryLabel}>{qa.questionLabel}</Text>
-                <Text style={s.summaryValue}>{qa.answer}</Text>
+              <View key={idx} style={base} wrap={false}>
+                <Text style={{ fontSize: 7.5, fontFamily: 'Helvetica-Bold', color: C.slate, flex: 1, lineHeight: 1.3 }}>{qa.questionLabel}</Text>
+                <Text style={{ fontSize: 7.5, color: C.text, flex: 2, lineHeight: 1.3 }}>{qa.answer}</Text>
               </View>
             );
           })}
