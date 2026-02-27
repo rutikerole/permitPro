@@ -780,7 +780,7 @@ export function Step4Results() {
           {/* ── Excluded Items Section ── */}
           {!isFiltered && (result.excludedItems?.length ?? 0) > 0 && (
             <ExcludedItemsSection
-              excludedItems={result.excludedItems}
+              excludedItems={result.excludedItems ?? []}
               locale={locale}
             />
           )}
