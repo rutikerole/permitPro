@@ -466,6 +466,18 @@
         "label": "Anzahl der auf dem Grundstück nachgewiesenen Stellplätze",
         "hint": "Jede BW-Gemeinde hat eine Stellplatzsatzung mit Mindestvorgaben je Wohn- oder Nutzungseinheit."
       },
+      "hasFireplace": {
+        "label": "Ist ein Kaminofen oder eine Feuerstätte geplant?",
+        "hint": "Feuerstätten erfordern eine Anzeige beim Bezirksschornsteinfeger nach 1. BImSchV."
+      },
+      "nearVibrationSource": {
+        "label": "Liegt das Grundstück in der Nähe einer Bahnlinie oder Industrieanlage?",
+        "hint": "Erschütterungsempfindliche Nutzungen nahe Schienen oder Industrie erfordern einen Erschütterungsnachweis nach DIN 4150."
+      },
+      "plotSize": {
+        "label": "Grundstücksfläche",
+        "hint": "Die Grundstücksgröße beeinflusst Anforderungen an Versickerung und Entwässerung (DWA-A 138)."
+      },
       "answerYes": "Ja",
       "answerNo": "Nein"
     },

@@ -446,6 +446,18 @@
         "label": "Number of parking spaces (Stellplätze) provided on the plot",
         "hint": "Every BW municipality has a Stellplatzsatzung defining how many spaces are required per dwelling or use unit."
       },
+      "hasFireplace": {
+        "label": "Is a fireplace or solid fuel appliance planned?",
+        "hint": "Fireplaces require notification to the district chimney sweep (Bezirksschornsteinfeger) under 1. BImSchV."
+      },
+      "nearVibrationSource": {
+        "label": "Is the plot near a railway line or industrial facility?",
+        "hint": "Vibration-sensitive uses near railways or industry require a vibration assessment per DIN 4150."
+      },
+      "plotSize": {
+        "label": "Plot area",
+        "hint": "The plot size influences requirements for infiltration and drainage (DWA-A 138)."
+      },
       "answerYes": "Yes",
       "answerNo": "No"
     },

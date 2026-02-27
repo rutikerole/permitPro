@@ -149,6 +149,8 @@ describe('areQuestionsComplete — empty string handling', () => {
       holzbauweise: false,
       kellerGeplant: false,
       aufzugGeplant: false,
+      plotSize: 500,
+      nearVibrationSource: false,
       stellplaetze: 2,
       heizungTyp: 'waermepumpe',
       photovoltaik: false,

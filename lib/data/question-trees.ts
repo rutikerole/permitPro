@@ -208,6 +208,25 @@ const Q_SCHADSTOFFE: Question = {
   group: 'specialConditions',
 };
 
+const Q_VIBRATION: Question = {
+  id: 'nearVibrationSource',
+  inputType: 'boolean',
+  labelKey: 'assessment.questions.nearVibrationSource.label',
+  hintKey: 'assessment.questions.nearVibrationSource.hint',
+  legalRef: 'DIN 4150',
+  group: 'specialConditions',
+};
+
+const Q_GRUNDSTUECK: Question = {
+  id: 'plotSize',
+  inputType: 'number',
+  labelKey: 'assessment.questions.plotSize.label',
+  hintKey: 'assessment.questions.plotSize.hint',
+  legalRef: 'DWA-A 138',
+  unit: 'm\u00b2', min: 0, max: 99999, step: 1,
+  group: 'buildingDetails',
+};
+
 // ─── GROUP: technicalSystems ─────────────────────────────────────────────────
 
 const Q_HEIZUNG: Question = {
@@ -236,6 +255,16 @@ const Q_ERNEUERBAR: Question = {
   showIf: (a: Answers) => a.heizungTyp === 'gas' || a.heizungTyp === 'sonstige',
 };
 
+const Q_FEUERSTAETTE: Question = {
+  id: 'hasFireplace',
+  inputType: 'boolean',
+  labelKey: 'assessment.questions.hasFireplace.label',
+  hintKey: 'assessment.questions.hasFireplace.hint',
+  legalRef: '1. BImSchV',
+  group: 'technicalSystems',
+  showIf: (a: Answers) => a.heizungTyp === 'holz',
+};
+
 const Q_PHOTOVOLTAIK: Question = {
   id: 'photovoltaik',
   inputType: 'boolean',
@@ -259,16 +288,16 @@ const Q_STELLPLAETZE: Question = {
 
 export const QUESTION_TREES: Record<ProjectTypeId, Question[]> = {
   neubau: [
-    Q_HOEHE, Q_ANZAHL_GESCHOSSE, Q_NUTZUNGSART, Q_FREISTEHEND, Q_NUTZUNGSEINHEITEN, Q_BGF,
+    Q_HOEHE, Q_ANZAHL_GESCHOSSE, Q_NUTZUNGSART, Q_FREISTEHEND, Q_NUTZUNGSEINHEITEN, Q_BGF, Q_GRUNDSTUECK,
     Q_BRI, Q_BEBAUUNGSPLAN, Q_KONFORM, Q_DENKMALSCHUTZ, Q_UEBERSCHWEMMUNG,
-    Q_HOLZBAU, Q_KELLER, Q_AUFZUG,
-    Q_HEIZUNG, Q_ERNEUERBAR, Q_PHOTOVOLTAIK, Q_STELLPLAETZE,
+    Q_HOLZBAU, Q_KELLER, Q_AUFZUG, Q_VIBRATION,
+    Q_HEIZUNG, Q_ERNEUERBAR, Q_FEUERSTAETTE, Q_PHOTOVOLTAIK, Q_STELLPLAETZE,
   ],
   anbau: [
     Q_BESTAND_HOEHE, Q_ANZAHL_GESCHOSSE, Q_NUTZUNGSART, Q_FREISTEHEND, Q_NUTZUNGSEINHEITEN, Q_BGF,
     Q_ANBAU_BRI, Q_BEBAUUNGSPLAN, Q_KONFORM, Q_DENKMALSCHUTZ, Q_UEBERSCHWEMMUNG,
-    Q_HOLZBAU, Q_AUFZUG,
-    Q_HEIZUNG, Q_ERNEUERBAR, Q_PHOTOVOLTAIK, Q_STELLPLAETZE,
+    Q_HOLZBAU, Q_AUFZUG, Q_VIBRATION,
+    Q_HEIZUNG, Q_ERNEUERBAR, Q_FEUERSTAETTE, Q_PHOTOVOLTAIK, Q_STELLPLAETZE,
   ],
   aufstockung: [
     Q_BESTAND_HOEHE, Q_NEUE_HOEHE, Q_ANZAHL_GESCHOSSE, Q_NUTZUNGSART, Q_FREISTEHEND, Q_NUTZUNGSEINHEITEN, Q_BGF,

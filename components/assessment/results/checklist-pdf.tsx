@@ -17,6 +17,7 @@ export interface TranslatedItem {
   title: string;
   legalRef: string;
   xbauTag?: string;
+  projektDatenId?: string;
   priority: ItemPriority;
   costRange?: { min: number; max: number };
   timeWeeks?: { min: number; max: number };
@@ -877,7 +878,7 @@ function ChecklistPages({ sections, checklist, locale }: {
                     <View style={s.itemMeta}>
                       <Text style={s.legalRef}>{item.legalRef}</Text>
                       {item.xbauTag && (
-                        <Text style={[s.metaText, { color: '#6B7280' }]}>XBau:{item.xbauTag}</Text>
+                        <Text style={[s.metaText, { color: '#6B7280' }]}>XBau:{item.xbauTag}{item.projektDatenId ? ` · PD:${item.projektDatenId}` : ''}</Text>
                       )}
                       {cost && <Text style={s.metaGreen}>{cost}</Text>}
                       {time && <Text style={s.metaText}>{de ? 'Zeit: ' : 'Time: '}{time}</Text>}
@@ -1242,6 +1243,210 @@ function ExcludedItemsPage({ excludedItems, checklist, locale }: {
   );
 }
 
+// ── Planning Roadmap Page ─────────────────────────────────────────────────────
+
+function RoadmapPage({ checklist, locale }: { checklist: GeneratedChecklist; locale: string }) {
+  const de = locale === 'de';
+  const date = localDate(checklist.generatedAt, de);
+  const { municipality } = checklist;
+
+  const phases = [
+    { id: 'SP 0', titleDe: 'Projektvorbereitung', titleEn: 'Project Preparation',
+      steps: [
+        { de: 'Bedarfsermittlung', en: 'Needs Assessment', ids: [] as string[] },
+        { de: 'Planungsgrundlagen', en: 'Planning Fundamentals', ids: [] as string[] },
+        { de: 'Planverträge', en: 'Planner Contracts', ids: [] as string[] },
+      ] },
+    { id: 'SP 1', titleDe: 'Grundlagenermittlung', titleEn: 'Basic Evaluation',
+      steps: [
+        { de: 'Ortsbesichtigung', en: 'Site Inspection', ids: ['B1', 'D2'] },
+        { de: 'Untersuchungsbedarf', en: 'Investigations', ids: ['H4', 'H5', 'G5', 'G6', 'H7'] },
+        { de: 'Fachplaner auswählen', en: 'Select Specialists', ids: [] as string[] },
+      ] },
+    { id: 'SP 2', titleDe: 'Vorplanung', titleEn: 'Preliminary Design',
+      steps: [
+        { de: 'Vorentwurf (GK)', en: 'Preliminary Plan', ids: [] as string[] },
+        { de: 'Kostenschätzung', en: 'Cost Estimate', ids: ['C7'] },
+      ] },
+    { id: 'SP 3', titleDe: 'Entwurfsplanung', titleEn: 'Design Development',
+      steps: [
+        { de: 'Entwurf', en: 'Design', ids: ['C1', 'C2', 'C3', 'C4', 'C5'] },
+        { de: 'Baubeschreibung', en: 'Description', ids: ['A2'] },
+        { de: 'Kostenberechnung', en: 'Cost Calc.', ids: ['C7'] },
+      ] },
+    { id: 'SP 4', titleDe: 'Genehmigungsplanung', titleEn: 'Permit Application',
+      steps: [
+        { de: 'Unterlagen', en: 'Compile Docs', ids: ['C1', 'C2', 'C3', 'D1', 'D2', 'D3'] },
+        { de: 'Antrag einreichen', en: 'Submit', ids: ['A1', 'E1', 'E2', 'E3'] },
+        { de: 'Bescheid (XBau 0205)', en: 'Decision (XBau 0205)', ids: [] as string[] },
+      ] },
+  ];
+
+  const itemIds = new Set(checklist.sections.flatMap((sec) => sec.items.map((i) => i.id)));
+
+  return (
+    <Page size="A4" style={s.page}>
+      <View style={s.pageHeader} fixed>
+        <Text style={s.pageHeaderTitle}>
+          {de ? 'PLANUNGSFAHRPLAN' : 'PLANNING ROADMAP'} — {municipality.name}
+        </Text>
+        <Text
+          render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
+          style={s.footerText}
+        />
+      </View>
+
+      <View style={{ marginBottom: 12 }}>
+        <Text style={{ fontSize: 8.5, color: C.muted, lineHeight: 1.5 }}>
+          {de
+            ? 'Planungsablauf nach HOAI 2021 Anlage 10 — Leistungsphasen für Gebäude und Innenräume.'
+            : 'Planning workflow per HOAI 2021 Annex 10 — Service phases for buildings and interiors.'}
+        </Text>
+      </View>
+
+      {phases.map((phase) => (
+        <View key={phase.id} style={{ marginBottom: 10 }} wrap={false}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 4 }}>
+            <View style={{ backgroundColor: C.amber, borderRadius: 3, paddingHorizontal: 6, paddingVertical: 2, marginRight: 6 }}>
+              <Text style={{ fontSize: 8, fontFamily: 'Helvetica-Bold', color: '#FFFFFF' }}>{phase.id}</Text>
+            </View>
+            <Text style={{ fontSize: 10, fontFamily: 'Helvetica-Bold', color: C.text }}>
+              {de ? phase.titleDe : phase.titleEn}
+            </Text>
+          </View>
+          {phase.steps.map((step, sIdx) => {
+            const relevant = step.ids.filter((id) => itemIds.has(id));
+            return (
+              <View key={sIdx} style={{ flexDirection: 'row', paddingLeft: 20, marginBottom: 3 }}>
+                <Text style={{ fontSize: 8, color: C.muted, width: 8, marginRight: 4 }}>•</Text>
+                <Text style={{ fontSize: 8.5, color: C.text, flex: 1 }}>
+                  {de ? step.de : step.en}
+                  {relevant.length > 0 && (
+                    ` → ${relevant.join(', ')}`
+                  )}
+                </Text>
+              </View>
+            );
+          })}
+        </View>
+      ))}
+
+      <PageFooter left={`${municipality.name} · PermitPro`} date={date} />
+    </Page>
+  );
+}
+
+// ── XBau Flow Page ──────────────────────────────────────────────────────────
+
+function XBauFlowPage({ checklist, locale }: { checklist: GeneratedChecklist; locale: string }) {
+  const de = locale === 'de';
+  const date = localDate(checklist.generatedAt, de);
+  const { municipality } = checklist;
+
+  const itemIds = new Set(checklist.sections.flatMap((sec) => sec.items.map((i) => i.id)));
+
+  const mainSteps = [
+    { code: '0200', de: 'Bauantrag einreichen', en: 'Submit Application', from: de ? 'Bauherr' : 'Applicant', to: de ? 'Bauaufsicht' : 'Authority' },
+    { code: '0201', de: 'Formale Prüfung', en: 'Formal Review', from: de ? 'Bauaufsicht' : 'Authority', to: de ? 'Bauherr' : 'Applicant' },
+    { code: '0202', de: 'Nachforderungen', en: 'Amendments', from: de ? 'Bauherr' : 'Applicant', to: de ? 'Bauaufsicht' : 'Authority' },
+    { code: '0203', de: 'Anhörung', en: 'Hearing', from: de ? 'Bauaufsicht' : 'Authority', to: de ? 'Bauherr' : 'Applicant' },
+    { code: '0204', de: 'Stellungnahme', en: 'Response', from: de ? 'Bauherr' : 'Applicant', to: de ? 'Bauaufsicht' : 'Authority' },
+    { code: '0205', de: 'Baugenehmigung', en: 'Permit Decision', from: de ? 'Bauaufsicht' : 'Authority', to: de ? 'Bauherr' : 'Applicant' },
+  ];
+
+  const parallelSteps: { code: string; de: string; en: string; from: string; to: string; condIds: string[] }[] = [];
+
+  if (['H3', 'H4', 'H5', 'G5', 'G6', 'J2'].some((id) => itemIds.has(id))) {
+    parallelSteps.push(
+      { code: '0400', de: 'Fachbehörde anfragen', en: 'Request Statement', from: de ? 'Bauaufsicht' : 'Authority', to: de ? 'Fachbehörde' : 'Specialist', condIds: ['H3', 'H4', 'H5'] },
+      { code: '0405', de: 'Fachstellungnahme', en: 'Statement', from: de ? 'Fachbehörde' : 'Specialist', to: de ? 'Bauaufsicht' : 'Authority', condIds: [] },
+    );
+  }
+  if (itemIds.has('A7')) {
+    parallelSteps.push(
+      { code: '0500', de: 'Nachbarbeteiligung', en: 'Neighbor Notification', from: de ? 'Bauaufsicht' : 'Authority', to: de ? 'Nachbarn' : 'Neighbors', condIds: ['A7'] },
+    );
+  }
+  if (['D3', 'F2'].some((id) => itemIds.has(id))) {
+    parallelSteps.push(
+      { code: '0700', de: 'Prüfingenieur beauftragen', en: 'Commission Engineer', from: de ? 'Bauaufsicht' : 'Authority', to: de ? 'Prüfingenieur' : 'Engineer', condIds: ['D3'] },
+      { code: '0706', de: 'Prüfbericht', en: 'Review Report', from: de ? 'Prüfingenieur' : 'Engineer', to: de ? 'Bauaufsicht' : 'Authority', condIds: ['F2'] },
+    );
+  }
+
+  return (
+    <Page size="A4" style={s.page}>
+      <View style={s.pageHeader} fixed>
+        <Text style={s.pageHeaderTitle}>
+          {de ? 'XBAU-VERFAHRENSABLAUF' : 'XBAU PROCESS FLOW'} — {municipality.name}
+        </Text>
+        <Text
+          render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
+          style={s.footerText}
+        />
+      </View>
+
+      <View style={{ marginBottom: 12 }}>
+        <Text style={{ fontSize: 8.5, color: C.muted, lineHeight: 1.5 }}>
+          {de
+            ? 'Digitaler Nachrichtenfluss nach XBau-Standard v2.2 für Ihr Genehmigungsverfahren.'
+            : 'Digital message flow per XBau standard v2.2 for your permit procedure.'}
+        </Text>
+      </View>
+
+      {/* Main flow */}
+      <View style={{ marginBottom: 10 }}>
+        <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Bold', color: C.amber, marginBottom: 6, letterSpacing: 1 }}>
+          {de ? 'HAUPTVERFAHREN' : 'MAIN PROCESS'}
+        </Text>
+        {mainSteps.map((step, idx) => (
+          <View key={idx} style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 4, paddingLeft: 4 }} wrap={false}>
+            <View style={{ backgroundColor: C.sectionBg, borderRadius: 3, paddingHorizontal: 5, paddingVertical: 2, marginRight: 6, width: 42 }}>
+              <Text style={{ fontSize: 8, fontFamily: 'Helvetica-Bold', color: C.blue, textAlign: 'center' }}>{step.code}</Text>
+            </View>
+            <Text style={{ fontSize: 8, color: C.muted, width: 70 }}>{step.from}</Text>
+            <Text style={{ fontSize: 8, color: C.subtle, marginHorizontal: 4 }}>→</Text>
+            <Text style={{ fontSize: 8, color: C.muted, width: 70 }}>{step.to}</Text>
+            <Text style={{ fontSize: 8.5, color: C.text, flex: 1, marginLeft: 6 }}>
+              {de ? step.de : step.en}
+            </Text>
+          </View>
+        ))}
+      </View>
+
+      {/* Parallel flows */}
+      {parallelSteps.length > 0 && (
+        <View style={{ marginBottom: 10 }}>
+          <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Bold', color: C.amber, marginBottom: 6, letterSpacing: 1 }}>
+            {de ? 'PARALLELE VERFAHREN' : 'PARALLEL PROCESSES'}
+          </Text>
+          {parallelSteps.map((step, idx) => (
+            <View key={idx} style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 4, paddingLeft: 4 }} wrap={false}>
+              <View style={{ backgroundColor: C.sectionBg, borderRadius: 3, paddingHorizontal: 5, paddingVertical: 2, marginRight: 6, width: 42 }}>
+                <Text style={{ fontSize: 8, fontFamily: 'Helvetica-Bold', color: C.blue, textAlign: 'center' }}>{step.code}</Text>
+              </View>
+              <Text style={{ fontSize: 8, color: C.muted, width: 70 }}>{step.from}</Text>
+              <Text style={{ fontSize: 8, color: C.subtle, marginHorizontal: 4 }}>→</Text>
+              <Text style={{ fontSize: 8, color: C.muted, width: 70 }}>{step.to}</Text>
+              <Text style={{ fontSize: 8.5, color: C.text, flex: 1, marginLeft: 6 }}>
+                {de ? step.de : step.en}
+              </Text>
+            </View>
+          ))}
+        </View>
+      )}
+
+      <View style={{ marginTop: 8 }}>
+        <Text style={{ fontSize: 7.5, color: C.subtle, fontStyle: 'italic' }}>
+          XBau — XML-Standard für die Baugenehmigung · Datenmodell v2.2
+        </Text>
+      </View>
+
+      <PageFooter left={`${municipality.name} · PermitPro`} date={date} />
+    </Page>
+  );
+}
+
 // ── Document assembly ──────────────────────────────────────────────────────────
 
 function ChecklistPDFDoc(data: ChecklistPDFData) {
@@ -1278,6 +1483,8 @@ function ChecklistPDFDoc(data: ChecklistPDFData) {
           locale={locale}
         />
       )}
+      <RoadmapPage checklist={checklist} locale={locale} />
+      <XBauFlowPage checklist={checklist} locale={locale} />
       <NextStepsPage
         sections={sections}
         checklist={checklist}

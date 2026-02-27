@@ -235,6 +235,11 @@ export function ChecklistItemRow({ item, status, onCycle, inclusionReason }: Che
                 XBau:{item.xbauTag}
               </span>
             )}
+            {item.projektDatenId && (
+              <span className="hidden sm:inline text-[9px] font-mono text-slate-600 bg-white/3 border border-white/8 rounded px-1.5 py-0.5 tracking-wide">
+                PD:{item.projektDatenId}
+              </span>
+            )}
             {costStr && (
               <span className="text-[10px] font-mono text-emerald-400/80">{costStr}</span>
             )}

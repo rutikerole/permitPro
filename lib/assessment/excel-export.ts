@@ -1,8 +1,10 @@
 /**
- * Excel export — 3 sheets:
+ * Excel export — 5 sheets:
  *   1. Projektübersicht  — project summary (municipality, type, classification, Q&A)
- *   2. XBau Tag-Matrix   — ALL items with XBau tag, section, priority, status
+ *   2. XBau Tag-Matrix   — ALL items with Philipp's column layout (PD-ID, status workflow)
  *   3. Checkliste        — only relevant (filtered) items with full metadata
+ *   4. Planungsfahrplan  — HOAI phases with linked items and progress
+ *   5. ProjektDaten      — Item ID → ProjektDaten ID mapping
  */
 import ExcelJS from 'exceljs';
 import type { GeneratedChecklist, ItemStatus } from './types';
@@ -158,7 +160,7 @@ export async function downloadChecklistExcel(opts: ExcelExportOptions): Promise<
     }
   }
 
-  // ── Sheet 2: XBau Tag-Matrix (ALL items, including NOT_RELEVANT) ──────────
+  // ── Sheet 2: XBau Tag-Matrix (Philipp's column layout) ─────────────────
 
   const relevantIds = new Set(allItems.map((i) => i.id));
 
@@ -166,31 +168,35 @@ export async function downloadChecklistExcel(opts: ExcelExportOptions): Promise<
     views: [{ showGridLines: false }],
   });
   s2.columns = [
-    { key: 'id',       width: 10 },
-    { key: 'section',  width: 8  },
-    { key: 'relevant', width: 16 },
-    { key: 'reason',   width: 48 },
-    { key: 'xbauTag',  width: 32 },
-    { key: 'xbauSec',  width: 14 },
-    { key: 'projDat',  width: 14 },
-    { key: 'priority', width: 16 },
-    { key: 'status',   width: 18 },
-    { key: 'title',    width: 52 },
-    { key: 'legalRef', width: 36 },
+    { key: 'pdId',      width: 12 },  // A — PD-ID
+    { key: 'id',        width: 10 },  // B — ID
+    { key: 'section',   width: 10 },  // C — Abschnitt
+    { key: 'xbauTag',   width: 28 },  // D — XBau Tag
+    { key: 'title',     width: 48 },  // E — Titel
+    { key: 'relevant',  width: 16 },  // F — Relevant
+    { key: 'reason',    width: 44 },  // G — Begründung
+    { key: 'status',    width: 16 },  // H — Vorhanden
+    { key: 'checked',   width: 12 },  // I — Geprüft
+    { key: 'submitted', width: 14 },  // J — Eingereicht
+    { key: 'approved',  width: 14 },  // K — Genehmigt
+    { key: 'legalRef',  width: 34 },  // L — Rechtsgrundlage
+    { key: 'provider',  width: 22 },  // M — Verantwortlich
   ];
 
   const h2 = s2.addRow([
+    'PD-ID',
     'ID',
     de ? 'Abschnitt' : 'Section',
-    de ? 'Relevant'  : 'Relevant',
-    de ? 'Begründung' : 'Reason',
     'XBau Tag',
-    de ? 'XBau-Kap.' : 'XBau Ch.',
-    'ProjektDaten',
-    de ? 'Priorität' : 'Priority',
-    de ? 'Status'    : 'Status',
-    de ? 'Titel'     : 'Title',
+    de ? 'Titel' : 'Title',
+    de ? 'Relevant' : 'Relevant',
+    de ? 'Begründung' : 'Reason',
+    de ? 'Vorhanden' : 'Available',
+    de ? 'Geprüft' : 'Checked',
+    de ? 'Eingereicht' : 'Submitted',
+    de ? 'Genehmigt' : 'Approved',
     de ? 'Rechtsgrundlage' : 'Legal ref.',
+    de ? 'Verantwortlich' : 'Provider',
   ]);
   applyHeaderStyle(h2, C.headerBg, C.headerFg);
 
@@ -212,17 +218,19 @@ export async function downloadChecklistExcel(opts: ExcelExportOptions): Promise<
       ? (relevanceReasons?.[item.id] ?? '')
       : (excludedReasonMap.get(item.id) ?? '');
     const row = s2.addRow([
+      item.projektDatenId ?? '',
       item.id,
       item.sectionId,
+      item.xbauTag ?? '',
+      itemTitles[item.id] ?? item.id,
       relevantStr,
       reasonStr,
-      item.xbauTag      ?? '',
-      item.xbauSection  ?? '',
-      item.projektDatenId ?? '',
-      priorityLabel(item.priority, de),
       isRelevant ? statusLabel(status, de) : '',
-      itemTitles[item.id] ?? item.id,
+      '',  // Geprüft — placeholder
+      '',  // Eingereicht — placeholder
+      '',  // Genehmigt — placeholder
       item.legalRef,
+      item.providers.join(', '),
     ]);
     const bg = idx % 2 === 0 ? C.bodyBg : C.altRowBg;
     row.eachCell((cell) => {
@@ -230,31 +238,29 @@ export async function downloadChecklistExcel(opts: ExcelExportOptions): Promise<
       cell.font = { name: 'Calibri', size: 10, color: hex(isRelevant ? C.white : C.slate) };
       cell.alignment = { vertical: 'middle', wrapText: false };
     });
+    // PD-ID bold amber
+    row.getCell(1).font = { bold: true, name: 'Calibri', size: 10, color: hex(isRelevant ? C.blue : C.slate) };
     // ID bold
-    row.getCell(1).font = { bold: true, name: 'Calibri', size: 10, color: hex(isRelevant ? C.amber : C.slate) };
-    // Relevant column
-    row.getCell(3).font = {
+    row.getCell(2).font = { bold: true, name: 'Calibri', size: 10, color: hex(isRelevant ? C.amber : C.slate) };
+    // Relevant column (F)
+    row.getCell(6).font = {
       bold: isRelevant, name: 'Calibri', size: 10,
       color: hex(isRelevant ? C.green : C.slate),
     };
-    // Reason column — amber for included, slate for excluded
-    row.getCell(4).font = {
+    // Reason column (G) — amber for included, slate for excluded
+    row.getCell(7).font = {
       name: 'Calibri', size: 9, italic: true,
       color: hex(isRelevant ? C.amber : C.slate),
     };
-    row.getCell(4).alignment = { vertical: 'middle', wrapText: true };
-    // XBau tag — highlight if present
-    if (item.xbauTag) {
-      row.getCell(5).font = { name: 'Calibri', size: 10, color: hex(isRelevant ? C.blue : C.slate) };
-    }
-    // Status color (col 9)
+    row.getCell(7).alignment = { vertical: 'middle', wrapText: true };
+    // Status color (H)
     if (isRelevant) {
-      row.getCell(9).font = { bold: true, name: 'Calibri', size: 10, color: hex(statusColor(status)) };
+      row.getCell(8).font = { bold: true, name: 'Calibri', size: 10, color: hex(statusColor(status)) };
     }
     row.height = 16;
   });
 
-  s2.autoFilter = { from: { row: 1, column: 1 }, to: { row: 1, column: 11 } };
+  s2.autoFilter = { from: { row: 1, column: 1 }, to: { row: 1, column: 13 } };
   s2.views = [{ state: 'frozen', xSplit: 0, ySplit: 1, showGridLines: false }];
 
   // ── Sheet 3: Checkliste (nur relevante) ────────────────────────────────────
@@ -336,6 +342,139 @@ export async function downloadChecklistExcel(opts: ExcelExportOptions): Promise<
 
   s3.autoFilter = { from: { row: 1, column: 1 }, to: { row: 1, column: 11 } };
   s3.views = [{ state: 'frozen', xSplit: 0, ySplit: 1, showGridLines: false }];
+
+  // ── Sheet 4: Planungsfahrplan (HOAI phases) ────────────────────────────────
+
+  const s4 = wb.addWorksheet(de ? 'Planungsfahrplan' : 'Planning Roadmap', {
+    views: [{ showGridLines: false }],
+  });
+  s4.columns = [
+    { key: 'phase',    width: 12 },
+    { key: 'title',    width: 32 },
+    { key: 'step',     width: 40 },
+    { key: 'linked',   width: 28 },
+    { key: 'status',   width: 16 },
+  ];
+
+  const h4 = s4.addRow([
+    de ? 'Phase' : 'Phase',
+    de ? 'Titel' : 'Title',
+    de ? 'Arbeitsschritt' : 'Work Step',
+    de ? 'Verknüpfte Dokumente' : 'Linked Documents',
+    de ? 'Status' : 'Status',
+  ]);
+  applyHeaderStyle(h4);
+
+  const hoaiPhases = [
+    { id: 'SP 0', titleDe: 'Projektvorbereitung', titleEn: 'Project Preparation',
+      steps: [
+        { de: 'Bedarfsermittlung', en: 'Needs Assessment', ids: [] },
+        { de: 'Planungsgrundlagen', en: 'Planning Fundamentals', ids: [] },
+        { de: 'Planverträge abschließen', en: 'Planner Contracts', ids: [] },
+        { de: 'Finanzierung klären', en: 'Financing', ids: [] },
+      ] },
+    { id: 'SP 1', titleDe: 'Grundlagenermittlung', titleEn: 'Basic Evaluation',
+      steps: [
+        { de: 'Aufgabe klären', en: 'Clarify Task', ids: [] },
+        { de: 'Ortsbesichtigung', en: 'Site Inspection', ids: ['B1', 'D2'] },
+        { de: 'Untersuchungsbedarf', en: 'Investigation Requirements', ids: ['H4', 'H5', 'G5', 'G6', 'H7'] },
+        { de: 'Fachplaner auswählen', en: 'Select Specialists', ids: [] },
+      ] },
+    { id: 'SP 2', titleDe: 'Vorplanung', titleEn: 'Preliminary Design',
+      steps: [
+        { de: 'Grundlagen analysieren', en: 'Analyze Fundamentals', ids: [] },
+        { de: 'Vorentwurf (GK)', en: 'Preliminary Plan (GK)', ids: [] },
+        { de: 'Vorabstimmung Behörde', en: 'Pre-Negotiations', ids: [] },
+        { de: 'Kostenschätzung', en: 'Cost Estimate', ids: ['C7'] },
+      ] },
+    { id: 'SP 3', titleDe: 'Entwurfsplanung', titleEn: 'Design Development',
+      steps: [
+        { de: 'Entwurf ausarbeiten', en: 'Develop Design', ids: ['C1', 'C2', 'C3', 'C4', 'C5'] },
+        { de: 'Baubeschreibung', en: 'Object Description', ids: ['A2'] },
+        { de: 'Kostenberechnung', en: 'Cost Calculation', ids: ['C7'] },
+      ] },
+    { id: 'SP 4', titleDe: 'Genehmigungsplanung', titleEn: 'Permit Application',
+      steps: [
+        { de: 'Unterlagen zusammenstellen', en: 'Compile Documents', ids: ['C1', 'C2', 'C3', 'D1', 'D2', 'D3'] },
+        { de: 'Bauantrag einreichen', en: 'Submit Application', ids: ['A1', 'E1', 'E2', 'E3'] },
+        { de: 'Behördenanfragen (0201/0202)', en: 'Authority Queries (0201/0202)', ids: [] },
+        { de: 'Bescheid erhalten (0205)', en: 'Receive Decision (0205)', ids: [] },
+      ] },
+  ];
+
+  for (const phase of hoaiPhases) {
+    for (const step of phase.steps) {
+      const linkedRelevant = step.ids.filter((id) => relevantIds.has(id));
+      const linkedStr = linkedRelevant.join(', ');
+      const allDone = linkedRelevant.length > 0 && linkedRelevant.every((id) => itemStatuses[id] === 'available');
+      const someDone = linkedRelevant.some((id) => itemStatuses[id] === 'available');
+      const statusStr = linkedRelevant.length === 0
+        ? '—'
+        : allDone ? (de ? 'Fertig' : 'Done') : someDone ? (de ? 'Teilweise' : 'Partial') : (de ? 'Offen' : 'Open');
+
+      const row = s4.addRow([
+        phase.id,
+        de ? phase.titleDe : phase.titleEn,
+        de ? step.de : step.en,
+        linkedStr,
+        statusStr,
+      ]);
+      row.eachCell((cell) => {
+        cell.fill = headerFill(C.bodyBg);
+        cell.font = { name: 'Calibri', size: 10, color: hex(C.white) };
+        cell.alignment = { vertical: 'middle' };
+      });
+      row.getCell(1).font = { bold: true, name: 'Calibri', size: 10, color: hex(C.amber) };
+      if (allDone) {
+        row.getCell(5).font = { bold: true, name: 'Calibri', size: 10, color: hex(C.green) };
+      } else if (someDone) {
+        row.getCell(5).font = { bold: true, name: 'Calibri', size: 10, color: hex(C.amber) };
+      }
+      row.height = 16;
+    }
+  }
+
+  s4.views = [{ state: 'frozen', xSplit: 0, ySplit: 1, showGridLines: false }];
+
+  // ── Sheet 5: ProjektDaten Mapping ─────────────────────────────────────────
+
+  const s5 = wb.addWorksheet(de ? 'ProjektDaten' : 'ProjectData Mapping', {
+    views: [{ showGridLines: false }],
+  });
+  s5.columns = [
+    { key: 'itemId',   width: 12 },
+    { key: 'pdId',     width: 14 },
+    { key: 'xbauTag',  width: 28 },
+    { key: 'title',    width: 48 },
+  ];
+
+  const h5 = s5.addRow([
+    'Item ID',
+    'ProjektDaten-ID',
+    'XBau Tag',
+    de ? 'Titel' : 'Title',
+  ]);
+  applyHeaderStyle(h5);
+
+  ALL_CHECKLIST_ITEMS.forEach((item, idx) => {
+    const row = s5.addRow([
+      item.id,
+      item.projektDatenId ?? '',
+      item.xbauTag ?? '',
+      itemTitles[item.id] ?? item.id,
+    ]);
+    const bg = idx % 2 === 0 ? C.bodyBg : C.altRowBg;
+    row.eachCell((cell) => {
+      cell.fill = headerFill(bg);
+      cell.font = { name: 'Calibri', size: 10, color: hex(C.white) };
+      cell.alignment = { vertical: 'middle' };
+    });
+    row.getCell(1).font = { bold: true, name: 'Calibri', size: 10, color: hex(C.amber) };
+    row.getCell(2).font = { bold: true, name: 'Calibri', size: 10, color: hex(C.blue) };
+    row.height = 16;
+  });
+
+  s5.views = [{ state: 'frozen', xSplit: 0, ySplit: 1, showGridLines: false }];
 
   // ── Trigger download ───────────────────────────────────────────────────────
 

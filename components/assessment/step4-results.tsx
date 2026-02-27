@@ -3,13 +3,15 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
-import { Download, RotateCcw, CheckCircle2, PartyPopper, Share2, Check, Loader2, Search, X, Mail, TableProperties, EyeOff, ChevronDown } from 'lucide-react';
+import { Download, RotateCcw, CheckCircle2, PartyPopper, Share2, Check, Loader2, Search, X, Mail, TableProperties, EyeOff, ChevronDown, ClipboardList, Route, GitBranch } from 'lucide-react';
 import { useAssessmentStore } from '@/store/assessment-store';
 import { ChecklistSection } from './results/checklist-section';
 import { ChecklistOverview } from './results/checklist-overview';
 import { PrintHeader } from './results/print-header';
 import { Button } from '@/components/ui/button';
 import { BuildingPreview } from './building-preview';
+import { PlanningRoadmap } from './results/planning-roadmap';
+import { XBauFlowDiagram } from './results/xbau-flow';
 // ── Lazy-load the PDF renderer (~500 KB) only when the user clicks Download ──
 import { getVisibleQuestions } from '@/lib/data/question-trees';
 import { getInclusionReason } from '@/lib/assessment/checklist-gen';
@@ -179,6 +181,7 @@ export function Step4Results() {
   const [emailAddress, setEmailAddress] = useState('');
   const [emailSending, setEmailSending] = useState(false);
   const [emailStatus, setEmailStatus] = useState<'idle' | 'sent' | 'error'>('idle');
+  const [activeView, setActiveView] = useState<'checklist' | 'roadmap' | 'xbau'>('checklist');
   const [filterMode, setFilterMode] = useState<'all' | 'critical' | 'required' | 'conditional' | 'completed'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -198,6 +201,7 @@ export function Step4Results() {
           title:              tRoot(item.titleKey as Parameters<typeof tRoot>[0]),
           legalRef:           item.legalRef,
           xbauTag:            item.xbauTag,
+          projektDatenId:     item.projektDatenId,
           priority:           item.priority,
           costRange:          item.costRange,
           timeWeeks:          item.timeWeeks,
@@ -363,6 +367,7 @@ export function Step4Results() {
           title:              tRoot(item.titleKey as Parameters<typeof tRoot>[0]),
           legalRef:           item.legalRef,
           xbauTag:            item.xbauTag,
+          projektDatenId:     item.projektDatenId,
           priority:           item.priority,
           costRange:          item.costRange,
           timeWeeks:          item.timeWeeks,
@@ -649,7 +654,31 @@ export function Step4Results() {
         {/* Print header (screen-hidden) */}
         <PrintHeader checklist={result} />
 
-        {/* ── Filter + Search bar ── */}
+        {/* ── View Tabs ── */}
+        <div className="shrink-0 px-4 sm:px-6 border-b border-white/5 print:hidden flex overflow-x-auto scrollbar-none">
+          {([
+            { id: 'checklist' as const, icon: ClipboardList, labelDe: 'Checkliste', labelEn: 'Checklist' },
+            { id: 'roadmap' as const,   icon: Route,         labelDe: 'Planungsfahrplan', labelEn: 'Planning Roadmap' },
+            { id: 'xbau' as const,      icon: GitBranch,     labelDe: 'XBau-Ablauf', labelEn: 'XBau Flow' },
+          ]).map(({ id, icon: Icon, labelDe, labelEn }) => (
+            <button
+              key={id}
+              onClick={() => setActiveView(id)}
+              className={cn(
+                'flex items-center gap-1.5 px-3 py-2.5 text-[11px] font-semibold whitespace-nowrap transition-all duration-150 border-b-2 -mb-px',
+                activeView === id
+                  ? 'text-amber-400 border-amber-400'
+                  : 'text-slate-500 border-transparent hover:text-slate-300 hover:border-white/10',
+              )}
+            >
+              <Icon size={13} />
+              {locale === 'de' ? labelDe : labelEn}
+            </button>
+          ))}
+        </div>
+
+        {/* ── Filter + Search bar (checklist view only) ── */}
+        {activeView === 'checklist' && (
         <div className="shrink-0 px-4 py-2.5 sm:px-6 border-b border-white/5 print:hidden flex flex-col gap-2">
           {/* Search input */}
           <div className="relative">
@@ -695,10 +724,13 @@ export function Step4Results() {
             ))}
           </div>
         </div>
+        )}
 
         {/* ── Scrollable sections ── */}
         <div className="flex-1 overflow-y-auto overscroll-contain px-4 py-4 sm:px-6 sm:py-5 flex flex-col gap-3 scrollbar-thin">
 
+          {activeView === 'checklist' && (
+          <>
           {/* Overview stats dashboard — only when not filtered */}
           {!isFiltered && <ChecklistOverview checklist={result} itemStatuses={itemStatuses} />}
 
@@ -783,6 +815,16 @@ export function Step4Results() {
               excludedItems={result.excludedItems ?? []}
               locale={locale}
             />
+          )}
+          </>
+          )}
+
+          {activeView === 'roadmap' && (
+            <PlanningRoadmap checklist={result} itemStatuses={itemStatuses} locale={locale} />
+          )}
+
+          {activeView === 'xbau' && (
+            <XBauFlowDiagram checklist={result} itemStatuses={itemStatuses} locale={locale} />
           )}
         </div>
 
